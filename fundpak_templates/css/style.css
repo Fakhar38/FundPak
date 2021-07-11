@@ -317,6 +317,38 @@ a {
           justify-content: center;
 }
 
+.header-loggedin-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-left: 0.8px solid #A0A0A0;
+  margin-left: 1rem;
+  padding-left: 2vw;
+}
+
+.header-loggedin-btns-logout {
+  font-size: 1rem;
+  color: #181819;
+}
+
+.header-loggedin-btns-profile {
+  margin-left: 4vw;
+}
+
+.header-loggedin-btns-profile-img {
+  width: 3.5vw;
+  cursor: pointer;
+}
+
 .header-explore:hover .header-explore-content {
   height: 80%;
   -webkit-transition: all 0.3s ease-in;
@@ -502,12 +534,14 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .popular-projects-row-card {
@@ -516,7 +550,9 @@ a {
   padding: 0;
   padding-bottom: 2vh;
   display: block;
-  width: 22%;
+  width: 20vw;
+  margin-left: 2vw;
+  margin-bottom: 8vh;
 }
 
 .popular-projects-row-card-image {
@@ -1199,180 +1235,6 @@ a {
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
   .header-explore {
     margin-left: 6vw;
-  }
-  .hero {
-    height: 90vh;
-  }
-  .hero-swiper-slide-content {
-    padding-top: 22vh;
-  }
-  .hero-swiper-slide-content-heading {
-    font-size: 4vw;
-  }
-  .hero-swiper-slide-content-paragraph {
-    font-size: 1.8vw;
-  }
-  .hero-swiper-slide-content-btn {
-    font-size: 1.8vw;
-    border-radius: 0.5vw;
-  }
-  .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-    left: 2vw !important;
-    right: auto;
-  }
-  .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-    right: 2vw !important;
-    left: auto;
-  }
-  :root {
-    --swiper-navigation-size: 60px !important;
-  }
-  .popular-projects-heading {
-    font-size: 2.5vw;
-  }
-  .popular-projects-row-card-toprow {
-    font-size: 1.3vw;
-  }
-  .popular-projects-row-card-name {
-    font-size: 1.3vw;
-  }
-  .popular-projects-row-card-description {
-    font-size: 1.1vw;
-  }
-  .popular-projects-row-card-category {
-    font-size: 1.1vw;
-  }
-  .popular-projects-row-card-update-amount {
-    font-size: 1vw;
-  }
-  .popular-projects-row-card-update-currency {
-    font-size: 0.9vw;
-  }
-  .cool-clever {
-    height: 60vh;
-  }
-  .cool-clever-content {
-    font-size: 4vw;
-  }
-  .back-project-content {
-    background-repeat: no-repeat;
-  }
-  .back-project-content-heading {
-    font-size: 3vw;
-  }
-  .back-project-content-paragraph {
-    font-size: 1.4vw;
-  }
-  .back-project-content-btn {
-    font-size: 1.6vw;
-    font-weight: 500;
-    border-radius: 0.6vw;
-  }
-  .categories-heading {
-    font-size: 2.4vw;
-  }
-  .categories-paragraph {
-    font-size: 1.6vw;
-  }
-  .categories-btn {
-    font-size: 1.6vw;
-  }
-  .categories-link {
-    font-size: 1.4vw;
-  }
-  .categories-row {
-    font-size: 1.5vw;
-  }
-  .clever-things-heading {
-    font-size: 2.4vw;
-  }
-  .clever-things-paragraph {
-    font-size: 1.5vw;
-  }
-  .clever-things-row-btn {
-    font-size: 1.6vw;
-  }
-  .footer-top-column-1-column-heading {
-    font-size: 1.5vw;
-  }
-  .footer-top-column-1-column-link {
-    font-size: 1.2vw;
-  }
-  .footer-top-column-2-text {
-    font-size: 1.2vw;
-  }
-  .footer-top-column-2-form-input {
-    font-size: 1.2vw;
-    height: 7vh;
-  }
-  .footer-top-column-2-form-checkbox-text {
-    font-size: 1vw;
-  }
-  .footer-top-column-2-form-btn {
-    font-size: 1.4vw;
-  }
-  .footer-checkmark {
-    height: 2vw;
-    width: 2vw;
-  }
-  .footer-bottom {
-    font-size: 1.2vw;
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  .header-logo {
-    padding-left: 3vw;
-  }
-  .header-logo-img {
-    width: 15vw;
-  }
-  .header-explore {
-    margin-left: 3vw;
-  }
-  .header-explore-btn {
-    font-size: 1.3vw;
-  }
-  .header-explore-icon-img {
-    width: 1.2vw;
-  }
-  .header-explore-content-row {
-    padding-top: 3vh;
-  }
-  .header-explore-content-row-column-heading {
-    font-size: 1.6vw;
-  }
-  .header-explore-content-bottom-column-heading {
-    font-size: 1.6vw;
-  }
-  .header-explore-content-bottom-column-links {
-    font-size: 1.2vw;
-  }
-  .header-story {
-    font-size: 1.3vw;
-  }
-  .header-search-icon-img {
-    width: 1.4vw;
-  }
-  .header-search-input-box-shown {
-    width: 18vw;
-    font-size: 1.3vw;
-    padding: 1.2vh 1vw;
-    border-radius: 2vw;
-  }
-  .header-link {
-    margin-left: 13vw;
-    font-size: 1.3vw;
-    width: 23vw;
-  }
-  .header-btn {
-    margin-left: 2vw;
-    font-size: 1.3vw;
-    width: 14vw;
-    border-left: 0.1vw solid #A0A0A0;
-  }
-  .header-btn-signup {
-    border-radius: 0.5vw;
   }
   .hero {
     height: 90vh;
