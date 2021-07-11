@@ -52,16 +52,24 @@
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
-                    <div class="header-explore-content-row-column header-explore-content-row-column-3">
-                        <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
-                    </div>
+                    {% if not is_logged %}
+                        <div class="header-explore-content-row-column header-explore-content-row-column-3">
+                            <div class="header-explore-content-row-column-heading">Join Us!</div>
+                            <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        </div>
+                    {% else %}
+                        <div class="header-explore-content-row-column header-explore-content-row-column-3">
+                            <div class="header-explore-content-row-column-heading">Join Us!</div>
+                            <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        </div>
+                    {% endif %}
+
                 </div>
                 <div class="header-explore-content-bottom">
                     <div class="header-explore-content-bottom-column">
@@ -202,8 +210,8 @@
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                 Lorem Ipsum has been the industry's standard dummy text.
                             </div>
-                            <a href="#" class="hero-swiper-slide-content-btn">
-                                See Campaign
+                            <a href="{% url 'core:product_categories' %}" class="hero-swiper-slide-content-btn">
+                                See Campaigns
                             </a>
                             <a href="{% url 'core:index' %}#popular-projects" class="hero-scroll-icon">
                                 <img src="{% static 'images/scrolldown.svg' %}" alt="scroll icon" class="hero-scroll-icon-img bounce-1">
@@ -296,8 +304,8 @@
                         {{ prod.category }}
                     </div>
                     <div class="popular-projects-row-card-update">
-                        <div class="popular-projects-row-card-update-amount">${{ prod.moneyRaised }}</div>
-                        <div class="popular-projects-row-card-update-currency">USD raised</div>
+                        <div class="popular-projects-row-card-update-amount">Rs {{ prod.moneyRaised }}</div>
+                        <div class="popular-projects-row-card-update-currency">PKR raised</div>
                     </div>
                 </div>
                 <!-- popular projects row card ends here -->
