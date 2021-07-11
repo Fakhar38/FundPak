@@ -1,0 +1,644 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Home | FundPak  </title>
+    <!-- favicon goes here -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- custom js -->
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <!-- cdn for swiper js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- cdn for jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- 1. header -->
+    <!-- 2. hero -->
+    <!-- 3. popular projects -->
+    <!-- 4. cool and clever -->
+    <!-- 5. back the project -->
+    <!-- 6. categories -->
+    <!-- 7. clever things -->
+    <!-- 8. footer -->
+
+    <!-- header starts here -->
+
+    <div class="header">
+
+        <!-- header logo starts here -->
+
+        <div class="header-logo">
+            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
+        </div>
+
+        <!-- header explore starts here -->
+
+        <div class="header-explore">
+            <div class="header-explore-btn">
+                <a href="#" class="header-explore-text">Explore</a>
+                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+            </div>
+            <div class="header-explore-content">
+                <div class="header-explore-content-row">
+                    <div class="header-explore-content-row-column header-explore-content-row-column-1">
+                        <div class="header-explore-content-row-column-heading">Explore All Projects</div>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                    </div>
+                    <div class="header-explore-content-row-column header-explore-content-row-column-2">
+                        <div class="header-explore-content-row-column-heading">Most Favorites</div>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                    </div>
+                    <div class="header-explore-content-row-column header-explore-content-row-column-3">
+                        <div class="header-explore-content-row-column-heading">Join Us!</div>
+                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                    </div>
+                </div>
+                <div class="header-explore-content-bottom">
+                    <div class="header-explore-content-bottom-column">
+                        <div class="header-explore-content-bottom-column-heading">
+                            TECH & INNOVATION
+                        </div>
+                        <div class="header-explore-content-bottom-column-links">
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Audio</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Camera Gear</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Education</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Energy & Green Tech</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Fashion & Wearables</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Food & Beverages</a>
+                            </div>
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Health & Fitness</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Home</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Phones & Accessories</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Productivity</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Transportation</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Travel & Outdoors</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-explore-content-bottom-line">
+                        <div class="header-explore-content-bottom-line-verticle"></div>
+                    </div>
+                    <div class="header-explore-content-bottom-column">
+                        <div class="header-explore-content-bottom-column-heading">
+                            CREATIVE WORKS
+                        </div>
+                        <div class="header-explore-content-bottom-column-links">
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Art</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Comics</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Dance & Theater</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Film</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Music</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Photography</a>
+                            </div>
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Podcasts, Blogs & Vlogs</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Tabletop Games</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Video Games</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Web Series & TV Shows</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Writing & Publishing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- header story starts here -->
+
+        <div class="header-story">
+            <a href="{% url 'core:about_us' %}" class="header-story-text">Our Story</a>
+        </div>
+
+        <!-- header seach input starts here -->
+
+        <div class="header-search">
+            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
+        </div>
+
+        <!-- header links start here -->
+
+        <div class="header-link">
+
+            <a href="#" class="header-link-investor">For Investors</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'core:start_camp_logged' %}" class="header-link-campaign">Start a Campaign</a>
+            {% else %}
+                <a href="{% url 'core:start_camp_not_logged' %}" class="header-link-campaign">Start a Campaign</a>
+            {% endif %}
+
+        </div>
+
+
+        <!-- if there is no login then these buttons will be shown otherwise next div -->
+
+        <!-- header buttons start here -->
+        <div class="header-btn">
+
+            <a href="{% url 'core:login' %}" class="header-btn-login">
+                Log In
+            </a>
+
+            <a href="{% url 'core:signup' %}" class="header-btn-signup">
+                Sign Up
+            </a>
+        </div>
+        <!-- header buttons end here -->
+
+        <!-- account logged in btns start here -->
+
+        <!-- <div class="header-loggedin-btns">
+            <div class="header-loggedin-btns-logout">
+                Logout
+            </div>
+            <div class="header-loggedin-btns-profile">
+                <img src="./images/profile-icon.svg" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+            </div>
+        </div> -->
+
+        <!-- account logged in btns end here -->
+
+    </div>
+
+    <!-- header ends here -->
+
+    <!-- ----------------------------------------------------------- -->
+
+    <!-- hero section starts here -->
+
+    <div class="hero">
+        <!-- Slider main container -->
+        <div class="swiper-container hero-swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper hero-swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide hero-swiper-slide">
+                    <!-- slide 1 starts here -->
+                    <div class="hero-swiper-slide-1">
+                        <div class="hero-swiper-slide-content">
+                            <div class="hero-swiper-slide-content-heading">
+                                lorem ispum
+                            </div>
+                            <div class="hero-swiper-slide-content-paragraph">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text.
+                            </div>
+                            <a href="#" class="hero-swiper-slide-content-btn">
+                                See Campaign
+                            </a>
+                            <a href="{% url 'core:index' %}#popular-projects" class="hero-scroll-icon">
+                                <img src="{% static 'images/scrolldown.svg' %}" alt="scroll icon" class="hero-scroll-icon-img bounce-1">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide hero-swiper-slide">
+                    <!-- slide 1 starts here -->
+                    <div class="hero-swiper-slide-1 hero-swiper-slide-2">
+                        <div class="hero-swiper-slide-content">
+                            <div class="hero-swiper-slide-content-heading">
+                                lorem ispum
+                            </div>
+                            <div class="hero-swiper-slide-content-paragraph">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text.
+                            </div>
+                            <a href="#" class="hero-swiper-slide-content-btn">
+                                See Campaign
+                            </a>
+                            <a href="{% url 'core:index' %}#popular-projects" class="hero-scroll-icon">
+                                <img src="{% static 'images/scrolldown.svg' %}" alt="scroll icon" class="hero-scroll-icon-img bounce-1">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide hero-swiper-slide">
+                    <!-- slide 1 starts here -->
+                    <div class="hero-swiper-slide-1 hero-swiper-slide-3">
+                        <div class="hero-swiper-slide-content">
+                            <div class="hero-swiper-slide-content-heading">
+                                lorem ispum
+                            </div>
+                            <div class="hero-swiper-slide-content-paragraph">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text.
+                            </div>
+                            <a href="#" class="hero-swiper-slide-content-btn">
+                                See Campaign
+                            </a>
+                            <a href="{% url 'core:index' %}#popular-projects" class="hero-scroll-icon">
+                                <img src="{% static 'images/scrolldown.svg' %}" alt="scroll icon" class="hero-scroll-icon-img bounce-1">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!-- hero section ends here -->
+
+    <!-- ------------------------------------------------------------------ -->
+
+    <!-- popular projects section starts here -->
+
+    <div class="popular-projects">
+
+        <div class="popular-projects-heading" id="popular-projects">
+            Popular Projects
+        </div>
+
+        <div class="popular-projects-row">
+
+
+            <!-- popular projects row card starts here -->
+            <div class="popular-projects-row-card">
+                <a href="#" class="popular-projects-row-card-image">
+                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
+                </a>
+                <div class="popular-projects-row-card-toprow">
+                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                    <div class="popular-projects-row-card-toprow-favorite">
+                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="popular-projects-row-card-name">
+                    Center Cam: Finally- a middle-screen webcam!
+                </a>
+                <div class="popular-projects-row-card-description">
+                    Center Cam is an adjustable webcam that operates in the middle of your screen.
+                </div>
+                <div class="popular-projects-row-card-category">
+                    BEAUTY
+                </div>
+                <div class="popular-projects-row-card-update">
+                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
+                    <div class="popular-projects-row-card-update-currency">USD raised</div>
+                </div>
+            </div>
+            <!-- popular projects row card ends here -->
+
+            <!-- popular projects row card starts here -->
+            <div class="popular-projects-row-card">
+                <a href="#" class="popular-projects-row-card-image">
+                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
+                </a>
+                <div class="popular-projects-row-card-toprow">
+                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                    <div class="popular-projects-row-card-toprow-favorite">
+                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="popular-projects-row-card-name">
+                    Center Cam: Finally- a middle-screen webcam!
+                </a>
+                <div class="popular-projects-row-card-description">
+                    Center Cam is an adjustable webcam that operates in the middle of your screen.
+                </div>
+                <div class="popular-projects-row-card-category">
+                    BEAUTY
+                </div>
+                <div class="popular-projects-row-card-update">
+                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
+                    <div class="popular-projects-row-card-update-currency">USD raised</div>
+                </div>
+            </div>
+            <!-- popular projects row card ends here -->
+
+            <!-- popular projects row card starts here -->
+            <div class="popular-projects-row-card">
+                <a href="#" class="popular-projects-row-card-image">
+                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
+                </a>
+                <div class="popular-projects-row-card-toprow">
+                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                    <div class="popular-projects-row-card-toprow-favorite">
+                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="popular-projects-row-card-name">
+                    Center Cam: Finally- a middle-screen webcam!
+                </a>
+                <div class="popular-projects-row-card-description">
+                    Center Cam is an adjustable webcam that operates in the middle of your screen.
+                </div>
+                <div class="popular-projects-row-card-category">
+                    BEAUTY
+                </div>
+                <div class="popular-projects-row-card-update">
+                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
+                    <div class="popular-projects-row-card-update-currency">USD raised</div>
+                </div>
+            </div>
+            <!-- popular projects row card ends here -->
+
+            <!-- popular projects row card starts here -->
+            <div class="popular-projects-row-card">
+                <a href="#" class="popular-projects-row-card-image">
+                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
+                </a>
+                <div class="popular-projects-row-card-toprow">
+                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                    <div class="popular-projects-row-card-toprow-favorite">
+                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="popular-projects-row-card-name">
+                    Center Cam: Finally- a middle-screen webcam!
+                </a>
+                <div class="popular-projects-row-card-description">
+                    Center Cam is an adjustable webcam that operates in the middle of your screen.
+                </div>
+                <div class="popular-projects-row-card-category">
+                    BEAUTY
+                </div>
+                <div class="popular-projects-row-card-update">
+                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
+                    <div class="popular-projects-row-card-update-currency">USD raised</div>
+                </div>
+            </div>
+            <!-- popular projects row card ends here -->
+
+            <!-- popular projects row card starts here -->
+            <div class="popular-projects-row-card">
+                <a href="#" class="popular-projects-row-card-image">
+                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
+                </a>
+                <div class="popular-projects-row-card-toprow">
+                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                    <div class="popular-projects-row-card-toprow-favorite">
+                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="popular-projects-row-card-name">
+                    Center Cam: Finally- a middle-screen webcam!
+                </a>
+                <div class="popular-projects-row-card-description">
+                    Center Cam is an adjustable webcam that operates in the middle of your screen.
+                </div>
+                <div class="popular-projects-row-card-category">
+                    BEAUTY
+                </div>
+                <div class="popular-projects-row-card-update">
+                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
+                    <div class="popular-projects-row-card-update-currency">USD raised</div>
+                </div>
+            </div>
+            <!-- popular projects row card ends here -->
+
+            <!-- popular projects row card starts here -->
+            <div class="popular-projects-row-card">
+                <a href="#" class="popular-projects-row-card-image">
+                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
+                </a>
+                <div class="popular-projects-row-card-toprow">
+                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                    <div class="popular-projects-row-card-toprow-favorite">
+                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                <a href="#" class="popular-projects-row-card-name">
+                    Center Cam: Finally- a middle-screen webcam!
+                </a>
+                <div class="popular-projects-row-card-description">
+                    Center Cam is an adjustable webcam that operates in the middle of your screen.
+                </div>
+                <div class="popular-projects-row-card-category">
+                    BEAUTY
+                </div>
+                <div class="popular-projects-row-card-update">
+                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
+                    <div class="popular-projects-row-card-update-currency">USD raised</div>
+                </div>
+            </div>
+            <!-- popular projects row card ends here -->
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <!-- popular projects section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
+
+    <!-- cool and clever section starts here -->
+
+    <div class="cool-clever">
+        <a href="#" class="cool-clever-image">
+            <img src="{% static 'images/cool-clever-title.png' %}" alt="" class="cool-clever-image-title">
+        </a>
+        <a href="#" class="cool-clever-content">
+            <div class="cool-clever-content-heading">
+                10 Cool & Clever Finds
+            </div>
+        </a>
+    </div>
+
+    <!-- cool and clever section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
+
+    <!-- back the project section starts here -->
+
+    <div class="back-project">
+        <div class="back-project-content">
+            <div class="back-project-content-heading">
+                Back the project, take the ride
+            </div>
+            <div class="back-project-content-paragraph">
+                Fundpak is your destination for clever innovations in tech, design, and more,
+                often with special perks and pricing for early adopters. Back a campaign, share
+                your ideas and feedback with the project team - and join the risks and rewards
+                of bringing new products to life.
+            </div>
+            <a href="#" class="back-project-content-btn">
+                LEARN ABOUT CROWDFUNDING
+            </a>
+        </div>
+    </div>
+
+    <!-- back the project section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
+
+    <!-- categories section starts here -->
+
+    <div class="categories">
+        <div class="categories-heading">
+            Which categories interest you?
+        </div>
+        <div class="categories-paragraph">
+            Discover projects just for you and get great recommendations when you select your interests.
+        </div>
+        <a href="{% url 'core:signup' %}" class="categories-btn">
+            SIGN UP AND SELECT INTERESTS
+        </a>
+        <div class="categories-link">
+            Or explore our top categories
+        </div>
+        <div class="categories-row">
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="{% static 'images/film.svg' %}" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">FILM</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="{% static 'images/health.svg' %}" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">HEALTH</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon categories-row-link-icon-phone">
+                    <img src="{% static 'images/phone.svg' %}" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">PHONE</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="{% static 'images/home.svg' %}" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">HOME</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="{% static 'images/store.svg' %}" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">STORE</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- categories section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
+
+    <!-- clever things section starts here -->
+
+    <div class="clever-things">
+        <div class="clever-things-heading">
+            Clever Things For Curious Humans™
+        </div>
+        <div class="clever-things-paragraph">
+            There’s no better place to start the hunt for something new and special.
+            Begin on FundPak to find clever and unconventional things that solve everyday problems large and small.
+        </div>
+        <div class="clever-things-row">
+            <a href="{% url 'core:signup' %}" class="clever-things-row-btn clever-things-row-btn-1">
+                SIGN UP NOW
+            </a>
+            <a href="#" class="clever-things-row-btn clever-things-row-btn-2">
+                LEARN MORE
+            </a>
+        </div>
+    </div>
+
+    <!-- clever things section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
+
+    <!-- footer starts here -->
+
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-top-column-1">
+                <div class="footer-top-column-1-column">
+                    <div class="footer-top-column-1-column-heading">
+                        EXPLORE
+                    </div>
+                    <a href="#" class="footer-top-column-1-column-link">What We Do</a>
+                    <a href="#" class="footer-top-column-1-column-link">Funding</a>
+                    <a href="#" class="footer-top-column-1-column-link">GoFundMe</a>
+                </div>
+                <div class="footer-top-column-1-column">
+                    <div class="footer-top-column-1-column-heading">
+                        ABOUT
+                    </div>
+                    <a href="#" class="footer-top-column-1-column-link">About Us</a>
+                    <a href="#" class="footer-top-column-1-column-link">Trust & Safety</a>
+                    <a href="#" class="footer-top-column-1-column-link">Help & Support</a>
+                    <a href="#" class="footer-top-column-1-column-link">Contact</a>
+                </div>
+                <div class="footer-top-column-1-column">
+                    <div class="footer-top-column-1-column-heading">
+                        ENTREPRENEURS
+                    </div>
+                    <a href="#" class="footer-top-column-1-column-link">How It Works</a>
+                    <a href="#" class="footer-top-column-1-column-link">Education Center</a>
+                    <a href="#" class="footer-top-column-1-column-link">Experts Directory</a>
+                    <a href="#" class="footer-top-column-1-column-link">Fees</a>
+                    <a href="#" class="footer-top-column-1-column-link">Enterprise</a>
+                </div>
+            </div>
+            <div class="footer-top-column-2">
+                <div class="footer-top-column-2-icon">
+                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                </div>
+                <div class="footer-top-column-2-text">
+                    Discover new and clever products in the pakfund newsletter.
+                </div>
+                <form class="footer-top-column-2-form">
+                    <input type="text" class="footer-top-column-2-form-input" placeholder="Your email address">
+                    <div class="footer-top-column-2-form-inner">
+                        <input type="checkbox" name="" id="subscribe" class="footer-top-column-2-form-checkbox">
+                        <span class="footer-checkmark"></span>
+                        <label for="subscribe" class="footer-top-column-2-form-checkbox-text">I agree to the Terms of Use and have read and understand the Privacy Policy.</label>
+                    </div>
+                    <button type="submit" class="footer-top-column-2-form-btn">SIGN UP NOW</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-column footer-bottom-column-1">
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+            </div>
+            <div class="footer-bottom-column footer-bottom-column-2">
+                <a href="#" class="footer-bottom-column-link">Terms of Use</a>
+                <a href="#" class="footer-bottom-column-link">Privacy Policy</a>
+                <a href="#" class="footer-bottom-column-link">Cookie Policy</a>
+                <div class="footer-bottom-column-link">© 2021 fundPAK, Inc. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer ends here -->
+
+</body>
+</html>

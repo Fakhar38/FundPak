@@ -1,19 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  Login | FundPak  </title>
+    <title>  Start a campaign | FundPak  </title>
     <!-- favicon goes here -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/start-campaign2.css">
     <!-- custom js -->
-    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="./js/app.js" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -25,8 +23,13 @@
 <body>
 
     <!-- 1. header -->
-    <!-- 2. login -->    
-    <!-- 3. footer -->
+    <!-- 2. hero -->
+    <!-- 3. popular projects -->
+    <!-- 4. cool and clever -->
+    <!-- 5. back the project -->
+    <!-- 6. categories -->
+    <!-- 7. clever things -->
+    <!-- 8. footer -->
 
     <!-- header starts here -->
 
@@ -35,7 +38,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="./index.html"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
@@ -43,21 +46,21 @@
         <div class="header-explore">
             <div class="header-explore-btn">
                 <a href="#" class="header-explore-text">Explore</a>
-                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+                <div class="header-explore-icon"><img src="./images/icon-arrow-down.svg" alt="header arrow down icon here" class="header-explore-icon-img"></div>
             </div>            
             <div class="header-explore-content">
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="./images/drpdown1.png" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="./images/drpdown2.png" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-3">
                         <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="./signup.html" class="header-explore-content-row-column-link"><img src="./images/drpdown3.png" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                 </div>
                 <div class="header-explore-content-bottom">
@@ -122,11 +125,11 @@
         <!-- header seach input starts here -->
         
         <div class="header-search">
-            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-icon"><img src="./images/icon-search.svg" alt="header search icon here" class="header-search-icon-img"></div>
             <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
         </div>
 
-        <!-- header links starts here -->
+        <!-- header links start here -->
 
         <div class="header-link">
 
@@ -135,15 +138,15 @@
 
         </div>
 
-        <!-- header buttons starts here -->
+        <!-- header buttons start here -->
 
         <div class="header-btn">
 
-            <a href="#" class="header-btn-login">
+            <a href="./login.html" class="header-btn-login">
                 Log In
             </a>
 
-            <a href="{% url 'core:signup' %}" class="header-btn-signup">
+            <a href="./signup.html" class="header-btn-signup">
                 Sign Up
             </a>            
         </div>
@@ -152,55 +155,71 @@
 
     <!-- header ends here -->
 
-    <!-- login container starts here -->
+    <!-- ----------------------------------------------------------- -->
 
-    <div class="login">
-        <form class="login-container" action="{% url 'core:login' %}" method="post">
-            {% csrf_token %}
-            <div class="login-container-heading">
-                Welcome back!
-            </div>
-            <div class="login-container-toprow">
-                <div>Log in to Continue</div>
-            </div>
-            <div class="login-container-input-row">
-                <label for="loginEmail" class="login-container-input-row-label">Your Email</label>
-                {% if err_email %}
-                    <input type="text" name="email" style="border-color: red " class="login-container-input-row-input" placeholder="Your Email" id="loginEmail">
-                    <p style="margin-top: 1vh; color: red">Invalid Email</p>
-                {% else%}
-                    <input type="text" name="email" class="login-container-input-row-input" placeholder="Your Email" id="loginEmail">
-                {% endif %}
+    <!-- start campaign section starts here -->
 
-            </div>
-            <div class="login-container-input-row">
-                <label for="loginPass" class="login-container-input-row-label">Password</label>
-                {% if err_password %}
-                    <input type="password" style="border-color: red " name="password" class="login-container-input-row-input" placeholder="Your Password" id="loginPass">
-                    <p style="margin-top: 1vh; color: red">Invalid password</p>
-                {% else %}
-                    <input type="password" name="password" class="login-container-input-row-input" placeholder="Your Password" id="loginPass">
-                {% endif %}
-
-                {# Error is unknown           #}
-                {% if err_message %}
-                    <p style="margin-top: 1vh; color: red">{{ err_message }}</p>
-                {% endif %}
-            </div>
-            <a href="#" class="login-container-lastrow login-container-lastrow-1">
-                Forget your password?
-            </a>
-            <button type="submit" class="login-container-submit-btn">LOG IN</button>
-            <div class="login-container-lastrow">
-                New to FundPak? <a href="{% url 'core:signup' %}" class="login-container-lastrow-link">Signup</a>
-            </div>
-        </form>
+    <div class="start-campaign">
+        <div class="start-campaign-title">
+            <img src="./images/start-campaign-title.svg" alt="start campaign title image here" class="start-campaign-title-img">
+        </div>
+        <div class="start-campaign-heading">
+            Let’s get ready to start your campaign!
+        </div>
+        <div class="start-campaign-text">
+            We want to create the best onboarding for you – please fill out the information below. 
+            Your answers will be locked for this campaign and can’t be changed later.
+        </div>
     </div>
 
+    <div class="start-campaign-form-2">
+        <div class="start-campaign-form-2-text">
+            Who are you raising money for?
+        </div>
+        <div class="start-campaign-form-2-question">        
+            <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-1">
+                Please choose the type of account that will be receiving your funds:
+            </div>
+            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
+                <input type="radio" name="question1" id="start-campaign-form-answer1">
+                <label for="start-campaign-form-answer1" class="start-campaign-form-2-text-question-answer-label">New startup</label>
+            </div>
+            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
+                <input type="radio" name="question1" id="start-campaign-form-answer2">
+                <label for="start-campaign-form-answer2" class="start-campaign-form-2-text-question-answer-label">Nonprofit / Charity</label>
+            </div>
+            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
+                <input type="radio" name="question1" id="start-campaign-form-answer3">
+                <label for="start-campaign-form-answer3" class="start-campaign-form-2-text-question-answer-label">Extension of Existing Business</label>
+            </div>
+        </div>
+        <div class="start-campaign-form-2-question">  
+            <div class="start-campaign-form-2-text">
+                Who are you raising money for?
+            </div>      
+            <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-2">
+                If you are raising funds as an individual, what is your city of legal residence? If you are raising funds for a business, where is the business located?
+            </div>
+            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-2-answer">
+                <input type="text" name="" class="start-campaign-form-2-text-question-2-answer-input" placeholder="Islamabad, Pakistan">                
+            </div>
+        </div>
+        <div class="start-campaign-form-2-btns">
+            <a href="./signup.html" class="start-campaign-form-2-btn">
+                START MY CAMPAIGN
+            </a>
+        </div>        
+    </div>
 
-    <!-- login container ends here -->
+    <div class="start-campaign-note">
+        All pakfund projects must provide banking information, a government-issued ID, 
+        location, and tax information. This information is used to prevent fraud, comply with 
+        the law, and disburse project funds.
+    </div>
 
+    <!-- start campaign section ends here -->
     
+    <!-- --------------------------------------------------------------- -->
 
     <!-- footer starts here -->
 
@@ -237,7 +256,7 @@
             </div>
             <div class="footer-top-column-2">
                 <div class="footer-top-column-2-icon">
-                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                    <img src="./images/envelope.svg" alt="envelope icon here" class="footer-top-column-2-icon-img">
                 </div>
                 <div class="footer-top-column-2-text">
                     Discover new and clever products in the pakfund newsletter.
@@ -255,11 +274,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-column footer-bottom-column-1">
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/fb.png" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/insta.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/linkedin.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/ttr.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/yt.png" alt="" class="footer-bottom-column-social-img"></a>
             </div>
             <div class="footer-bottom-column footer-bottom-column-2">
                 <a href="#" class="footer-bottom-column-link">Terms of Use</a>

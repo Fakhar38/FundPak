@@ -1,18 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  Signup | FundPak  </title>
+    <title>  About Us | FundPak  </title>
     <!-- favicon goes here -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="./css/about-us.css">
     <!-- custom js -->
-    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="./js/app.js" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -24,8 +22,13 @@
 <body>
 
     <!-- 1. header -->
-    <!-- 2. signup -->    
-    <!-- 3. footer -->
+    <!-- 2. hero -->
+    <!-- 3. popular projects -->
+    <!-- 4. cool and clever -->
+    <!-- 5. back the project -->
+    <!-- 6. categories -->
+    <!-- 7. clever things -->
+    <!-- 8. footer -->
 
     <!-- header starts here -->
 
@@ -34,7 +37,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="./index.html"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
@@ -42,21 +45,21 @@
         <div class="header-explore">
             <div class="header-explore-btn">
                 <a href="#" class="header-explore-text">Explore</a>
-                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+                <div class="header-explore-icon"><img src="./images/icon-arrow-down.svg" alt="header arrow down icon here" class="header-explore-icon-img"></div>
             </div>            
             <div class="header-explore-content">
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="./images/drpdown1.png" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="./images/drpdown2.png" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-3">
                         <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="./signup.html" class="header-explore-content-row-column-link"><img src="./images/drpdown3.png" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                 </div>
                 <div class="header-explore-content-bottom">
@@ -121,11 +124,11 @@
         <!-- header seach input starts here -->
         
         <div class="header-search">
-            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-icon"><img src="./images/icon-search.svg" alt="header search icon here" class="header-search-icon-img"></div>
             <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
         </div>
 
-        <!-- header links starts here -->
+        <!-- header links start here -->
 
         <div class="header-link">
 
@@ -134,15 +137,15 @@
 
         </div>
 
-        <!-- header buttons starts here -->
+        <!-- header buttons start here -->
 
         <div class="header-btn">
 
-            <a href="{% url 'core:login' %}" class="header-btn-login">
+            <a href="./login.html" class="header-btn-login">
                 Log In
             </a>
 
-            <a href="#" class="header-btn-signup">
+            <a href="./signup.html" class="header-btn-signup">
                 Sign Up
             </a>            
         </div>
@@ -151,67 +154,167 @@
 
     <!-- header ends here -->
 
-    <!-- signup container starts here -->
+    <!-- ----------------------------------------------------------- -->
 
-    <div class="signup">
-        <form class="signup-container" action="{% url 'core:signup' %}" method="post">
-            {% csrf_token %}
-            <div class="signup-container-heading">
-                Welcome!
-            </div>
-            <div class="signup-container-toprow">
-                <div>Sign up to join</div><img src="{% static 'images/header-logo.svg' %}" alt="logo here" class="signup-container-toprow-logo">
-            </div>
+    <!-- about hero section starts here -->
 
-            {# Error Handling            #}
-            {% if err_message %}
-                <p style="color: red; margin: 1vh">{{ err_message }}</p>
-            {% endif %}
-            {% if err_email %}
-                <p style="color: red; margin: 1vh">{{ err_email }}</p>
-            {% endif %}
+    <div class="about-hero">
+        <img src="./images/about-hero.png" alt="about hero here" class="about-hero-thumbnail">
+        <div class="about-hero-text">
+            <div class="about-hero-text-span">Our mission is to help bring creative projects to life.</div>
+        </div>
+    </div>
 
-            <div class="signup-container-input-row">
-                <label for="signupFname" class="signup-container-input-row-label">First Name</label>
-                <input type="text" name="firstname" class="signup-container-input-row-input" placeholder="Your First Name" id="signupFname" required>
+    <!-- about hero section ends here -->
+
+    <!-- about us text section starts here -->
+
+    <div class="about-us-text">
+        <div class="about-us-text-heading">
+            About Us
+        </div>
+        <div class="about-us-text-description">
+            Millions of people around the world visit Fundpak to find clever and unconventional 
+            things that solve everyday problems large and small. By giving entrepreneurs everywhere 
+            a platform to launch new and groundbreaking products, we help surface innovations in 
+            tech, design, and much more, all before they go mainstream.
+        </div>
+    </div>
+    <!-- about us text section ends here -->
+
+    <div class="stories-section">
+        <div class="stories-section-row">
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-heading">
+                    Our community
+                </div>
             </div>
-            <div class="signup-container-input-row">
-                <label for="signupLname" class="signup-container-input-row-label">Last Name</label>
-                <input type="text" name="lastname" class="signup-container-input-row-input" placeholder="Your Last Name" id="signupLname" required>
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-description">
+                    Tapping into our community starts with activating your own. 
+                    Most successful projects build a snowball effect, winning over 
+                    friends and early supporters who then share the idea with their 
+                    networks, and signal their support to the wider Kickstarter community. 
+                    The snowball can get pretty big. Over 19 million people, from every continent 
+                    on earth, have helped fund Kickstarter projects.
+                </div>
             </div>
-            <div class="signup-container-input-row">
-                <label for="signupEmail" class="signup-container-input-row-label">Your Email</label>
-                {% if err_email %}
-                    <input type="email" name="email" style="border-color: red" class="signup-container-input-row-input" placeholder="Your Email" id="signupEmail" required>
-                {% else %}
-                    <input type="email" name="email" class="signup-container-input-row-input" placeholder="Your Email" id="signupEmail" required>
-                {% endif %}
+        </div>
+        <div class="stories-section-row">
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-heading">
+                    Our Mission
+                </div>
             </div>
-            <div class="signup-container-input-row">
-                <label for="signupPass" class="signup-container-input-row-label">Password</label>
-                <input type="password" name="password" class="signup-container-input-row-input" placeholder="Your Password" id="signupPass" required>
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-description">
+                    Our mission is to help bring creative projects to life. We believe that art and creative expression are essential to a healthy and vibrant society, and the space to create requires protection.
+                    <br><br>
+                    We don’t want art world elites and entertainment executives to define our culture; we want creative people—even those who’ve never made anything before—to take the wheel. We help creators connect directly with their communities, putting power where it belongs.
+                    <br><br>
+                    We are so committed to our mission, we wrote it into our business model. In 2015 we became a Public Benefit Corporation—a for-profit company that prioritizes positive outcomes for society as much as our shareholders. We updated our corporate charter to lay out specific goals and commitments to put our values into our operations, promote arts and culture, fight inequality, and help creative projects happen.
+                    <br><br>
+                </div>
             </div>
-            <div class="signup-container-input-row signup-container-input-row-checkboxrow">
-                <input type="checkbox" class="signup-container-input-row-input-checkbox" id="signupNewsletter">
-                <span class="checkmark"></span>
-                <label for="signupNewsletter" class="signup-container-input-row-label signup-container-input-row-checkboxlabel">Sign me up for the FundPak newsletter</label>                
+        </div>
+        <div class="stories-section-row">
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-heading">
+                    Our Team
+                </div>
             </div>
-            <div class="signup-container-input-row signup-container-input-row-checkboxrow">
-                <input type="checkbox" class="signup-container-input-row-input-checkbox" id="signupTerms" required>
-                <span class="checkmark"></span>
-                <label for="signupTerms" class="signup-container-input-row-label signup-container-input-row-checkboxlabel">I agree to the <a href="#" class="signup-container-input-row-label-link">Terms of Use</a> and have read and understand the <a href="#" class="signup-container-input-row-label-link">Privacy Policy</a></label>                
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-description">
+                    We're an independent company of about 05 people working together, many of us in an old pencil factory in New York City. We spend our time designing and building Kickstarter, forging community around creative projects, and supporting the creative ecosystem around us. We’re developers, designers, support specialists, writers, musicians, painters, poets, gamers, robot-builders—you name it. Over the years, our team has backed more than 50,000 projects (and launched plenty of our own).
+                </div>
             </div>
-            <button type="submit" class="signup-container-submit-btn">CREATE ACCOUNT</button>
-            <div class="signup-container-lastrow">
-                Already have an account? <a href="{% url 'core:login' %}" class="signup-container-lastrow-link">Log In</a>
+        </div>
+        <div class="stories-section-row">
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-heading">
+                    Our History
+                </div>
             </div>
-        </form>
+            <div class="stories-section-row-column">
+                <div class="stories-section-row-column-description">
+                    FundPak launched on April 28, 2020. A lot has happened since.
+                    <br><br>
+                    We became a Public Benefit Corporation to commit to our principles as much as our profits. We launched The Creative Independent to share resources and advice for all types of makers. We invited the local community into our Brooklyn headquarters with the Creators-in-Residence program.
+                    <br><br>
+                    Projects won Grammys and Oscars. London’s V&A Museum curated a show about Kickstarter design projects. Hank Willis Thomas and For Freedoms’ political billboard project across all 50 states became the largest creative collaboration in U.S. history. We celebrated our tenth birthday. We joined the Global Strike for Climate Change and went Climate Neutral—we’re doing everything we can to build a long, healthy future for the creative culture we helped cultivate. This is just the beginning.
+                    <br><br>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <!-- signup container ends here -->
+    <!-- categories section starts here -->
 
-    
+    <div class="categories">
+        <div class="categories-heading">
+            Explore our top categories
+        </div>
+        <div class="categories-row">
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="./images/film.svg" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">FILM</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="./images/health.svg" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">HEALTH</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon categories-row-link-icon-phone">
+                    <img src="./images/phone.svg" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">PHONE</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="./images/home.svg" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">HOME</div>
+            </a>
+            <a href="#" class="categories-row-link">
+                <div class="categories-row-link-icon">
+                    <img src="./images/store.svg" alt="" class="categories-row-link-icon-img">
+                </div>
+                <div class="categories-row-link-text">STORE</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- categories section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
+
+    <!-- clever things section starts here -->
+
+    <div class="clever-things">
+        <div class="clever-things-heading">
+            Ready to GO?
+        </div>
+        <div class="clever-things-paragraph">
+            You're only a step away from kicking off your entrepreneurial adventure on FundPAK. Here's where to go next:
+        </div>        
+        <div class="clever-things-row">
+            <a href="./signup.html" class="clever-things-row-btn clever-things-row-btn-1">
+                SIGN UP NOW
+            </a>
+            <a href="#" class="clever-things-row-btn clever-things-row-btn-2">
+                LEARN MORE
+            </a>
+        </div>
+    </div>
+
+    <!-- clever things section ends here -->
+
+    <!-- --------------------------------------------------------------- -->
 
     <!-- footer starts here -->
 
@@ -248,7 +351,7 @@
             </div>
             <div class="footer-top-column-2">
                 <div class="footer-top-column-2-icon">
-                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                    <img src="./images/envelope.svg" alt="envelope icon here" class="footer-top-column-2-icon-img">
                 </div>
                 <div class="footer-top-column-2-text">
                     Discover new and clever products in the pakfund newsletter.
@@ -266,11 +369,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-column footer-bottom-column-1">
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/fb.png" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/insta.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/linkedin.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/ttr.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="./images/yt.png" alt="" class="footer-bottom-column-social-img"></a>
             </div>
             <div class="footer-bottom-column footer-bottom-column-2">
                 <a href="#" class="footer-bottom-column-link">Terms of Use</a>
