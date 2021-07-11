@@ -32,3 +32,16 @@ contributeBtn.addEventListener("click",()=>{
     contributeSection.style.display = "block";
     campaignSection.style.display = "none"
 })
+
+
+let avatarBtn = document.querySelector(".profile-section-menu-dp-img");
+
+let uploadInput = document.querySelector(".profile-section-menu-dp-upload-container");
+
+avatarBtn.addEventListener("mouseover",()=>{
+    uploadInput.style.display = "flex";
+})
+
+avatarBtn.addEventListener("mouseout",()=>{
+    uploadInput.style.display = "none";
+})
