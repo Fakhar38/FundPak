@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #181819;
+}
+
+.header {
+  -webkit-box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 3vh;
+}
+
+.profile-section {
+  width: 100%;
+  padding: 5vh 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.profile-section-menu {
+  width: 35vw;
+  border: 0.1vh solid #A0A0A0;
+  border-radius: 0.5vw;
+  padding: 6vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-section-menu-dp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+.profile-section-menu-dp-img {
+  width: 30%;
+  height: 22vh;
+  border-radius: 50%;
+}
+
+.profile-section-menu-name {
+  font-size: 1.2rem;
+  color: #181819;
+  font-weight: 500;
+  margin-bottom: 2vh;
+}
+
+.profile-section-menu-description {
+  font-size: 1rem;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 6vh;
+  border-bottom: 0.1vh solid #C8C8C8;
+  padding-bottom: 5vh;
+}
+
+.profile-section-menu-campaigns, .profile-section-menu-contributions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 2vh;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.profile-section-menu-campaigns-text, .profile-section-menu-contributions-text {
+  margin-left: 0.6vw;
+}
+
+.profile-section-menu-contributions {
+  margin-bottom: 6vh;
+}
+
+.profile-section-menu-btn {
+  width: 60%;
+  background-color: #FC7753;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.5vw;
+  margin: auto;
+  padding: 1vh 0;
+  cursor: pointer;
+}
+
+.profile-section-details {
+  width: 55vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.profile-section-details-menu {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-bottom: 0.1vh solid #C8C8C8;
+  padding: 2vh 0;
+  padding-top: 0;
+  margin-bottom: 2vh;
+}
+
+.profile-section-details-menu-link {
+  border-bottom: 0.2vh solid #fff;
+  padding-bottom: 2vh;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.profile-section-details-menu-link:last-child {
+  margin-left: 3vw;
+}
+
+.profile-section-details-menu-link-active {
+  border-bottom: 0.2vh solid #FC7753;
+}
+
+.profile-section-details-campaign {
+  width: 100%;
+}
+
+.profile-section-details-campaign-heading {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-bottom: 2vh;
+  border-bottom: 0.2vh solid #C8C8C8;
+  margin-bottom: 5vh;
+}
+
+.profile-section-details-campaign-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  border-bottom: 0.1vh solid #C8C8C8;
+  padding-bottom: 5vh;
+  margin-bottom: 5vh;
+}
+
+.profile-section-details-campaign-card-thumbnail {
+  width: 22%;
+}
+
+.profile-section-details-campaign-card-thumbnail-img {
+  width: 100%;
+}
+
+.profile-section-details-campaign-card-text {
+  margin-left: 2vw;
+}
+
+.profile-section-details-campaign-card-text-title {
+  font-size: 1.4rem;
+  margin-bottom: 2vh;
+}
+
+.profile-section-details-campaign-card-text-name {
+  font-size: 1.1rem;
+}
+
+.profile-section-details-campaign-card-text-name-value {
+  color: #FC7753;
+}
+
+.profile-section-details-campaign-card-links {
+  margin-left: auto;
+}
+
+.profile-section-details-campaign-card-links-btn {
+  width: 10vw;
+  padding: 1vh 1.5vw;
+  border: 0.1vh solid #575756;
+  border-radius: 0.5vw;
+  color: #575756;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.profile-section-details-campaign-card-links-btn-content {
+  position: absolute;
+  background-color: #f7f7f7;
+  font-size: 0.9rem;
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.profile-section-details-campaign-card-links-btn-content-link {
+  padding: 1vh 0.5vw;
+  margin-bottom: 1vh;
+}
+
+.profile-section-details-campaign-card-links-btn-content-link:hover {
+  background-color: #ececec;
+  cursor: pointer;
+}
+
+.profile-section-details-contributions {
+  display: none;
+  width: 100%;
+}
+
+.profile-section-details-contributions-heading {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding-bottom: 2vh;
+  border-bottom: 0.2vh solid #C8C8C8;
+  margin-bottom: 5vh;
+}
+/*# sourceMappingURL=profile.css.map */
