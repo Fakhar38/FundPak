@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  Login | FundPak  </title>
     <!-- favicon goes here -->
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/signup.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <!-- custom js -->
-    <script src="./js/app.js" defer></script>
+    <script src="{% static 'js/app.js' %}" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -34,7 +35,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="./index.html"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
@@ -42,21 +43,21 @@
         <div class="header-explore">
             <div class="header-explore-btn">
                 <a href="#" class="header-explore-text">Explore</a>
-                <div class="header-explore-icon"><img src="./images/icon-arrow-down.svg" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
             </div>            
             <div class="header-explore-content">
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="./images/drpdown1.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="#" class="header-explore-content-row-column-link"><img src="./images/drpdown2.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-3">
                         <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="./signup.html" class="header-explore-content-row-column-link"><img src="./images/drpdown3.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                 </div>
                 <div class="header-explore-content-bottom">
@@ -121,7 +122,7 @@
         <!-- header seach input starts here -->
         
         <div class="header-search">
-            <div class="header-search-icon"><img src="./images/icon-search.svg" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
             <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
         </div>
 
@@ -138,11 +139,11 @@
 
         <div class="header-btn">
 
-            <a href="./login.html" class="header-btn-login">
+            <a href="{% url 'core:login' %}" class="header-btn-login">
                 Log In
             </a>
 
-            <a href="./signup.html" class="header-btn-signup">
+            <a href="{% url 'core:signup' %}" class="header-btn-signup">
                 Sign Up
             </a>            
         </div>
@@ -174,7 +175,7 @@
             </a>
             <button class="login-container-submit-btn">LOG IN</button>
             <div class="login-container-lastrow">
-                New to FundPak? <a href="./signup.html" class="login-container-lastrow-link">Signup</a>
+                New to FundPak? <a href="{% url 'core:signup' %}" class="login-container-lastrow-link">Signup</a>
             </div>
         </form>
     </div>
@@ -219,7 +220,7 @@
             </div>
             <div class="footer-top-column-2">
                 <div class="footer-top-column-2-icon">
-                    <img src="./images/envelope.svg" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
                 </div>
                 <div class="footer-top-column-2-text">
                     Discover new and clever products in the pakfund newsletter.
@@ -237,11 +238,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-column footer-bottom-column-1">
-                <a href="#" class="footer-bottom-column-social"><img src="./images/fb.png" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/insta.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/linkedin.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/ttr.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/yt.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
             </div>
             <div class="footer-bottom-column footer-bottom-column-2">
                 <a href="#" class="footer-bottom-column-link">Terms of Use</a>
