@@ -65,6 +65,10 @@ def product_detail(request):
     return render(request, 'product-details.html')
 
 
+def product_categories(request):
+    return render(request, 'product-categories.html')
+
+
 def login_view(request):
     if request.method == "POST":
         email = request.POST.get("email")

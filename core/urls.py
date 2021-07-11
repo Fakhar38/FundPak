@@ -15,7 +15,7 @@ urlpatterns = [
     path("start_campaign_not_logged/", views.start_campaign_not_logged, name='start_camp_not_logged'),
     path("start_campaign_logged/", views.start_campaign_logged, name='start_camp_logged'),
     path("logout/", views.logout, name='logout'),
-    path("product-detail/<prod_id>", views.product_detail, name='product_detail'),
-
+    path("product-detail/<prod_id>/", views.product_detail, name='product_detail'),
+    path("product_categories/", views.product_categories, name='product_categories'),
 
 ]

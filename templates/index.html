@@ -466,7 +466,7 @@
         <a href="#" class="cool-clever-image">
             <img src="{% static 'images/cool-clever-title.png' %}" alt="" class="cool-clever-image-title">
         </a>
-        <a href="#" class="cool-clever-content">
+        <a href="{% url 'core:product_categories' %}" class="cool-clever-content">
             <div class="cool-clever-content-heading">
                 10 Cool & Clever Finds
             </div>
@@ -509,9 +509,17 @@
         <div class="categories-paragraph">
             Discover projects just for you and get great recommendations when you select your interests.
         </div>
-        <a href="{% url 'core:signup' %}" class="categories-btn">
-            SIGN UP AND SELECT INTERESTS
-        </a>
+
+        {% if is_logged %}
+            <a href="{% url 'core:product_categories' %}" class="categories-btn">
+                SELECT INTERESTS
+            </a>
+        {% else %}
+            <a href="{% url 'core:signup' %}" class="categories-btn">
+                SIGNUP AND SELECT INTERESTS
+            </a>
+        {% endif %}
+
         <div class="categories-link">
             Or explore our top categories
         </div>
@@ -564,9 +572,17 @@
             Begin on FundPak to find clever and unconventional things that solve everyday problems large and small.
         </div>
         <div class="clever-things-row">
-            <a href="{% url 'core:signup' %}" class="clever-things-row-btn clever-things-row-btn-1">
-                SIGN UP NOW
-            </a>
+
+            {% if not is_logged %}
+                <a href="{% url 'core:signup' %}" class="clever-things-row-btn clever-things-row-btn-1">
+                    SIGNUP NOW
+                </a>
+            {% else %}
+                <a href="{% url 'core:product_categories' %}" class="clever-things-row-btn clever-things-row-btn-1">
+                    BROWSE
+                </a>
+            {% endif %}
+
             <a href="#" class="clever-things-row-btn clever-things-row-btn-2">
                 LEARN MORE
             </a>
