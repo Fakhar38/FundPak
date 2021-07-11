@@ -542,7 +542,7 @@ a {
 }
 
 .guide-section {
-  background-color: #000;
+  background-color: #181819;
   width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -554,7 +554,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5vh 0;
+  padding: 8vh 0;
 }
 
 .guide-section-subtext {
