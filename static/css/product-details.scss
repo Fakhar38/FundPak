@@ -168,6 +168,34 @@ a {
                 width: 60%;
                 text-align: justify;
             }
+            &-heading {
+                padding-bottom: 5vh;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+            &-description {
+                width: 60%;
+                text-align: justify;
+                font-size: 1.1rem;
+                color: $brand-black;                
+                margin-bottom: 3vh;
+            }
+            &-contact {
+                font-size: 1.1rem;
+                @include center();
+                justify-content: flex-start;
+                margin-bottom: 2vh;
+                &-link {
+                    margin-left: 1vw;                
+                }
+            }
+            &-address {
+                margin-top: 5vh;
+                font-size: 1.1rem;
+            }
+            &-2 {
+                display: none;
+            }
         }
     }
 }
@@ -187,7 +215,7 @@ a {
         padding-bottom: 5vh;
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: stretch;
         flex-wrap: wrap;
         &-card {
             border: 1px solid #AAAAAA;
@@ -198,15 +226,19 @@ a {
             width: 20vw;    
             margin-left: 2vw;   
             margin-bottom: 8vh;    
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
             &-image {
                 width: 100%;
-                height: 100%;
                 margin-bottom: 1vh;
                 position: relative;
                 overflow: hidden;
                 display: block;
                 &-title {
                     width: 100%;
+                    height: 30vh;
                     transition: all 0.3s ease-in-out;
                     transform: scale(1.01);
                     &:hover {
@@ -257,6 +289,7 @@ a {
                 font-size: 0.8rem;
             }
             &-category {
+                margin-top: auto;
                 padding-top: 1vh;
                 padding-left: 5%;
                 color: #A0A0A0;
