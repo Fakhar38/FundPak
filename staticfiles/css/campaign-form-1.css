@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #181819;
+}
+
+.header {
+  -webkit-box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.1rem;
+}
+
+.campaign-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.campaign-form-menu {
+  width: 20%;
+  background-color: #FC7753;
+  color: #fff;
+  padding-top: 6vh;
+  font-size: 1.1rem;
+}
+
+.campaign-form-menu-link {
+  margin-bottom: 4vh;
+  padding-left: 10%;
+}
+
+.campaign-form-1 {
+  width: 80%;
+  background-color: #fff;
+}
+
+.campaign-form-1-header {
+  padding: 5vh 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 3vh;
+  font-size: 1.1rem;
+}
+
+.campaign-form-1-header-btns-container {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.campaign-form-1-header-save-btn {
+  color: #FC7753;
+}
+
+.campaign-form-1-header-review-btn {
+  background-color: #FC7753;
+  color: #fff;
+  padding: 1vh 3vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.5rem;
+}
+
+.campaign-form-1-description {
+  margin-top: 5vh;
+  width: 90%;
+  padding-left: 5%;
+  margin-bottom: 5vh;
+}
+
+.campaign-form-1-description-heading {
+  font-size: 1.4rem;
+  margin-bottom: 3vh;
+  font-weight: 600;
+}
+
+.campaign-form-1-description-details {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.campaign-form-1-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 90%;
+  padding-left: 5%;
+  margin-bottom: 5vh;
+}
+
+.campaign-form-1-data-heading {
+  font-size: 1.2rem;
+  color: #181819;
+  font-weight: 600;
+  margin-bottom: 1vh;
+}
+
+.campaign-form-1-data-heading-required {
+  color: #FC7753;
+}
+
+.campaign-form-1-data-description {
+  font-weight: normal;
+  color: #979797;
+  font-size: 1rem;
+  margin-bottom: 2vh;
+}
+
+.campaign-form-1-data-input {
+  width: 90%;
+  border: 0.1rem solid #979797;
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1vh 2vw;
+  color: #181819;
+  font-size: 1.1rem;
+}
+
+.campaign-form-1-data-input-tagline {
+  resize: none;
+}
+
+.campaign-form-1-data-input-image {
+  position: absolute;
+  width: 37%;
+  height: 40vh;
+  top: 28%;
+  z-index: 100;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.campaign-form-1-data-input-image-box {
+  width: 40%;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0.1rem solid #979797;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.campaign-form-1-data-input-image-box-icon {
+  width: 1.6vw;
+  margin-right: 1vw;
+}
+
+.campaign-form-1-data-input-image-box-text {
+  color: #979797;
+  font-size: 1.1rem;
+}
+
+.campaign-form-1-image-data {
+  position: relative;
+}
+
+.campaign-form-1-btn {
+  background-color: #FC7753;
+  color: #fff;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2vh 3vw;
+  width: 30%;
+  border-radius: 0.5rem;
+  margin-left: 25%;
+  cursor: pointer;
+  margin-bottom: 6vh;
+}
+/*# sourceMappingURL=campaign-form-1.css.map */

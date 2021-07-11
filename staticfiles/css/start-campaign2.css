@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #181819;
+}
+
+.header {
+  -webkit-box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 3vh;
+}
+
+.start-campaign {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  width: 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.start-campaign-title {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3vh;
+}
+
+.start-campaign-title-img {
+  width: 100%;
+}
+
+.start-campaign-heading {
+  color: #181819;
+  font-weight: 600;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.start-campaign-text {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  color: #181819;
+  font-size: 1.5rem;
+}
+
+.start-campaign-form-2 {
+  width: 92%;
+  margin: auto;
+  margin-top: 5vh;
+  padding: 5vh 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.start-campaign-form-2-question {
+  margin-bottom: 8vh;
+  width: 75%;
+}
+
+.start-campaign-form-2-text {
+  width: 75%;
+  text-align: left;
+  font-size: 1.4rem;
+  color: #181819;
+  margin-bottom: 3vh;
+}
+
+.start-campaign-form-2-text-question {
+  width: 90%;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #181819;
+}
+
+.start-campaign-form-2-text-question-2-answer-input {
+  width: 100%;
+  padding: 1% 2%;
+  border: 0.1rem solid #979797;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1.1rem;
+}
+
+.start-campaign-form-2-text-question-2-answer-input:focus {
+  border: 0.15rem solid #979797;
+}
+
+.start-campaign-form-2-text-question-answer {
+  width: 75%;
+  margin-top: 3vh;
+  font-size: 1.1rem;
+}
+
+.start-campaign-form-2-text-question-answer-label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.start-campaign-form-2-logo {
+  width: 15%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3vh;
+}
+
+.start-campaign-form-2-logo-img {
+  width: 100%;
+}
+
+.start-campaign-form-2-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+  margin: auto;
+  margin-top: 3vh;
+}
+
+.start-campaign-form-2-btn {
+  padding: 1.5vh 4vw;
+  background-color: #FC7753;
+  color: #fff;
+  margin: auto;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 3vh;
+}
+
+.start-campaign-note {
+  width: 92%;
+  margin: auto;
+  margin-top: 6vh;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #181819;
+  margin-bottom: 10vh;
+}
+/*# sourceMappingURL=start-campaign2.css.map */
