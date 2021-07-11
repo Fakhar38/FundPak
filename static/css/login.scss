@@ -1,0 +1,150 @@
+//////////////////////////////////////////////////////
+
+// 1. header
+// 2. login container
+
+//////////////////////////////////////////////////////
+
+.header {
+    box-shadow: 0px 0.2rem 0.1rem rgba(0, 0, 0, 0.25);
+    margin-bottom: 3vh;
+}
+
+.login {
+    padding: 10vh 30%;
+    background-color: #fff;
+    width: 100%;
+    &-container {
+        width: 100%;
+        border: 0.15rem solid #A0A0A0;
+        padding: 10vh 10%;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        &-heading {
+            color: #181819;
+            font-weight: 500;
+            font-size: 1.6rem;
+            margin-bottom: 2vh;
+        }
+        &-toprow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #181819;
+            margin-bottom: 5vh;
+            &-logo {
+                width: 10vw;
+                margin-left: 1vw;
+            }
+        }
+        &-input-row {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 3vh;
+            width: 90%;
+            &-label {
+                margin-bottom: 1vh;
+                color: #181819;
+                font-size: 1rem;
+                &-link {
+                    color: #FC7753;
+                }
+            }
+            &-input {
+                width: 100%;
+                border-radius: 2rem;
+                padding: 1.5vh 1vw;
+                border: 0.1rem solid #181819;
+                outline: none;
+                &::placeholder {
+                    color: #ddd;
+                    font-size: 0.9rem;
+                }
+                &-checkbox {
+                    position: absolute;
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    z-index: 100;
+                    opacity: 0;
+                    cursor: pointer;
+                    &:checked ~ .checkmark {
+                        background-color: #FC7753;
+                    }
+                    &:checked ~ .checkmark:after {
+                        display: block;
+                    }
+                }
+            }
+            &-checkboxrow {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: baseline;
+                position: relative;
+            }
+            &-checkboxlabel {
+                margin-left: 2vw;
+                user-select: none;
+                cursor: pointer;
+
+            }
+        }
+        &-submit-btn {
+            width: 90%;
+            background-color: #FC7753;
+            color: #fff;
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            padding: 1vh 0vw;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin-bottom: 3vh;
+        }
+        &-lastrow {
+            color: #979797;
+            font-size: 1rem;
+        }
+    }
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.2rem;
+    width: 1.2rem;
+    border: 0.1rem solid #181819;
+    border-radius: 0.1rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.checkmark:after {
+    left: 35%;
+    top: 15%;
+    width: 15%;
+    height: 40%;
+    border: solid white;
+    border-width: 0 0.15rem 0.15rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.login-container-lastrow-1 {
+    width: 90%;
+    text-align: right;
+    margin-bottom: 3vh;
+}
