@@ -390,7 +390,7 @@ a {
         padding-bottom: 5vh;
         display: flex;
         justify-content: flex-start;
-        align-items: center;
+        align-items: stretch;
         flex-wrap: wrap;
         &-card {
             border: 1px solid #AAAAAA;
@@ -401,16 +401,20 @@ a {
             width: 20vw;     
             height: 100%;           
             margin-left: 2vw;   
-            margin-bottom: 8vh;    
+            margin-bottom: 8vh;  
+            display: flex;  
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
             &-image {
                 width: 100%;
-                height: 100%;
                 margin-bottom: 1vh;
                 position: relative;
                 overflow: hidden;
                 display: block;
                 &-title {
                     width: 100%;
+                    height: 30vh;
                     transition: all 0.3s ease-in-out;
                     transform: scale(1.01);
                     &:hover {
@@ -461,6 +465,7 @@ a {
                 font-size: 0.8rem;
             }
             &-category {
+                margin-top: auto;
                 padding-top: 1vh;
                 padding-left: 5%;
                 color: #A0A0A0;
