@@ -537,9 +537,9 @@ a {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -551,13 +551,26 @@ a {
   padding-bottom: 2vh;
   display: block;
   width: 20vw;
+  height: 100%;
   margin-left: 2vw;
   margin-bottom: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .popular-projects-row-card-image {
   width: 100%;
-  height: 100%;
   margin-bottom: 1vh;
   position: relative;
   overflow: hidden;
@@ -566,6 +579,7 @@ a {
 
 .popular-projects-row-card-image-title {
   width: 100%;
+  height: 30vh;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   -webkit-transform: scale(1.01);
@@ -643,6 +657,7 @@ a {
 }
 
 .popular-projects-row-card-category {
+  margin-top: auto;
   padding-top: 1vh;
   padding-left: 5%;
   color: #A0A0A0;
