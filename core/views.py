@@ -30,8 +30,39 @@ db = firestore.client()
 # Create your views here.
 
 
+def get_all_products():
+    prods = db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").get()
+    prods_list = []
+    if prods:
+        prods_list = [x.to_dict() for x in prods]
+        prods_list = sorted(prods_list, key=lambda x: x['frt'], reverse=True)
+    return prods_list
+
+
 def index(request):
-    return render(request, 'index.html')
+    try:
+        user_id = request.session['uid']
+    except KeyError:
+        user_id = None
+    if user_id:
+        is_logged = True
+    else:
+        is_logged = False
+
+    # Getting products
+    all_prods = get_all_products()
+    if len(all_prods) > 6:
+        all_prods = all_prods[:6]
+
+    context = {
+        'is_logged': is_logged,
+        "all_prods": all_prods
+    }
+    return render(request, 'index.html', context)
+
+
+def product_detail(request):
+    return render(request, 'product-details.html')
 
 
 def login_view(request):
@@ -110,6 +141,11 @@ def signup_view(request):
 
     else:
         return render(request, 'signup.html')
+
+
+def logout(request):
+    del request.session['uid']
+    return HttpResponseRedirect(reverse("core:index"))
 
 
 def about_us(request):

@@ -134,7 +134,7 @@
         <div class="header-link">
 
             <a href="#" class="header-link-investor">For Investors</a>
-            {% if user.is_authenticated %}
+            {% if is_logged %}
                 <a href="{% url 'core:start_camp_logged' %}" class="header-link-campaign">Start a Campaign</a>
             {% else %}
                 <a href="{% url 'core:start_camp_not_logged' %}" class="header-link-campaign">Start a Campaign</a>
@@ -145,29 +145,35 @@
 
         <!-- if there is no login then these buttons will be shown otherwise next div -->
 
-        <!-- header buttons start here -->
-        <div class="header-btn">
-
-            <a href="{% url 'core:login' %}" class="header-btn-login">
-                Log In
-            </a>
-
-            <a href="{% url 'core:signup' %}" class="header-btn-signup">
-                Sign Up
-            </a>
-        </div>
         <!-- header buttons end here -->
 
         <!-- account logged in btns start here -->
 
-        <!-- <div class="header-loggedin-btns">
-            <div class="header-loggedin-btns-logout">
-                Logout
+        {% if is_logged %}
+
+             <div class="header-loggedin-btns">
+                <a href="{% url 'core:logout' %}" class="header-loggedin-btns-logout">
+                    Logout
+                </a>
+                <div class="header-loggedin-btns-profile">
+                    <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                </div>
             </div>
-            <div class="header-loggedin-btns-profile">
-                <img src="./images/profile-icon.svg" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+        {% else %}
+            <!-- header buttons start here -->
+            <div class="header-btn">
+
+                <a href="{% url 'core:login' %}" class="header-btn-login">
+                    Log In
+                </a>
+
+                <a href="{% url 'core:signup' %}" class="header-btn-signup">
+                    Sign Up
+                </a>
             </div>
-        </div> -->
+
+        {% endif %}
+
 
         <!-- account logged in btns end here -->
 
@@ -266,180 +272,181 @@
 
         <div class="popular-projects-row">
 
-
-            <!-- popular projects row card starts here -->
-            <div class="popular-projects-row-card">
-                <a href="#" class="popular-projects-row-card-image">
-                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
-                </a>
-                <div class="popular-projects-row-card-toprow">
-                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
-                    <div class="popular-projects-row-card-toprow-favorite">
-                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                        </svg>
+            {% for prod in all_prods %}
+                <!-- popular projects row card starts here -->
+                <div class="popular-projects-row-card">
+                    <a href="{% url 'core:product_detail' prod_id=prod.id %}" class="popular-projects-row-card-image">
+                        <img src="{{ prod.image }}" alt="project title image here" class="popular-projects-row-card-image-title">
+                    </a>
+                    <div class="popular-projects-row-card-toprow">
+                        <div class="popular-projects-row-card-toprow-category">FUNDING</div>
+                        <div class="popular-projects-row-card-toprow-favorite">
+                            <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <a href="{% url 'core:product_detail' prod_id=prod.id %}" class="popular-projects-row-card-name">
+                        {{ prod.title }}
+                    </a>
+                    <div class="popular-projects-row-card-description">
+                        {{ prod.tagline }}
+                    </div>
+                    <div class="popular-projects-row-card-category">
+                        {{ prod.category }}
+                    </div>
+                    <div class="popular-projects-row-card-update">
+                        <div class="popular-projects-row-card-update-amount">${{ prod.moneyRaised }}</div>
+                        <div class="popular-projects-row-card-update-currency">USD raised</div>
                     </div>
                 </div>
-                <a href="#" class="popular-projects-row-card-name">
-                    Center Cam: Finally- a middle-screen webcam!
-                </a>
-                <div class="popular-projects-row-card-description">
-                    Center Cam is an adjustable webcam that operates in the middle of your screen.
-                </div>
-                <div class="popular-projects-row-card-category">
-                    BEAUTY
-                </div>
-                <div class="popular-projects-row-card-update">
-                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
-                    <div class="popular-projects-row-card-update-currency">USD raised</div>
-                </div>
-            </div>
-            <!-- popular projects row card ends here -->
+                <!-- popular projects row card ends here -->
+            {% endfor %}
 
-            <!-- popular projects row card starts here -->
-            <div class="popular-projects-row-card">
-                <a href="#" class="popular-projects-row-card-image">
-                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
-                </a>
-                <div class="popular-projects-row-card-toprow">
-                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
-                    <div class="popular-projects-row-card-toprow-favorite">
-                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
-                <a href="#" class="popular-projects-row-card-name">
-                    Center Cam: Finally- a middle-screen webcam!
-                </a>
-                <div class="popular-projects-row-card-description">
-                    Center Cam is an adjustable webcam that operates in the middle of your screen.
-                </div>
-                <div class="popular-projects-row-card-category">
-                    BEAUTY
-                </div>
-                <div class="popular-projects-row-card-update">
-                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
-                    <div class="popular-projects-row-card-update-currency">USD raised</div>
-                </div>
-            </div>
-            <!-- popular projects row card ends here -->
-
-            <!-- popular projects row card starts here -->
-            <div class="popular-projects-row-card">
-                <a href="#" class="popular-projects-row-card-image">
-                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
-                </a>
-                <div class="popular-projects-row-card-toprow">
-                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
-                    <div class="popular-projects-row-card-toprow-favorite">
-                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
-                <a href="#" class="popular-projects-row-card-name">
-                    Center Cam: Finally- a middle-screen webcam!
-                </a>
-                <div class="popular-projects-row-card-description">
-                    Center Cam is an adjustable webcam that operates in the middle of your screen.
-                </div>
-                <div class="popular-projects-row-card-category">
-                    BEAUTY
-                </div>
-                <div class="popular-projects-row-card-update">
-                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
-                    <div class="popular-projects-row-card-update-currency">USD raised</div>
-                </div>
-            </div>
-            <!-- popular projects row card ends here -->
-
-            <!-- popular projects row card starts here -->
-            <div class="popular-projects-row-card">
-                <a href="#" class="popular-projects-row-card-image">
-                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
-                </a>
-                <div class="popular-projects-row-card-toprow">
-                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
-                    <div class="popular-projects-row-card-toprow-favorite">
-                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
-                <a href="#" class="popular-projects-row-card-name">
-                    Center Cam: Finally- a middle-screen webcam!
-                </a>
-                <div class="popular-projects-row-card-description">
-                    Center Cam is an adjustable webcam that operates in the middle of your screen.
-                </div>
-                <div class="popular-projects-row-card-category">
-                    BEAUTY
-                </div>
-                <div class="popular-projects-row-card-update">
-                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
-                    <div class="popular-projects-row-card-update-currency">USD raised</div>
-                </div>
-            </div>
-            <!-- popular projects row card ends here -->
-
-            <!-- popular projects row card starts here -->
-            <div class="popular-projects-row-card">
-                <a href="#" class="popular-projects-row-card-image">
-                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
-                </a>
-                <div class="popular-projects-row-card-toprow">
-                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
-                    <div class="popular-projects-row-card-toprow-favorite">
-                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
-                <a href="#" class="popular-projects-row-card-name">
-                    Center Cam: Finally- a middle-screen webcam!
-                </a>
-                <div class="popular-projects-row-card-description">
-                    Center Cam is an adjustable webcam that operates in the middle of your screen.
-                </div>
-                <div class="popular-projects-row-card-category">
-                    BEAUTY
-                </div>
-                <div class="popular-projects-row-card-update">
-                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
-                    <div class="popular-projects-row-card-update-currency">USD raised</div>
-                </div>
-            </div>
-            <!-- popular projects row card ends here -->
-
-            <!-- popular projects row card starts here -->
-            <div class="popular-projects-row-card">
-                <a href="#" class="popular-projects-row-card-image">
-                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">
-                </a>
-                <div class="popular-projects-row-card-toprow">
-                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>
-                    <div class="popular-projects-row-card-toprow-favorite">
-                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                        </svg>
-                    </div>
-                </div>
-                <a href="#" class="popular-projects-row-card-name">
-                    Center Cam: Finally- a middle-screen webcam!
-                </a>
-                <div class="popular-projects-row-card-description">
-                    Center Cam is an adjustable webcam that operates in the middle of your screen.
-                </div>
-                <div class="popular-projects-row-card-category">
-                    BEAUTY
-                </div>
-                <div class="popular-projects-row-card-update">
-                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>
-                    <div class="popular-projects-row-card-update-currency">USD raised</div>
-                </div>
-            </div>
-            <!-- popular projects row card ends here -->
+{#            <!-- popular projects row card starts here -->#}
+{#            <div class="popular-projects-row-card">#}
+{#                <a href="#" class="popular-projects-row-card-image">#}
+{#                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-toprow">#}
+{#                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>#}
+{#                    <div class="popular-projects-row-card-toprow-favorite">#}
+{#                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                        </svg>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <a href="#" class="popular-projects-row-card-name">#}
+{#                    Center Cam: Finally- a middle-screen webcam!#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-description">#}
+{#                    Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-category">#}
+{#                    BEAUTY#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-update">#}
+{#                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>#}
+{#                    <div class="popular-projects-row-card-update-currency">USD raised</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- popular projects row card ends here -->#}
+{##}
+{#            <!-- popular projects row card starts here -->#}
+{#            <div class="popular-projects-row-card">#}
+{#                <a href="#" class="popular-projects-row-card-image">#}
+{#                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-toprow">#}
+{#                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>#}
+{#                    <div class="popular-projects-row-card-toprow-favorite">#}
+{#                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                        </svg>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <a href="#" class="popular-projects-row-card-name">#}
+{#                    Center Cam: Finally- a middle-screen webcam!#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-description">#}
+{#                    Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-category">#}
+{#                    BEAUTY#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-update">#}
+{#                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>#}
+{#                    <div class="popular-projects-row-card-update-currency">USD raised</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- popular projects row card ends here -->#}
+{##}
+{#            <!-- popular projects row card starts here -->#}
+{#            <div class="popular-projects-row-card">#}
+{#                <a href="#" class="popular-projects-row-card-image">#}
+{#                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-toprow">#}
+{#                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>#}
+{#                    <div class="popular-projects-row-card-toprow-favorite">#}
+{#                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                        </svg>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <a href="#" class="popular-projects-row-card-name">#}
+{#                    Center Cam: Finally- a middle-screen webcam!#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-description">#}
+{#                    Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-category">#}
+{#                    BEAUTY#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-update">#}
+{#                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>#}
+{#                    <div class="popular-projects-row-card-update-currency">USD raised</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- popular projects row card ends here -->#}
+{##}
+{#            <!-- popular projects row card starts here -->#}
+{#            <div class="popular-projects-row-card">#}
+{#                <a href="#" class="popular-projects-row-card-image">#}
+{#                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-toprow">#}
+{#                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>#}
+{#                    <div class="popular-projects-row-card-toprow-favorite">#}
+{#                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                        </svg>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <a href="#" class="popular-projects-row-card-name">#}
+{#                    Center Cam: Finally- a middle-screen webcam!#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-description">#}
+{#                    Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-category">#}
+{#                    BEAUTY#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-update">#}
+{#                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>#}
+{#                    <div class="popular-projects-row-card-update-currency">USD raised</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- popular projects row card ends here -->#}
+{##}
+{#            <!-- popular projects row card starts here -->#}
+{#            <div class="popular-projects-row-card">#}
+{#                <a href="#" class="popular-projects-row-card-image">#}
+{#                    <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="popular-projects-row-card-image-title">#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-toprow">#}
+{#                    <div class="popular-projects-row-card-toprow-category">FUNDING</div>#}
+{#                    <div class="popular-projects-row-card-toprow-favorite">#}
+{#                        <svg class="popular-projects-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                            <path class="popular-projects-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                        </svg>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <a href="#" class="popular-projects-row-card-name">#}
+{#                    Center Cam: Finally- a middle-screen webcam!#}
+{#                </a>#}
+{#                <div class="popular-projects-row-card-description">#}
+{#                    Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-category">#}
+{#                    BEAUTY#}
+{#                </div>#}
+{#                <div class="popular-projects-row-card-update">#}
+{#                    <div class="popular-projects-row-card-update-amount">$1,210,12</div>#}
+{#                    <div class="popular-projects-row-card-update-currency">USD raised</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- popular projects row card ends here -->#}
 
 
         </div>

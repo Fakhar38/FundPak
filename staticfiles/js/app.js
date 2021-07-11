@@ -84,3 +84,14 @@ likeBtn.forEach((e)=>{
         e.firstElementChild.classList.toggle("popular-projects-row-card-toprow-favorite-icon-path-liked");        
     })
 })
+
+
+let likeBtn1 = document.querySelectorAll(".interested-section-row-card-toprow-favorite-icon");
+
+likeBtn1.forEach((e)=>{
+    e.addEventListener("click",()=>{
+        console.log("im clicked")
+        e.classList.toggle("interested-section-row-card-toprow-favorite-icon-bigger")
+        e.firstElementChild.classList.toggle("interested-section-row-card-toprow-favorite-icon-path-liked");        
+    })
+})
