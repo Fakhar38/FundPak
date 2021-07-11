@@ -698,6 +698,26 @@ a {
   padding-left: 0.5vw;
 }
 
+.popular-projects-btn {
+  padding: 1vh 0;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1rem;
+  border-radius: 0.5vw;
+  background-color: #FC7753;
+  color: #fff;
+  margin: auto;
+  margin-bottom: 5vh;
+}
+
 .cool-clever {
   padding: 5vh 0vw;
   padding-top: 0;

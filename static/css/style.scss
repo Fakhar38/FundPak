@@ -492,6 +492,17 @@ a {
             }
         }
     }
+    &-btn {
+        padding: 1vh 0;
+        width: 20%;
+        @include center();
+        font-size: 1.1rem;
+        border-radius: 0.5vw;
+        background-color: $primary-color;
+        color: #fff;
+        margin: auto;
+        margin-bottom: 5vh;
+    }
 }
 
 //////////////////// 3. POPULAR PROJECTS ///////////////////////
