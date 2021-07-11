@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  Product Details | FundPak  </title>
     <!-- favicon goes here -->
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/product-details.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product-details.css' %}">
     <!-- custom js -->
-    <script src="./js/app.js" defer></script>
+    <script src="{% static 'js/app.js' %}" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -35,7 +36,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="./index.html"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
@@ -43,21 +44,21 @@
         <div class="header-explore">
             <div class="header-explore-btn">
                 <a href="#" class="header-explore-text">Explore</a>
-                <div class="header-explore-icon"><img src="./images/icon-arrow-down.svg" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
             </div>
             <div class="header-explore-content">
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="./product-categories.html" class="header-explore-content-row-column-link"><img src="./images/drpdown1.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="./product-categories.html" class="header-explore-content-row-column-link"><img src="./images/drpdown2.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-3">
                         <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="./signup.html" class="header-explore-content-row-column-link"><img src="./images/drpdown3.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                 </div>
                 <div class="header-explore-content-bottom">
@@ -116,13 +117,13 @@
         <!-- header story starts here -->
 
         <div class="header-story">
-            <a href="./about-us.html" class="header-story-text">Our Story</a>
+            <a href="{% url 'core:about_us' %}" class="header-story-text">Our Story</a>
         </div>
 
         <!-- header seach input starts here -->
 
         <div class="header-search">
-            <div class="header-search-icon"><img src="./images/icon-search.svg" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
             <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
         </div>
 
@@ -130,8 +131,12 @@
 
         <div class="header-link">
 
-            <a href="./featured.html" class="header-link-investor">For Investors</a>
-            <a href="./start-a-campaign1.html" class="header-link-campaign">Start a Campaign</a>
+            <a href="{% url 'core:featured' %}" class="header-link-investor">For Investors</a>
+            {% if is_logged %}
+                <a href="{% url 'core:start_camp_logged' %}" class="header-link-campaign">Start a Campaign</a>
+            {% else %}
+                <a href="{% url 'core:start_camp_not_logged' %}" class="header-link-campaign">Start a Campaign</a>
+            {% endif %}
 
         </div>
 
@@ -141,11 +146,11 @@
         <!-- header buttons start here -->
         <div class="header-btn">
 
-            <a href="./login.html" class="header-btn-login">
+            <a href="{% url 'core:login' %}" class="header-btn-login">
                 Log In
             </a>
 
-            <a href="./signup.html" class="header-btn-signup">
+            <a href="{% url 'core:signup' %}" class="header-btn-signup">
                 Sign Up
             </a>
         </div>
@@ -182,7 +187,7 @@
         <div class="product-section-1">
             <div class="product-section-1-column">
                 <div class="product-section-1-column-thumbnail">
-                    <img src="./images/product-thumbnail.png" alt="" class="product-section-1-column-thumbnail-img">
+                    <img src="{% static 'images/product-thumbnail.png' %}" alt="" class="product-section-1-column-thumbnail-img">
                 </div>
             </div>
             <div class="product-section-1-column">
@@ -208,18 +213,18 @@
                 <div class="product-section-1-column-btns">
                     <div class="product-section-1-column-btns-1">
                         <div class="product-section-1-column-btns-1-follow">
-                            <img src="./images/favorite.svg" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
+                            <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
                             <div class="product-section-1-column-btns-1-follow-text">FOLLOW</div>
                         </div>
                         <div class="product-section-1-column-btns-1-back">
-                            <img src="./images/favorite.svg" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
+                            <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
                             <div class="product-section-1-column-btns-1-follow-text">BACK</div>
                         </div>
                     </div>
                     <div class="product-section-1-column-btns-2">
-                        <img src="./images/fb.png" alt="" class="product-section-1-column-btns-2-img">
-                        <img src="./images/insta.png" alt="" class="product-section-1-column-btns-2-img">
-                        <img src="./images/linkedin.png" alt="" class="product-section-1-column-btns-2-img">
+                        <img src="{% static 'images/fb.png' %}" alt="" class="product-section-1-column-btns-2-img">
+                        <img src="{% static 'images/insta.png' %}" alt="" class="product-section-1-column-btns-2-img">
+                        <img src="{% static 'images/linkedin.png' %}" alt="" class="product-section-1-column-btns-2-img">
                     </div>
                 </div>
             </div>
@@ -280,7 +285,7 @@
                 <!-- card starts here -->
                 <div class="interested-section-row-card">
                     <a href="#" class="interested-section-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="interested-section-row-card-image-title">
+                        <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="interested-section-row-card-image-title">
                     </a>
                     <div class="interested-section-row-card-toprow">
                         <div class="interested-section-row-card-toprow-category">FUNDING</div>
@@ -308,7 +313,7 @@
                 <!-- card starts here -->
                 <div class="interested-section-row-card">
                     <a href="#" class="interested-section-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="interested-section-row-card-image-title">
+                        <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="interested-section-row-card-image-title">
                     </a>
                     <div class="interested-section-row-card-toprow">
                         <div class="interested-section-row-card-toprow-category">FUNDING</div>
@@ -336,7 +341,7 @@
                 <!-- card starts here -->
                 <div class="interested-section-row-card">
                     <a href="#" class="interested-section-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="interested-section-row-card-image-title">
+                        <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="interested-section-row-card-image-title">
                     </a>
                     <div class="interested-section-row-card-toprow">
                         <div class="interested-section-row-card-toprow-category">FUNDING</div>
@@ -364,7 +369,7 @@
                 <!-- card starts here -->
                 <div class="interested-section-row-card">
                     <a href="#" class="interested-section-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="interested-section-row-card-image-title">
+                        <img src="{% static 'images/project-title.png' %}" alt="project title image here" class="interested-section-row-card-image-title">
                     </a>
                     <div class="interested-section-row-card-toprow">
                         <div class="interested-section-row-card-toprow-category">FUNDING</div>
@@ -437,7 +442,7 @@
             </div>
             <div class="footer-top-column-2">
                 <div class="footer-top-column-2-icon">
-                    <img src="./images/envelope.svg" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
                 </div>
                 <div class="footer-top-column-2-text">
                     Discover new and clever products in the pakfund newsletter.
@@ -455,11 +460,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-column footer-bottom-column-1">
-                <a href="#" class="footer-bottom-column-social"><img src="./images/fb.png" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/insta.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/linkedin.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/ttr.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/yt.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
             </div>
             <div class="footer-bottom-column footer-bottom-column-2">
                 <a href="#" class="footer-bottom-column-link">Terms of Use</a>

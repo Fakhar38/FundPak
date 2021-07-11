@@ -61,12 +61,31 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def product_detail(request):
+def product_detail(request, prod_id):
+    all_prods = get_all_products()
+    this_prod = ''
+    extra_prods_to_show = []
+    for prod in all_prods:
+        if prod['id'] == prod_id:
+            this_prod = prod
+    if len(all_prods) > 4:
+        extra_prods_to_show = all_prods[:4]
+    else:
+        extra_prods_to_show = all_prods
+
+    context = {
+        "this_prod": this_prod,
+        "extra_prods": extra_prods_to_show
+    }
     return render(request, 'product-details.html')
 
 
 def product_categories(request):
     return render(request, 'product-categories.html')
+
+
+def featured(request):
+    return render(request, 'featured.html')
 
 
 def login_view(request):
@@ -124,6 +143,9 @@ def signup_view(request):
             if "EMAIL_EXISTS" in err_desc:
                 err_email = "Email already exists"
                 return render(request, 'signup.html', {'err_email': err_email})
+            elif "WEAK_PASSWORD" in err_desc:
+                err_pass = "Weak Password"
+                return render(request, 'signup.html', {'err_pass': err_pass})
             else:
                 err_message = "An Error Occurred. Please try again later."
                 return render(request, "signup.html", {'err_message': err_message})
