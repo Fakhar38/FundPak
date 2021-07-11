@@ -236,6 +236,24 @@ a {
                 justify-content: center;
         }
     }
+    &-loggedin-btns {
+        @include center();
+        justify-content: space-between;   
+        border-left: 0.8px solid #A0A0A0;
+        margin-left: 1rem;
+        padding-left: 2vw;     
+        &-logout {
+            font-size: 1rem;
+            color: $brand-black;
+        }
+        &-profile {
+            margin-left: 4vw;
+            &-img {
+                width: 3.5vw;  
+                cursor: pointer;              
+            }
+        }
+    }
 }
 
 .header-explore:hover .header-explore-content  {                
@@ -371,15 +389,18 @@ a {
         padding: 0 4vw;
         padding-bottom: 5vh;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
+        flex-wrap: wrap;
         &-card {
             border: 1px solid #AAAAAA;
             outline: none;
             padding: 0;
             padding-bottom: 2vh;
             display: block;
-            width: 22%;            
+            width: 20vw;    
+            margin-left: 2vw;   
+            margin-bottom: 8vh;    
             &-image {
                 width: 100%;
                 height: 100%;
@@ -1152,283 +1173,3 @@ a {
 
 
 
-//   responsive styling for more than 1600px
-
-@media only screen and (min-width: 1600px) {
-    //////////////////// 1. HEADER ///////////////////////
-    //////////////////// 1. HEADER ///////////////////////
-    //////////////////// 1. HEADER ///////////////////////
-    .header {
-        &-logo {
-            padding-left: 3vw;
-            &-img {
-                width: 15vw;
-            }
-        }
-        &-explore {
-            margin-left: 3vw;
-            &-btn {
-                font-size: 1.3vw;
-            }
-            &-icon-img {
-                width: 1.2vw;
-            }
-            &-content {
-                &-row {
-                    padding-top: 3vh;
-                    &-column {
-                        &-heading {
-                            font-size: 1.6vw;
-                        }
-                    }
-                }  
-                &-bottom-column {
-                    &-heading {
-                        font-size: 1.6vw;
-                    }
-                    &-links {
-                        font-size: 1.2vw;
-                    }
-                }              
-            }
-        }
-        &-story {
-            font-size: 1.3vw;
-        }
-        &-search-icon {
-            &-img {
-                width: 1.4vw;
-            }
-        }
-        &-search-input {
-            &-box-shown {
-                width: 18vw;
-                font-size: 1.3vw;
-                padding: 1.2vh 1vw;
-                border-radius: 2vw;
-            }
-        }
-        &-link {
-            margin-left: 13vw;
-            font-size: 1.3vw;
-            width: 23vw;
-        }
-        &-btn {
-            margin-left: 2vw;
-            font-size: 1.3vw;
-            width: 14vw;
-            border-left: 0.1vw solid #A0A0A0;
-            &-signup {
-                border-radius: 0.5vw;
-            }
-        }
-    }
-    //////////////////// 1. HEADER ///////////////////////
-    //////////////////// 1. HEADER ///////////////////////
-    //////////////////// 1. HEADER ///////////////////////
-
-    //////////////////// 2. HERO ///////////////////////
-    //////////////////// 2. HERO ///////////////////////
-    //////////////////// 2. HERO ///////////////////////
-    .hero {
-        height: 90vh;
-    }
-    .hero-swiper-slide-content {
-        padding-top: 22vh;
-        &-heading {
-            font-size: 4vw;
-        }
-        &-paragraph {
-            font-size: 1.8vw;
-        }
-        &-btn {
-            font-size: 1.8vw;
-            border-radius: 0.5vw;
-        }
-    }
-    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-        left: 2vw !important;
-        right: auto;
-    }
-    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-        right: 2vw !important;
-        left: auto;
-    }
-    :root {
-        --swiper-navigation-size: 60px !important;
-    }
-    //////////////////// 2. HERO ///////////////////////
-    //////////////////// 2. HERO ///////////////////////
-    //////////////////// 2. HERO ///////////////////////
-
-    //////////////////// 3. POPULAR PROJECTS ///////////////////////
-    //////////////////// 3. POPULAR PROJECTS ///////////////////////
-    //////////////////// 3. POPULAR PROJECTS ///////////////////////
-
-    .popular-projects {
-        &-heading {
-            font-size: 2.5vw;
-        }
-        &-row-card {
-            &-toprow {
-                font-size: 1.3vw;
-            }
-            &-name {
-                font-size: 1.3vw;
-            }
-            &-description {
-                font-size: 1.1vw;
-            }
-            &-category {
-                font-size: 1.1vw;
-            }
-            &-update {
-                &-amount {
-                    font-size: 1vw;
-                }
-                &-currency {
-                    font-size: 0.9vw;
-                }
-            }
-        }
-    }
-    //////////////////// 3. POPULAR PROJECTS ///////////////////////
-    //////////////////// 3. POPULAR PROJECTS ///////////////////////
-    //////////////////// 3. POPULAR PROJECTS ///////////////////////
-
-    //////////////////// 4. COOL N CLEVER ///////////////////////
-    //////////////////// 4. COOL N CLEVER ///////////////////////
-    //////////////////// 4. COOL N CLEVER ///////////////////////
-
-    .cool-clever {
-        height: 60vh;
-        &-content {
-            font-size: 4vw;
-        }
-    }
-
-    //////////////////// 4. COOL N CLEVER ///////////////////////
-    //////////////////// 4. COOL N CLEVER ///////////////////////
-    //////////////////// 4. COOL N CLEVER ///////////////////////
-
-    //////////////////// 5. BACK PROJECT ///////////////////////
-    //////////////////// 5. BACK PROJECT ///////////////////////
-    //////////////////// 5. BACK PROJECT ///////////////////////
-
-    .back-project {
-        &-content {
-            background-repeat: no-repeat;
-            &-heading {
-                font-size: 3vw;
-            }
-            &-paragraph {
-                font-size: 1.4vw;
-            }
-            &-btn {
-                font-size: 1.6vw;
-                font-weight: 500;
-                border-radius: 0.6vw;
-            }
-        }
-    }
-
-    //////////////////// 5. BACK PROJECT ///////////////////////
-    //////////////////// 5. BACK PROJECT ///////////////////////
-    //////////////////// 5. BACK PROJECT ///////////////////////
-
-    //////////////////// 6. CATEGORIES ///////////////////////
-    //////////////////// 6. CATEGORIES ///////////////////////
-    //////////////////// 6. CATEGORIES ///////////////////////
-
-    .categories {
-        &-heading {
-            font-size: 2.4vw;
-        }
-        &-paragraph {
-            font-size: 1.6vw;
-        }
-        &-btn {
-            font-size: 1.6vw;
-        }
-        &-link {
-            font-size: 1.4vw;
-        }
-        &-row {
-            font-size: 1.5vw;
-        }
-    }
-
-    //////////////////// 6. CATEGORIES ///////////////////////
-    //////////////////// 6. CATEGORIES ///////////////////////
-    //////////////////// 6. CATEGORIES ///////////////////////
-
-    //////////////////// 7. CLEVER THINGS ///////////////////////
-    //////////////////// 7. CLEVER THINGS ///////////////////////
-    //////////////////// 7. CLEVER THINGS ///////////////////////
-
-    .clever-things {
-        &-heading {
-            font-size: 2.4vw;
-        }
-        &-paragraph {
-            font-size: 1.5vw;
-        }
-        &-row {
-            &-btn {
-                font-size: 1.6vw;
-            }
-        }
-    }
-
-    //////////////////// 7. CLEVER THINGS ///////////////////////
-    //////////////////// 7. CLEVER THINGS ///////////////////////
-    //////////////////// 7. CLEVER THINGS ///////////////////////
-
-    //////////////////// 8. FOOTER ///////////////////////
-    //////////////////// 8. FOOTER ///////////////////////
-    //////////////////// 8. FOOTER ///////////////////////
-
-    .footer {
-        &-top {
-            &-column-1 {
-                &-column {
-                    &-heading {
-                        font-size: 1.5vw;
-                    }
-                    &-link {
-                        font-size: 1.2vw;
-                    }
-                }                
-            }
-            &-column-2 {
-                &-text {
-                    font-size: 1.2vw;
-                }
-                &-form-input {
-                    font-size: 1.2vw;
-                    height: 7vh;
-                }
-                &-form-checkbox {
-                    &-text {
-                        font-size: 1vw;
-                    }
-                }
-                &-form-btn {
-                    font-size: 1.4vw;
-                }
-            }
-        }
-        &-checkmark {
-            height: 2vw;
-            width: 2vw;
-        }
-        &-bottom {
-            font-size: 1.2vw;
-        }
-    }
-
-
-    //////////////////// 8. FOOTER ///////////////////////
-    //////////////////// 8. FOOTER ///////////////////////
-    //////////////////// 8. FOOTER ///////////////////////
-}
