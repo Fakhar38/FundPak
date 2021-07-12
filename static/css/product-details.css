@@ -672,6 +672,9 @@ a {
 }
 
 @media only screen and (max-width: 620px) {
+  html {
+    font-size: 14px;
+  }
   .product-section-1 {
     padding-top: 4vh;
     -webkit-box-orient: vertical;

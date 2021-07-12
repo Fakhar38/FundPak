@@ -56,6 +56,11 @@ a {
   padding-left: 10%;
 }
 
+.campaign-form-menu a {
+  color: #fff;
+  margin-bottom: 4vh;
+}
+
 .campaign-form-1 {
   width: 100%;
   background-color: #fff;
@@ -271,7 +276,7 @@ a {
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   position: absolute;
-  left: 17%;
+  left: 19%;
   top: 50%;
 }
 
@@ -294,6 +299,142 @@ a {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1080px) {
+  .campaign-form-1-data-input-image-box {
+    width: 45%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 42.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 44%;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .campaign-form-menu {
+    display: none;
+  }
+  .campaign-form-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 768px) {
+  .campaign-form-1-data-input-image-box {
+    width: 60%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 58.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 59%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+  .campaign-form-1-btn {
+    font-size: 1rem;
+    width: 35%;
+  }
+  .loader {
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  html {
+    font-size: 14px;
+  }
+  .campaign-form-1-data {
+    width: 95%;
+  }
+  .campaign-form-1-data-input {
+    width: 100%;
+  }
+  .campaign-form-1-data-input-image-box {
+    width: 60%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 58.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 59%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+  .campaign-form-1-btn {
+    font-size: 1rem;
+    width: 35%;
+  }
+  .loader {
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .campaign-form-1-data-input-image-box {
+    width: 70%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 68.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 69%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .campaign-form-1-data-input-image-box {
+    width: 90%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 88.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 89%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+  .campaign-form-1-btn {
+    font-size: 1rem;
+    width: 55%;
+  }
+  .loader {
+    left: 38%;
+    top: 55%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+  .campaign-form-1-data-input-image-box {
+    width: 96%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 94.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 95%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 7vw;
   }
 }
 /*# sourceMappingURL=campaign-form-1.css.map */
