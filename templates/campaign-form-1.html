@@ -339,11 +339,15 @@
                         Upload a square image that represents your campaign.
                         640 x 640 recommended resolution, 220 x 220 minimum resolution.
                     </div>
-                    <input type="file" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
+
+                    <input type="file" name="file[]" id="files" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
+                    <input type="hidden" name="img_url" id="img_url">
+
                     <!-- <div class="campaign-form-1-data-input-image-box-upload" style="background-image: url();background-size:cover">
 
                     </div> -->
                     <!-- <div class="loader"></div> -->
+
                     <div class="campaign-form-1-data-input-image-box">
                         <img src="{% static 'images/upload-image-cam-icon.svg' %}" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
                         <p class="campaign-form-1-data-input-image-box-text">Upload an Image</p>
@@ -503,6 +507,44 @@
     </div>
 
     <!-- footer ends here -->
-    
+
 </body>
+<!-- Adding firebase js -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+<script>
+    var firebaseConfig = {
+          apiKey: "AIzaSyBQwup5w7OoBcSrn8_ggVivckCJ2TSN3AQ",
+          authDomain: "fundpak-531e2.firebaseapp.com",
+          databaseURL: "https://fundpak-531e2.firebaseio.com",
+          projectId: "fundpak-531e2",
+          storageBucket: "fundpak-531e2.appspot.com",
+          messagingSenderId: "588369785043",
+          appId: "1:588369785043:web:b0a25f4da16f657302e426",
+          measurementId: "G-1NZH718QKV",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function uploadImage(){
+        console.log("In uploadimage fundtion")
+        var storage = firebase.storage();
+        var file = document.getElementById('files').files[0];
+        var storageRef = storage.ref();
+        var thisRef = storageRef.child("product_images").child(file.name).put(file);
+
+        thisRef.on('state_changed', function (snapshot){
+            console.log("file uploaded!")
+        },
+        function (error){
+
+        },
+        function(){
+            var downloadURL = thisRef.snapshot.downloadURL;
+            console.log("Got Url")
+        }
+        )
+    }
+
+</script>
 </html>
