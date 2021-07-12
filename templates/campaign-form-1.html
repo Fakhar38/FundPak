@@ -224,147 +224,167 @@
 
         <!-- campaign form menu ends here -->
 
-        <!-- campaign form section 1 starts here -->
 
-        <div class="campaign-form-1">
-            <!-- campaign form header starts here -->
-            <div class="campaign-form-1-header">
-                <div class="campaign-form-1-header-address">
-                    Campaign / Basics
+        <form action="{% url 'core:campaign_1' %}" method="post">
+            {% csrf_token %}
+            <!-- campaign form section 1 starts here -->
+
+            <div class="campaign-form-1">
+                <!-- campaign form header starts here -->
+                <div class="campaign-form-1-header">
+                    <div class="campaign-form-1-header-address">
+                        Campaign / Basics
+                    </div>
+                    <div class="campaign-form-1-header-btns-container">
+    {#                    <div class="campaign-form-1-header-save-btn">#}
+    {#                        SAVE CAMPAIGN#}
+    {#                    </div>#}
+    {#                    <div class="campaign-form-1-header-review-btn">#}
+    {#                        REVIEW & LAUNCH#}
+    {#                    </div>#}
+                    </div>
                 </div>
-                <div class="campaign-form-1-header-btns-container">
-{#                    <div class="campaign-form-1-header-save-btn">#}
-{#                        SAVE CAMPAIGN#}
-{#                    </div>#}
-{#                    <div class="campaign-form-1-header-review-btn">#}
-{#                        REVIEW & LAUNCH#}
-{#                    </div>#}
-                </div>                
+                <!-- campaign form header ends here -->
+                <!-- campaign form description starts here -->
+                <div class="campaign-form-1-description">
+                    <div class="campaign-form-1-description-heading">
+                        Basics
+                    </div>
+                    <div class="campaign-form-1-description-details">
+                        Make a good first impression: introduce your campaign objectives and entice people to learn more.
+                        This basic information will represent your campaign on your campaign page, on your campaign card,
+                        and in searches.
+                    </div>
+                </div>
+                <!-- campaign form description ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Campaign Title <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        What is the title of your campaign?
+                    </div>
+                    <input name="title" type="text" class="campaign-form-1-data-input" placeholder="My Campaign Title" required>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Campaign Tagline <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        Provide a short description that best describes your campaign.
+                    </div>
+                    <textarea name="tagline" class="campaign-form-1-data-input campaign-form-1-data-input-tagline" placeholder="My Campaign Tagline" required></textarea>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data campaign-form-1-image-data">
+                    <div class="campaign-form-1-data-heading">
+                        Campaign Card Image <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        Upload a square image that represents your campaign.
+                        640 x 640 recommended resolution, 220 x 220 minimum resolution.
+                    </div>
+                    <input type="file" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
+                    <div class="campaign-form-1-data-input-image-box">
+                        <img src="{% static 'images/upload-image-cam-icon.svg' %}" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
+                        <p class="campaign-form-1-data-input-image-box-text">Upload an Image</p>
+                    </div>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Location <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        Choose the location where you are running the campaign. This location will be visible on your campaign page for your audience to see.
+                    </div>
+                    <input name="location" type="text" class="campaign-form-1-data-input" placeholder="City, Country" required>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Category <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        To help backers find your campaign, select a category that best represents your project.
+                    </div>
+                    <input name="category" type="text" class="campaign-form-1-data-input" placeholder="Select a Category" required>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Price Per Unit <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        The least price requested from a supporter to become a part of your campaign. Select wisely!
+                    </div>
+                    <input name="price" type="text" class="campaign-form-1-data-input" placeholder="Least price to request from a supporter" required>
+                </div>
+
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Story <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        Tell potential contributors more about your campaign. Provide details that will motivate people to contribute. A good pitch is compelling, informative, and easy to digest. Learn more.
+                    </div>
+                    <textarea name="description" class="campaign-form-1-data-input campaign-form-1-data-input-tagline" placeholder="My Campaign Story" required></textarea>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <button type="submit" class="campaign-form-1-btn">
+                    SAVE & CONTINUE
+                </button>
+
+
             </div>
-            <!-- campaign form header ends here -->
-            <!-- campaign form description starts here -->
-            <div class="campaign-form-1-description">
-                <div class="campaign-form-1-description-heading">
-                    Basics
-                </div>
-                <div class="campaign-form-1-description-details">
-                    Make a good first impression: introduce your campaign objectives and entice people to learn more. 
-                    This basic information will represent your campaign on your campaign page, on your campaign card, 
-                    and in searches.
-                </div>
-            </div>
-            <!-- campaign form description ends here -->
 
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    Campaign Title <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    What is the title of your campaign?
-                </div>
-                <input type="text" class="campaign-form-1-data-input" placeholder="My Campaign Title">
-            </div>
-            <!-- campaign form input ends here -->
+            <!-- campaign form section 1  ends here -->
 
-            <!-- --------------------------------------------- -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    Campaign Tagline <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    Provide a short description that best describes your campaign.
-                </div>
-                <textarea class="campaign-form-1-data-input campaign-form-1-data-input-tagline" placeholder="My Campaign Tagline"></textarea>
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data campaign-form-1-image-data">
-                <div class="campaign-form-1-data-heading">
-                    Campaign Card Image <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    Upload a square image that represents your campaign.
-                    640 x 640 recommended resolution, 220 x 220 minimum resolution.
-                </div>
-                <input type="file" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
-                <div class="campaign-form-1-data-input-image-box">
-                    <img src="{% static 'images/upload-image-cam-icon.svg' %}" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
-                    <p class="campaign-form-1-data-input-image-box-text">Upload an Image</p>
-                </div>
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    Location <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    Choose the location where you are running the campaign. This location will be visible on your campaign page for your audience to see.
-                </div>
-                <input type="text" class="campaign-form-1-data-input" placeholder="City">
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    Category <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    To help backers find your campaign, select a category that best represents your project.
-                </div>
-                <input type="text" class="campaign-form-1-data-input" placeholder="Select a Category">
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    Tags <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    Enter up to five keywords that best describe your campaign. These tags will help with organization and discoverability.
-                </div>
-                <input type="text" class="campaign-form-1-data-input" placeholder="Add a few tages related to your campaign">
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
-
-            <div class="campaign-form-1-btn">
-                SAVE & CONTINUE
-            </div>
-
-
-        </div>
-
-        <!-- campaign form section 1  ends here -->
-
+        </form>
     </div>
 
 
