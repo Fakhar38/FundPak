@@ -18,5 +18,8 @@ urlpatterns = [
     path("product-detail/<prod_id>/", views.product_detail, name='product_detail'),
     path("product_categories/", views.product_categories, name='product_categories'),
     path("featured/", views.featured, name='featured'),
-
+    path("create_checkout_session/", views.create_checkout_session, name='create_checkout'),
+    path("payment_success/", views.payment_success, name='payment_success'),
+    path("payment_cancel/", views.payment_cancel, name='payment_cancel'),
+    path("hooks/", views.hook_listener, name='hooks'),
 ]

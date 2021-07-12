@@ -514,10 +514,8 @@ a {
 //////////////////// 4. COOL CLEVER ///////////////////////
 
 .cool-clever {    
-    padding: 5vh 0vw;
     padding-top: 0;
     width: 92%;
-    height: 70vh;
     margin: auto;
     position: relative;
     overflow: hidden;
@@ -570,6 +568,7 @@ a {
         width: 100%;
         background-image: url(../images/back-bg.png);
         background-size: 100%;
+        background-repeat: no-repeat;
         @include center();
         flex-direction: column;
         justify-content: flex-start;
@@ -914,13 +913,13 @@ a {
     //////////////////// 1. HEADER ///////////////////////
     .header {
         &-logo {
-            padding-left: 3vw;
+            padding-left: 2vw;
             &-img {
-                width: 15vw;
+                width: 14vw;
             }
         }
         &-explore {
-            margin-left: 6vw;
+            margin-left: 3vw;
             &-btn {
                 font-size: 1.3vw;
             }
@@ -1055,7 +1054,7 @@ a {
     //////////////////// 4. COOL N CLEVER ///////////////////////
 
     .cool-clever {
-        height: 60vh;
+        // height: 60vh;
         &-content {
             font-size: 4vw;
         }
@@ -1186,6 +1185,4 @@ a {
     //////////////////// 8. FOOTER ///////////////////////
     //////////////////// 8. FOOTER ///////////////////////
 }
-
-
 

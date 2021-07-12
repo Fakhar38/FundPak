@@ -719,10 +719,8 @@ a {
 }
 
 .cool-clever {
-  padding: 5vh 0vw;
   padding-top: 0;
   width: 92%;
-  height: 70vh;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -786,6 +784,7 @@ a {
   width: 100%;
   background-image: url(../images/back-bg.png);
   background-size: 100%;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1268,13 +1267,13 @@ a {
 
 @media only screen and (min-width: 1600px) {
   .header-logo {
-    padding-left: 3vw;
+    padding-left: 2vw;
   }
   .header-logo-img {
-    width: 15vw;
+    width: 14vw;
   }
   .header-explore {
-    margin-left: 6vw;
+    margin-left: 3vw;
   }
   .header-explore-btn {
     font-size: 1.3vw;
@@ -1367,9 +1366,6 @@ a {
   }
   .popular-projects-row-card-update-currency {
     font-size: 0.9vw;
-  }
-  .cool-clever {
-    height: 60vh;
   }
   .cool-clever-content {
     font-size: 4vw;
