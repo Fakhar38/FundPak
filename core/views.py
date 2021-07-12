@@ -413,4 +413,9 @@ def start_campaign_not_logged(request):
 
 
 def start_campaign_logged(request):
-    return render(request, "start-a-campaign2.html")
+    try:
+        request.session['uid']
+    except KeyError:
+        return HttpResponseRedirect(reverse("core:login"))
+    else:
+        return render(request, "start-a-campaign2.html")
