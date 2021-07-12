@@ -466,7 +466,7 @@ a {
             &-description {
                 padding-top: 1vh;
                 font-weight: 400;
-                padding-right: 0%;
+                padding-right: 2%;
                 font-size: 0.8rem;
             }
             &-category {
@@ -1245,5 +1245,511 @@ a {
     }
     :root {
         --swiper-navigation-size: 40px !important;
+    }
+}
+
+@media only screen and (min-width:980px) and (max-width: 1160px) {
+    .header {
+        &-explore {
+            &-content {
+                &-row {
+                    width: 90%;
+                    &-column {
+                        &-heading {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+                &-bottom {
+                    padding: 3vh 6%;
+                }
+            }
+        }
+        &-story {
+            display: none;
+        }
+        &-search {
+            width: 24%;
+        }
+        &-link {
+            &-investor {
+                display: none;
+            }
+        }
+        &-btn {
+            width: 18%;
+        }
+    }
+    .popular-projects {
+        &-row {
+            padding: 0 6vw;
+            &-card {
+                width: 25vw;
+            }
+        }
+        &-btn {
+            width: 27%;
+        }
+    }
+    .back-project {
+        &-content {
+            padding-top: 6vh;
+            &-heading {
+                font-size: 1.5rem;
+            }
+            &-paragraph {
+                font-size: 1rem;
+                width: 70%;
+                padding-top: 3vh;
+                margin-bottom: 2vh;
+            }
+            &-btn {
+                margin-bottom: 4vh;
+                font-size: 1rem;
+            }
+        }
+    }
+    .categories {
+        &-heading {
+            font-size: 1.5rem;
+        }
+        &-paragraph {
+            width: 75%;
+        }
+    }
+    .clever-things {
+        &-paragraph {
+            width: 90%;
+        }
+        &-row {
+            width: 50%;
+            &-btn {
+                font-size: 1rem;
+            }
+        }
+    }
+    .footer {
+        &-top {
+            &-column {
+                &-2 {
+                    &-text {
+                        width: 90%;
+                        font-size: 1rem;
+                    }
+                    &-form {
+                        &-input {
+                            width: 90%;
+                        }
+                        &-inner {
+                            width: 90%;
+                        }
+                        &-checkbox {
+                            &-text {
+                                font-size: 0.9rem;                                
+                            }
+                        }
+                        &-btn {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom {
+            &-column {
+                &-2 {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:980px) {
+    .header {
+        height: 12vh;
+        &-logo {
+            width: 18%;
+        }
+        &-story {
+            display: none;
+        }
+        &-explore {
+            &-icon {
+                &-img {
+                    width: 1.6vw;
+                }
+            }
+            &-content {
+                top: 12vh;
+                &-row {
+                    width: 90%;
+                    height: 35%;
+                    &-column {
+                        &-heading {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                &-bottom {
+                    height: 65%;
+                    padding: 3vh 5%;
+                    &-column {
+                        width: 45%;
+                        &-heading {
+                            font-size: 1.1rem;
+                        }
+                        &-links {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+        &-search {
+            width: 24%;
+            &-icon {
+                &-img {
+                    width: 2vw;
+                }
+            }
+        }
+        &-link {
+            &-investor {
+                display: none;
+            }
+        }
+        &-btn {
+            width: 21%;
+            margin-left: 2vw;
+        }
+    }
+    :root {
+        --swiper-navigation-size: 30px !important;
+    }
+    .hero-swiper-slide-content {
+        &-paragraph {
+            width: 75%;
+        }
+    }
+    .hero-scroll-icon {
+        width: 3%;
+    }
+    .popular-projects {
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 28vw;
+                &-image {
+                    &-title {
+                        height: 25vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 27%;
+        }
+    }
+    .back-project {
+        &-content {
+            background-color: #ECECEC;
+            &-heading {
+                font-size: 1.5rem;
+            }
+            &-paragraph {
+                font-size: 1rem;
+                width: 85%;
+            }
+            &-btn {
+                margin-bottom: 4vh;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .categories {
+        &-heading {
+            font-size: 1.5rem;
+        }
+        &-paragraph {
+            font-size: 1.1rem;
+            width: 90%;
+        }
+        &-btn {
+            font-size: 1.1rem;
+        }
+        &-row {
+            width: 100%;
+            font-size: 1.1rem;
+        }
+    }
+    .clever-things {
+        &-heading {
+            font-size: 1.5rem;
+        }
+        &-row {
+            width: 60%;
+            &-btn {
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .footer {
+        &-top {
+            flex-direction: column-reverse;
+            &-column {
+                &-1 {
+                    width: 90%;                    
+                }
+                &-2 {
+                    width: 90%;
+                    margin-bottom: 10vh;
+                    &-icon {
+                        justify-content: flex-start;
+                    }
+                    &-text {
+                        text-align: left;
+                        width: 100%;
+                    }
+                    &-form {
+                        &-input {
+                            margin: 0;
+                            margin-bottom: 3vh;
+                            width: 100%;
+                        }
+                        &-inner {
+                            width: 100%;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        &-checkbox {
+                            height: 2rem;
+                            width: 6%;
+                        }
+                        &-btn {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom {
+            flex-direction: column;
+            &-column {
+                &-social {
+                    &-img {
+                        width: 4vw;
+                        &-1 {
+                            width: 2.6vw;
+                        }
+                    }
+                }
+                &-1 {
+                    margin-bottom: 3vh;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 620px) and (max-width:768px) {
+    .header {
+        height: 12vh;
+        &-logo {
+            width: 22%;
+        }
+        &-story {
+            display: none;
+        }
+        &-explore {
+            &-icon {
+                &-img {
+                    width: 2vw;
+                }
+            }
+            &-content {
+                top: 12vh;
+                &-row {
+                    width: 90%;
+                    height: 35%;
+                    &-column {
+                        &-heading {
+                            font-size: 1rem;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                &-bottom {
+                    height: 65%;
+                    padding: 3vh 5%;
+                    &-column {
+                        width: 45%;
+                        &-heading {
+                            font-size: 1.1rem;
+                        }
+                        &-links {
+                            font-size: 0.8rem;
+                            &-column {
+                                &-link {
+                                    margin-bottom: 1vh;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-search {
+            width: 30%;
+            &-icon {
+                &-img {
+                    width: 3vw;
+                }
+            }
+        }
+        &-link {
+            display: none;
+        }
+        &-btn {
+            width: 25%;
+            margin-left: auto;
+        }
+    }
+    :root {
+        --swiper-navigation-size: 30px !important;
+    }
+    .hero-swiper-slide-content {
+        &-paragraph {
+            width: 75%;
+        }
+    }
+    .hero-scroll-icon {
+        width: 3%;
+    }
+    .popular-projects {
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 40vw;
+                margin-left: 3vw;
+                &-image {
+                    &-title {
+                        height: 28vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 35%;
+        }
+    }
+    .back-project {
+        &-content {
+            background-color: #ECECEC;
+            &-heading {
+                font-size: 1.5rem;
+            }
+            &-paragraph {
+                font-size: 1rem;
+                width: 85%;
+            }
+            &-btn {
+                margin-bottom: 4vh;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .categories {
+        &-heading {
+            font-size: 1.5rem;
+        }
+        &-paragraph {
+            font-size: 1.1rem;
+            width: 90%;
+        }
+        &-btn {
+            font-size: 1.1rem;
+        }
+        &-row {
+            width: 100%;
+            font-size: 1.1rem;
+        }
+    }
+    .clever-things {
+        &-heading {
+            font-size: 1.5rem;
+        }
+        &-paragraph {
+            width: 100%;
+        }
+        &-row {
+            width: 60%;
+            &-btn {
+                font-size: 1rem;
+                padding: 1vh 3vw;
+            }
+        }
+    }
+    .footer {
+        &-top {
+            flex-direction: column-reverse;
+            &-column {
+                &-1 {
+                    width: 90%;                    
+                }
+                &-2 {
+                    width: 90%;
+                    margin-bottom: 10vh;
+                    &-icon {
+                        justify-content: flex-start;
+                    }
+                    &-text {
+                        text-align: left;
+                        width: 100%;
+                        font-size: 1rem;
+                    }
+                    &-form {
+                        &-input {
+                            margin: 0;
+                            margin-bottom: 3vh;
+                            width: 100%;
+                        }
+                        &-inner {
+                            width: 100%;
+                            align-items: center;
+                            justify-content: flex-start;
+                        }
+                        &-checkbox {
+                            height: 2rem;
+                            width: 6%;
+                            &-text {
+                                margin-left: 0.6vw;
+                            }
+                        }
+                        &-btn {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom {
+            flex-direction: column;
+            font-size: 0.9rem;
+            &-column {
+                &-social {
+                    &-img {
+                        width: 4vw;
+                        &-1 {
+                            width: 2.6vw;
+                        }
+                    }
+                }
+                &-1 {
+                    margin-bottom: 3vh;
+                }
+            }
+        }
     }
 }
