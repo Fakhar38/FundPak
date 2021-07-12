@@ -226,14 +226,17 @@
                             <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
                             <div class="product-section-1-column-btns-1-follow-text">FOLLOW</div>
                         </div>
-                        <div class="product-section-1-column-btns-1-back">
-                            <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
-                            <form action="{% url 'core:create_checkout' %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="prod_id" value="{{ this_prod.id }}">
-                                <button type="submit" class="product-section-1-column-btns-1-follow-text">BACK</button>
-                            </form>
-                        </div>
+                        <form action="{% url 'core:create_checkout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="product-section-1-column-btns-1-back">
+                                <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
+
+
+                                    <input type="hidden" name="prod_id" value="{{ this_prod.id }}">
+                                    <div class="product-section-1-column-btns-1-follow-text">BACK</div>
+
+                            </button>
+                        </form>
                     </div>
                     <div class="product-section-1-column-btns-2">
                         <img src="{% static 'images/fb.png' %}" alt="" class="product-section-1-column-btns-2-img">
