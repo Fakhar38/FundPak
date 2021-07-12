@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.conf import settings
 import datetime
+import uuid
 from django.contrib import auth as django_auth
 
 # Firebase configuration
@@ -52,6 +53,7 @@ def get_all_products():
 def index(request):
     try:
         user_id = request.session['uid']
+        print(f"User id: {user_id}")
     except KeyError:
         user_id = None
     if user_id:
@@ -207,6 +209,8 @@ def create_checkout_session(request):
             price_usd = 0
             this_prod_title = ''
             this_prod_img = ''
+            raised_amount_to_be = ''
+            total_backers_to_be = ''
             for prod in all_prods:
                 if prod['id'] == this_prod_id:
                     price = prod['price']
@@ -216,6 +220,12 @@ def create_checkout_session(request):
 
                     this_prod_title = prod['title']
                     this_prod_img = prod['image']
+
+                    last_raised_amount = int(prod['moneyRaised'])
+                    raised_amount_to_be = int(price) + last_raised_amount
+
+                    last_total_backers = int(prod['totalBackers'])
+                    total_backers_to_be = last_total_backers + 1
                     break
 
             checkout_session = stripe.checkout.Session.create(
@@ -244,6 +254,8 @@ def create_checkout_session(request):
                     'user_id': request.session['uid'],
                     "prod_id": this_prod_id,
                     "amount": price,
+                    "amountTobe": raised_amount_to_be,
+                    'totalBackersTobe': total_backers_to_be,
                 }
             db.collection("pending_payments").document(payment_intent_id).set(data)
 
@@ -276,7 +288,8 @@ def hook_listener(request):
         payment_details = db.collection("pending_payments").document(payment_id).get().to_dict()
         user_id = payment_details['user_id']
         prod_id = payment_details['prod_id']
-        amount = payment_details['amount']
+        amount_to_be = payment_details['amountTobe']
+        total_backers_to_be = payment_details['totalBackersTobe']
         data = {
             'orderId': payment_id,
             "productId": prod_id,
@@ -286,6 +299,12 @@ def hook_listener(request):
 
         # Adding order
         db.collection('orders').document(payment_id).set(data)
+        db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).update(
+            {'moneyRaised': amount_to_be,
+             'totalBackers': total_backers_to_be,
+             }
+        )
+        print(f"Orders and Products updated after webhook")
 
         # deleting pending payment
         batch = db.batch()
@@ -319,7 +338,70 @@ def hook_listener(request):
 
 
 def campaign_1(request):
-    return render(request, 'campaign-form-1.html')
+    try:
+        request.session['uid']
+    except KeyError:
+        return HttpResponseRedirect(reverse("core:login"))
+    else:
+        if request.method == "POST":
+            prod_id = str(uuid.uuid4())
+            print(f"Prod id: {prod_id}")
+            user_id = request.session['uid']
+            print(f"User id: {user_id}")
+            title = request.POST.get("title")
+            tagline = request.POST.get("tagline")
+            image = request.POST.get("img_url")
+            location = request.POST.get("location")
+            category = request.POST.get("category")
+            price = int(request.POST.get("price"))
+            description = request.POST.get("description")
+            frt = 0
+            total_backers = 0
+            money_raised = 0
+
+            data = {
+                "category": category,
+                "description": description,
+                "frt": frt,
+                "id": prod_id,
+                "image": image,
+                "location": location,
+                "moneyRaised": money_raised,
+                "price": price,
+                "tagline": tagline,
+                'title': title,
+                "totalBackers": total_backers,
+                "userId": user_id,
+            }
+
+            db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).set(data)
+
+            return HttpResponseRedirect(reverse('core:campaign_2', kwargs={'prod_id': prod_id}))
+
+        else:
+            return render(request, 'campaign-form-1.html')
+
+
+def campaign_2(request, prod_id):
+    try:
+        request.session['uid']
+    except KeyError:
+        return HttpResponseRedirect(reverse("core:login"))
+    else:
+        if request.method == "POST":
+            goal_amount = request.POST.get("goalAmount")
+            iban = request.POST.get("iban")
+
+            data = {
+                'goalAmount': goal_amount,
+                "IBAN": iban,
+            }
+
+            db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).update(data)
+            return HttpResponseRedirect(reverse("core:product_detail", kwargs={'prod_id': prod_id}))
+
+        else:
+            return render(request, 'campaign-form-2.html', {'prod_id': prod_id})
 
 
 def about_us(request):

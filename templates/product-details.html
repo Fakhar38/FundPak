@@ -256,7 +256,7 @@
                     <div class="product-section-1-column-location-text">{{ this_prod.location }}</div>
                 </div>
                 <div class="product-section-1-column-finance">
-                    <span class="product-section-1-column-finance-raised-amount">Target Amount: </span> <span class="product-section-1-column-finance-amount-currency">50,000 PKR</span>
+                    <span class="product-section-1-column-finance-raised-amount">Target Amount: </span> <span class="product-section-1-column-finance-amount-currency">{{ this_prod.goalAmount }} PKR</span>
                 </div>
                 <div class="product-section-1-column-finance">
                     <span class="product-section-1-column-finance-raised-amount">Achieved: Rs {{ this_prod.moneyRaised }}</span> <span class="product-section-1-column-finance-amount-currency">PKR</span> by <span class="product-section-1-column-finance-numbers">{{ this_prod.totalBackers }}</span> backers
