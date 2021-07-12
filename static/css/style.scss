@@ -292,7 +292,7 @@ a {
                 width: 100%;
                 height: 100%;
                 background-image: url(../images/hero-bg-1.png);
-                background-size: 100%;   
+                background-size: cover;   
                 background-repeat: no-repeat;           
                 background-color: #fff;  
             }
@@ -984,7 +984,7 @@ a {
     //////////////////// 2. HERO ///////////////////////
     //////////////////// 2. HERO ///////////////////////
     .hero {
-        height: 90vh;
+        // height: 90vh;
     }
     .hero-swiper-slide-content {
         padding-top: 22vh;
@@ -1043,6 +1043,10 @@ a {
                     font-size: 0.9vw;
                 }
             }
+        }
+        &-btn {
+            font-size: 1.5vw;
+            width: 26%;
         }
     }
     //////////////////// 3. POPULAR PROJECTS ///////////////////////
@@ -1160,6 +1164,9 @@ a {
                 &-form-input {
                     font-size: 1.2vw;
                     height: 7vh;
+                    &::placeholder-shown {
+                        font-size: 1.1vw;
+                    }
                 }
                 &-form-checkbox {
                     &-text {

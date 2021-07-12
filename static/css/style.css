@@ -391,7 +391,7 @@ a {
   width: 100%;
   height: 100%;
   background-image: url(../images/hero-bg-1.png);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #fff;
 }
@@ -1319,9 +1319,6 @@ a {
   .header-btn-signup {
     border-radius: 0.5vw;
   }
-  .hero {
-    height: 90vh;
-  }
   .hero-swiper-slide-content {
     padding-top: 22vh;
   }
@@ -1366,6 +1363,10 @@ a {
   }
   .popular-projects-row-card-update-currency {
     font-size: 0.9vw;
+  }
+  .popular-projects-btn {
+    font-size: 1.5vw;
+    width: 26%;
   }
   .cool-clever-content {
     font-size: 4vw;
@@ -1420,6 +1421,18 @@ a {
   .footer-top-column-2-form-input {
     font-size: 1.2vw;
     height: 7vh;
+  }
+  .footer-top-column-2-form-input::-webkit-input-placeholder-shown {
+    font-size: 1.1vw;
+  }
+  .footer-top-column-2-form-input:-ms-input-placeholder-shown {
+    font-size: 1.1vw;
+  }
+  .footer-top-column-2-form-input::-ms-input-placeholder-shown {
+    font-size: 1.1vw;
+  }
+  .footer-top-column-2-form-input::placeholder-shown {
+    font-size: 1.1vw;
   }
   .footer-top-column-2-form-checkbox-text {
     font-size: 1vw;
