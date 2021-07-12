@@ -148,3 +148,117 @@ a {
         margin-bottom: 10vh;
     }
 }
+
+@media only screen and (min-width:1600px) {
+    html {
+        font-size: 1.2vw;
+    }
+    .start-campaign-form-2-text-question-answer-input-radio {
+        width: 2rem;
+        height: 1rem;
+    }
+}
+
+@media only screen and (min-width:980px) and (max-width:1160px) {
+    html {
+        font-size: 15px;
+    }
+    .start-campaign-form-2-text-question-answer-input-radio {
+        width: 2rem;
+        height: 1rem;
+    }
+    .start-campaign-heading {
+        font-size: 2.5rem;
+    }
+    .start-campaign-text {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:980px) {
+    html {
+        font-size: 15px;
+    }
+    .start-campaign-form-2-text-question-answer-input-radio {
+        width: 2rem;
+        height: 1rem;
+    }
+    .start-campaign-heading {
+        font-size: 2.2rem;
+    }
+    .start-campaign-text {
+        width: 85%;
+    }
+}
+
+
+@media only screen and (min-width:620px) and (max-width:768px) {
+    html {
+        font-size: 15px;
+    }
+    .start-campaign-form-2-text-question-answer-input-radio {
+        width: 2rem;
+        height: 1rem;
+    }
+    .start-campaign-heading {
+        font-size: 2.2rem;
+    }
+    .start-campaign-text {
+        width: 85%;
+    }
+    .start-campaign-form-2-text {
+        width: 90%;
+    }
+    .start-campaign-form-2-question {
+        width: 90%;
+    }
+    .start-campaign-form-2-text-question-answer {
+        width: 90%;
+    }
+    .start-campaign-form-2-btns {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    html {
+        font-size: 14px;
+    }
+    .start-campaign-form-2-text-question-answer-input-radio {
+        width: 2rem;
+        height: 1rem;
+    }
+    .start-campaign-heading {
+        font-size: 2.2rem;
+    }
+    .start-campaign-text {
+        width: 85%;
+        font-size: 1.2rem;
+    }
+    .start-campaign-form-2-text {
+        width: 90%;
+    }
+    .start-campaign-form-2-question {
+        width: 90%;
+    }
+    .start-campaign-form-2-text-question-answer {
+        width: 90%;
+    }
+    .start-campaign-form-2-btns {
+        width: 60%;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    .start-campaign-form-2 {
+        margin-top: 0;
+        padding-top: 3vh;
+    }
+    .start-campaign-form-2-btn {
+        font-size: 1.1rem;
+    }
+    .start-campaign-form-2-btns {
+        width: 70%;
+    }
+}

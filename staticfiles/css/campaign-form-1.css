@@ -23,6 +23,10 @@ a {
   margin-bottom: 0.1rem;
 }
 
+.campaign-form-container {
+  width: 80%;
+}
+
 .campaign-form {
   width: 100%;
   display: -webkit-box;
@@ -52,8 +56,13 @@ a {
   padding-left: 10%;
 }
 
+.campaign-form-menu a {
+  color: #fff;
+  margin-bottom: 4vh;
+}
+
 .campaign-form-1 {
-  width: 80%;
+  width: 100%;
   background-color: #fff;
 }
 
@@ -222,6 +231,15 @@ a {
   font-size: 1.1rem;
 }
 
+.campaign-form-1-data-input-image-box-upload {
+  height: 40vh;
+  width: 38%;
+  position: absolute;
+  bottom: 0;
+  border: 0.1rem solid #979797;
+  border-radius: 1rem;
+}
+
 .campaign-form-1-image-data {
   position: relative;
 }
@@ -245,5 +263,178 @@ a {
   margin-left: 25%;
   cursor: pointer;
   margin-bottom: 6vh;
+  outline: none;
+  border: none;
+}
+
+.loader {
+  border: 0.8vw solid #f3f3f3;
+  border-top: 0.8vw solid #FC7753;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 19%;
+  top: 50%;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1080px) {
+  .campaign-form-1-data-input-image-box {
+    width: 45%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 42.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 44%;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .campaign-form-menu {
+    display: none;
+  }
+  .campaign-form-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 768px) {
+  .campaign-form-1-data-input-image-box {
+    width: 60%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 58.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 59%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+  .campaign-form-1-btn {
+    font-size: 1rem;
+    width: 35%;
+  }
+  .loader {
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  html {
+    font-size: 14px;
+  }
+  .campaign-form-1-data {
+    width: 95%;
+  }
+  .campaign-form-1-data-input {
+    width: 100%;
+  }
+  .campaign-form-1-data-input-image-box {
+    width: 60%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 58.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 59%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+  .campaign-form-1-btn {
+    font-size: 1rem;
+    width: 35%;
+  }
+  .loader {
+    left: 25%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .campaign-form-1-data-input-image-box {
+    width: 70%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 68.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 69%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .campaign-form-1-data-input-image-box {
+    width: 90%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 88.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 89%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 4vw;
+  }
+  .campaign-form-1-btn {
+    font-size: 1rem;
+    width: 55%;
+  }
+  .loader {
+    left: 38%;
+    top: 55%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+  .campaign-form-1-data-input-image-box {
+    width: 96%;
+  }
+  .campaign-form-1-data-input-image-box-upload {
+    width: 94.5%;
+  }
+  .campaign-form-1-data-input-image {
+    width: 95%;
+  }
+  .campaign-form-1-data-input-image-box-icon {
+    width: 7vw;
+  }
 }
 /*# sourceMappingURL=campaign-form-1.css.map */
