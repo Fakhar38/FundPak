@@ -239,7 +239,7 @@
         <!-- campaign form menu ends here -->
 
 
-        <form action="{% url 'core:campaign_1' %}" method="post" class="campaign-form-container">
+        <form action="{% url 'core:campaign_1' prod_id=prod_id %}" method="post" class="campaign-form-container">
             {% csrf_token %}
             <!-- campaign form section 1 starts here -->
 
