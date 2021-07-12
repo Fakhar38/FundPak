@@ -1044,6 +1044,10 @@ a {
                 }
             }
         }
+        &-btn {
+            font-size: 1.5vw;
+            width: 26%;
+        }
     }
     //////////////////// 3. POPULAR PROJECTS ///////////////////////
     //////////////////// 3. POPULAR PROJECTS ///////////////////////
@@ -1160,6 +1164,9 @@ a {
                 &-form-input {
                     font-size: 1.2vw;
                     height: 7vh;
+                    &::placeholder-shown {
+                        font-size: 1.1vw;
+                    }
                 }
                 &-form-checkbox {
                     &-text {
