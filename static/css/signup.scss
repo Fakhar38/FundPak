@@ -251,18 +251,3 @@
         }
     }
 
-    // When the input is invalid & not blank
-input:invalid:not(:placeholder-shown) {
-	border: 2px solid red !important;
-}
-
-// When input is invalid, show and make the adjacanet validation text red 
-input:invalid:not(:placeholder-shown) + [data-validation-text] {
-	color: red !important;
-	display: block;
-}
-
-// Hide validation text by default
-[data-validation-text] {
-	display: none;
-}

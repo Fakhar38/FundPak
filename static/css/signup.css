@@ -300,17 +300,4 @@
     width: 20vw;
   }
 }
-
-input:invalid:not(:placeholder-shown) {
-  border: 2px solid red !important;
-}
-
-input:invalid:not(:placeholder-shown) + [data-validation-text] {
-  color: red !important;
-  display: block;
-}
-
-[data-validation-text] {
-  display: none;
-}
 /*# sourceMappingURL=signup.css.map */

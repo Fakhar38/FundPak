@@ -34,6 +34,10 @@ a {
 
 //////////////////////////////////////////////////////
 
+.campaign-form-container {
+    width: 80%;
+}
+
 
 .campaign-form {
     width: 100%;
@@ -51,7 +55,7 @@ a {
         }
     }
     &-1 {
-        width: 80%;
+        width: 100%;
         background-color: #fff;
         &-header {
             padding: 5vh 5%;
@@ -154,6 +158,14 @@ a {
                         color: #979797;
                         font-size: 1.1rem;
                     }
+                    &-upload {
+                        height: 40vh;
+                        width: 38%;
+                        position: absolute;
+                        bottom: 0;
+                        border: 0.1rem solid #979797;
+                        border-radius: 1rem;
+                    }
                 }
             }
         }
@@ -171,6 +183,26 @@ a {
             margin-left: 25%;
             cursor: pointer;
             margin-bottom: 6vh;
+            outline: none;
+            border: none;
         }
     }
 }
+
+.loader {
+    border: 0.8vw solid #f3f3f3;
+    border-top: 0.8vw solid #FC7753;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 17%;
+    top: 50%;
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
