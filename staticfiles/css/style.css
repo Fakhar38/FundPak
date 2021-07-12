@@ -698,6 +698,26 @@ a {
   padding-left: 0.5vw;
 }
 
+.popular-projects-btn {
+  padding: 1vh 0;
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1rem;
+  border-radius: 0.5vw;
+  background-color: #FC7753;
+  color: #fff;
+  margin: auto;
+  margin-bottom: 5vh;
+}
+
 .cool-clever {
   padding: 5vh 0vw;
   padding-top: 0;
@@ -1246,9 +1266,59 @@ a {
   transform: rotate(45deg);
 }
 
-@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+@media only screen and (min-width: 1600px) {
+  .header-logo {
+    padding-left: 3vw;
+  }
+  .header-logo-img {
+    width: 15vw;
+  }
   .header-explore {
     margin-left: 6vw;
+  }
+  .header-explore-btn {
+    font-size: 1.3vw;
+  }
+  .header-explore-icon-img {
+    width: 1.2vw;
+  }
+  .header-explore-content-row {
+    padding-top: 3vh;
+  }
+  .header-explore-content-row-column-heading {
+    font-size: 1.6vw;
+  }
+  .header-explore-content-bottom-column-heading {
+    font-size: 1.6vw;
+  }
+  .header-explore-content-bottom-column-links {
+    font-size: 1.2vw;
+  }
+  .header-story {
+    font-size: 1.3vw;
+  }
+  .header-search-icon-img {
+    width: 1.4vw;
+  }
+  .header-search-input-box-shown {
+    width: 18vw;
+    font-size: 1.3vw;
+    padding: 1.2vh 1vw;
+    border-radius: 2vw;
+  }
+  .header-link {
+    margin-left: 13vw;
+    font-size: 1.3vw;
+    width: 23vw;
+  }
+  .header-btn {
+    margin-left: 2vw;
+    font-size: 1.3vw;
+    width: 14vw;
+    border-left: 0.1vw solid #A0A0A0;
+  }
+  .header-btn-signup {
+    border-radius: 0.5vw;
   }
   .hero {
     height: 90vh;
