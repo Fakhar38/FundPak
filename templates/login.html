@@ -204,20 +204,20 @@
             <div class="login-container-input-row">
                 <label for="loginEmail" class="login-container-input-row-label">Your Email</label>
                 {% if err_email %}
-                    <input type="text" name="email" style="border-color: red " class="login-container-input-row-input" placeholder="Your Email" id="loginEmail">
+                    <input type="email" name="email" style="border-color: red " class="login-container-input-row-input" placeholder="Your Email" id="loginEmail" required>
                     <p style="margin-top: 1vh; color: red">Invalid Email</p>
                 {% else%}
-                    <input type="text" name="email" class="login-container-input-row-input" placeholder="Your Email" id="loginEmail">
+                    <input type="email" name="email" class="login-container-input-row-input" placeholder="Your Email" id="loginEmail" required>
                 {% endif %}
 
             </div>
             <div class="login-container-input-row">
                 <label for="loginPass" class="login-container-input-row-label">Password</label>
                 {% if err_password %}
-                    <input type="password" style="border-color: red " name="password" class="login-container-input-row-input" placeholder="Your Password" id="loginPass">
+                    <input type="password" style="border-color: red " name="password" class="login-container-input-row-input" placeholder="Your Password" id="loginPass" required>
                     <p style="margin-top: 1vh; color: red">Invalid password</p>
                 {% else %}
-                    <input type="password" name="password" class="login-container-input-row-input" placeholder="Your Password" id="loginPass">
+                    <input type="password" name="password" class="login-container-input-row-input" placeholder="Your Password" id="loginPass" required>
                 {% endif %}
 
                 {# Error is unknown           #}
