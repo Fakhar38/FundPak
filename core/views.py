@@ -42,7 +42,6 @@ stripe.api_key = api_secret_key
 
 def get_all_products():
     prods = db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").get()
-    prod['fav'] = True
     prods_list = []
     if prods:
         prods_list = [x.to_dict() for x in prods]
