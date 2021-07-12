@@ -62,22 +62,33 @@ def index(request):
 
 
 def product_detail(request, prod_id):
+    try:
+        user_id = request.session['uid']
+    except KeyError:
+        user_id = None
+    if user_id:
+        is_logged = True
+    else:
+        is_logged = False
+
     all_prods = get_all_products()
     this_prod = ''
-    extra_prods_to_show = []
     for prod in all_prods:
         if prod['id'] == prod_id:
             this_prod = prod
+            all_prods.pop(all_prods.index(prod))
     if len(all_prods) > 4:
         extra_prods_to_show = all_prods[:4]
     else:
         extra_prods_to_show = all_prods
+    # print(f"This prod: {this_prod}")
 
     context = {
+        'is_logged': is_logged,
         "this_prod": this_prod,
         "extra_prods": extra_prods_to_show
     }
-    return render(request, 'product-details.html')
+    return render(request, 'product-details.html', context)
 
 
 def product_categories(request):
@@ -119,7 +130,12 @@ def login_view(request):
             return HttpResponseRedirect(reverse("core:index"))
 
     else:
-        return render(request, 'login.html')
+        try:
+            request.session['uid']
+        except KeyError:
+            return render(request, 'login.html')
+        else:
+            return HttpResponseRedirect(reverse("core:index"))
 
 
 def signup_view(request):
