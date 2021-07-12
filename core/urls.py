@@ -22,4 +22,5 @@ urlpatterns = [
     path("payment_success/", views.payment_success, name='payment_success'),
     path("payment_cancel/", views.payment_cancel, name='payment_cancel'),
     path("hooks/", views.hook_listener, name='hooks'),
+    path("campaign_1/", views.campaign_1, name='campaign_1'),
 ]
