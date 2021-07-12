@@ -274,7 +274,7 @@
                             {% csrf_token %}
                             <button type="submit" class="product-section-1-column-btns-1-back">
                                     <input type="hidden" name="prod_id" value="{{ this_prod.id }}">
-                                    <div class="product-section-1-column-btns-1-follow-text"> <span class="product-section-1-column-btns-1-follow-text-prcie">500 PKR </span>/ BACK</div>
+                                    <div class="product-section-1-column-btns-1-follow-text"> <span class="product-section-1-column-btns-1-follow-text-prcie">{{ this_prod.price }} PKR </span>/ BACK</div>
                             </button>
                         </form>
                     </div>

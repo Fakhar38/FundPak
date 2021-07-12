@@ -171,44 +171,47 @@
         </div>
     </div>
 
-    <div class="start-campaign-form-2">
-        <div class="start-campaign-form-2-text">
-            Who are you raising money for?
-        </div>
-        <div class="start-campaign-form-2-question">        
-            <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-1">
-                Please choose the type of account that will be receiving your funds:
-            </div>
-            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
-                <input type="radio" name="question1" id="start-campaign-form-answer1">
-                <label for="start-campaign-form-answer1" class="start-campaign-form-2-text-question-answer-label">New startup</label>
-            </div>
-            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
-                <input type="radio" name="question1" id="start-campaign-form-answer2">
-                <label for="start-campaign-form-answer2" class="start-campaign-form-2-text-question-answer-label">Nonprofit / Charity</label>
-            </div>
-            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
-                <input type="radio" name="question1" id="start-campaign-form-answer3">
-                <label for="start-campaign-form-answer3" class="start-campaign-form-2-text-question-answer-label">Extension of Existing Business</label>
-            </div>
-        </div>
-        <div class="start-campaign-form-2-question">  
+    <form action="{% url 'core:start_camp_logged' %}" method="post">
+        {% csrf_token %}
+        <div class="start-campaign-form-2">
             <div class="start-campaign-form-2-text">
                 Who are you raising money for?
-            </div>      
-            <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-2">
-                If you are raising funds as an individual, what is your city of legal residence? If you are raising funds for a business, where is the business located?
             </div>
-            <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-2-answer">
-                <input type="text" name="" class="start-campaign-form-2-text-question-2-answer-input" placeholder="Islamabad, Pakistan">                
+            <div class="start-campaign-form-2-question">
+                <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-1">
+                    Please choose the type of account that will be receiving your funds:
+                </div>
+                <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
+                    <input type="radio" name="question1" id="start-campaign-form-answer1" value="New Startup">
+                    <label for="start-campaign-form-answer1" class="start-campaign-form-2-text-question-answer-label">New startup</label>
+                </div>
+                <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
+                    <input type="radio" name="question1" id="start-campaign-form-answer2" value="Nonprofit / Charity">
+                    <label for="start-campaign-form-answer2" class="start-campaign-form-2-text-question-answer-label">Nonprofit / Charity</label>
+                </div>
+                <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
+                    <input type="radio" name="question1" id="start-campaign-form-answer3" value="Extension of Existing Business">
+                    <label for="start-campaign-form-answer3" class="start-campaign-form-2-text-question-answer-label">Extension of Existing Business</label>
+                </div>
+            </div>
+            <div class="start-campaign-form-2-question">
+                <div class="start-campaign-form-2-text">
+                    Who are you raising money for?
+                </div>
+                <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-2">
+                    If you are raising funds as an individual, what is your city of legal residence? If you are raising funds for a business, where is the business located?
+                </div>
+                <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-2-answer">
+                    <input type="text" name="location" class="start-campaign-form-2-text-question-2-answer-input" placeholder="Islamabad, Pakistan">
+                </div>
+            </div>
+            <div class="start-campaign-form-2-btns">
+                <button type="submit">
+                    START MY CAMPAIGN
+                </button>
             </div>
         </div>
-        <div class="start-campaign-form-2-btns">
-            <a href="{% url 'core:campaign_1' %}" class="start-campaign-form-2-btn">
-                START MY CAMPAIGN
-            </a>
-        </div>        
-    </div>
+    </form>
 
     <div class="start-campaign-note">
         All pakfund projects must provide banking information, a government-issued ID, 

@@ -45,7 +45,10 @@ def get_all_products():
     prods = db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").get()
     prods_list = []
     if prods:
-        prods_list = [x.to_dict() for x in prods]
+        prods = [x.to_dict() for x in prods]
+        for prod in prods:
+            if prod['isActive'] == "True":
+                prods_list.append(prod)
         prods_list = sorted(prods_list, key=lambda x: x['frt'], reverse=True)
     return prods_list
 
@@ -95,6 +98,7 @@ def product_detail(request, prod_id):
         extra_prods_to_show = all_prods
     # print(f"This prod: {this_prod}")
 
+    print(f"This prod in detail func: {this_prod}")
     context = {
         'is_logged': is_logged,
         "this_prod": this_prod,
@@ -337,17 +341,13 @@ def hook_listener(request):
     # return HttpResponse(status=200)
 
 
-def campaign_1(request):
+def campaign_1(request, prod_id):
     try:
         request.session['uid']
     except KeyError:
         return HttpResponseRedirect(reverse("core:login"))
     else:
         if request.method == "POST":
-            prod_id = str(uuid.uuid4())
-            print(f"Prod id: {prod_id}")
-            user_id = request.session['uid']
-            print(f"User id: {user_id}")
             title = request.POST.get("title")
             tagline = request.POST.get("tagline")
             image = request.POST.get("img_url")
@@ -363,7 +363,6 @@ def campaign_1(request):
                 "category": category,
                 "description": description,
                 "frt": frt,
-                "id": prod_id,
                 "image": image,
                 "location": location,
                 "moneyRaised": money_raised,
@@ -371,15 +370,14 @@ def campaign_1(request):
                 "tagline": tagline,
                 'title': title,
                 "totalBackers": total_backers,
-                "userId": user_id,
             }
 
-            db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).set(data)
+            db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).update(data)
 
             return HttpResponseRedirect(reverse('core:campaign_2', kwargs={'prod_id': prod_id}))
 
         else:
-            return render(request, 'campaign-form-1.html')
+            return render(request, 'campaign-form-1.html', {'prod_id': prod_id})
 
 
 def campaign_2(request, prod_id):
@@ -395,6 +393,7 @@ def campaign_2(request, prod_id):
             data = {
                 'goalAmount': goal_amount,
                 "IBAN": iban,
+                'isActive': "True",
             }
 
             db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).update(data)
@@ -409,7 +408,12 @@ def about_us(request):
 
 
 def start_campaign_not_logged(request):
-    return render(request, "start-a-campaign1.html")
+    try:
+        request.session['uid']
+    except KeyError:
+        return render(request, "start-a-campaign1.html")
+    else:
+        return HttpResponseRedirect(reverse("core:start_camp_logged"))
 
 
 def start_campaign_logged(request):
@@ -418,4 +422,26 @@ def start_campaign_logged(request):
     except KeyError:
         return HttpResponseRedirect(reverse("core:login"))
     else:
-        return render(request, "start-a-campaign2.html")
+        if request.method == "POST":
+            print(f"In Post")
+            account_type = request.POST.get("question1")
+            location = request.POST.get("location")
+
+            prod_id = str(uuid.uuid4())
+            print(f"Prod id: {prod_id}")
+            user_id = request.session['uid']
+            print(f"User id: {user_id}")
+
+            data = {
+                'account_type': account_type,
+                "location": location,
+                "id": prod_id,
+                "userId": user_id,
+                'frt': 0,
+                'isActive': "False"
+            }
+
+            db.collection("products").document("eVa2BlDFUQHAjY9zS7gC").collection("product").document(prod_id).set(data)
+            return HttpResponseRedirect(reverse("core:campaign_1", kwargs={'prod_id': prod_id}))
+        else:
+            return render(request, "start-a-campaign2.html")
