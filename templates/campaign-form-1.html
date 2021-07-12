@@ -340,13 +340,13 @@
                         640 x 640 recommended resolution, 220 x 220 minimum resolution.
                     </div>
 
-                    <input type="file" name="file[]" id="files" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
+                    <input type="file" name="file[]" id="files" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*" onchange="uploadImage()">
                     <input type="hidden" name="img_url" id="img_url">
 
-                    <!-- <div class="campaign-form-1-data-input-image-box-upload" style="background-image: url();background-size:cover">
+                    <div class="campaign-form-1-data-input-image-box-upload" style="background-image: url();background-size:cover;opacity: 0;" >
 
-                    </div> -->
-                    <!-- <div class="loader"></div> -->
+                    </div>
+                    <div class="loader" style="opacity: 0;"></div>
 
                     <div class="campaign-form-1-data-input-image-box">
                         <img src="{% static 'images/upload-image-cam-icon.svg' %}" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
@@ -528,6 +528,13 @@
 
     function uploadImage(){
         console.log("In uploadimage fundtion")
+        let camIcon = document.querySelector(".campaign-form-1-data-input-image-box-icon");
+        let camText = document.querySelector(".campaign-form-1-data-input-image-box-text");
+        let loader = document.querySelector(".loader");
+        let imageBg = document.querySelector(".campaign-form-1-data-input-image-box-upload");
+        camIcon.style.opacity = "0";
+        camText.style.opacity = "0";
+        loader.style.opacity = "1";
         var storage = firebase.storage();
         var file = document.getElementById('files').files[0];
         var storageRef = storage.ref();
@@ -542,8 +549,12 @@
         function(){
             var downloadURL = thisRef.snapshot.downloadURL;
             console.log("Got Url")
+            console.log(downloadURL);
+            loader.style.opacity = "0";
+            imageBg.style.backgroundImage = `URL(${downloadURL})`;
+            imageBg.style.opacity = "1";
         }
-        )
+        )        
     }
 
 </script>
