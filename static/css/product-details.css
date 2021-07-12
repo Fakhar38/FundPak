@@ -107,6 +107,11 @@ a {
   margin-bottom: 2vh;
 }
 
+.product-section-1-column-location-img {
+  width: 1vw;
+  margin-right: 1vw;
+}
+
 .product-section-1-column-finance {
   font-size: 1.1rem;
 }
@@ -151,7 +156,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 30%;
+  width: 50%;
 }
 
 .product-section-1-column-btns-1-follow, .product-section-1-column-btns-1-back {
@@ -180,6 +185,24 @@ a {
 
 .product-section-1-column-btns-1-follow-text, .product-section-1-column-btns-1-back-text {
   margin-left: 0.6vw;
+}
+
+.product-section-1-column-btns-1-follow {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.product-section-1-column-btns-1-follow-active {
+  background-color: #FC7753;
+  color: #fff;
+  border: 0.1vh solid #FC7753;
+}
+
+.product-section-1-column-btns-1-follow-favorite-icon-path {
+  fill: #fff;
+  stroke: #FC7753;
 }
 
 .product-section-1-column-btns-1-back {
@@ -294,6 +317,11 @@ a {
 
 .product-section-2-tab-2 {
   display: none;
+}
+
+.product-section-1-column-btns-1-follow-text-prcie {
+  color: #FC7753;
+  font-weight: 500;
 }
 
 .interested-section {

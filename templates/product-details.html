@@ -210,11 +210,11 @@
                 <div class="product-section-1-column-description">
                     {{ this_prod.tagline }}
                 </div>
-                <div class="product-section-1-column-category">
+                <div class="product-section-1-column-category">                    
                     {{ this_prod.category }}
                 </div>
                 <div class="product-section-1-column-location">
-                    <img src="" alt="" class="product-section-1-column-location-img">
+                    <img src="{% static 'images/location.svg' %}" alt="" class="product-section-1-column-location-img">
                     <div class="product-section-1-column-location-text">{{ this_prod.location }}</div>
                 </div>
                 <div class="product-section-1-column-finance">
@@ -226,18 +226,17 @@
                 <div class="product-section-1-column-btns">
                     <div class="product-section-1-column-btns-1">
                         <div class="product-section-1-column-btns-1-follow">
-                            <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
+                            <!-- <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img"> -->
+                            <svg class="product-section-1-column-btns-1-follow-favorite-icon" width="20" height="20" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="product-section-1-column-btns-1-follow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                            </svg>
                             <div class="product-section-1-column-btns-1-follow-text">FOLLOW</div>
                         </div>
                         <form action="{% url 'core:create_checkout' %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="product-section-1-column-btns-1-back">
-                                <img src="{% static 'images/back.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
-
-
                                     <input type="hidden" name="prod_id" value="{{ this_prod.id }}">
-                                    <div class="product-section-1-column-btns-1-follow-text">BACK</div>
-
+                                    <div class="product-section-1-column-btns-1-follow-text"> <span class="product-section-1-column-btns-1-follow-text-prcie">500 PKR </span>/ BACK</div>
                             </button>
                         </form>
                     </div>
@@ -505,4 +504,11 @@
     <!-- footer ends here -->
     
 </body>
+<script>
+    let followBtn = document.querySelector(".product-section-1-column-btns-1-follow");
+
+    followBtn.addEventListener("click",()=>{
+        followBtn.classList.toggle("product-section-1-column-btns-1-follow-active");
+    })
+</script>
 </html>

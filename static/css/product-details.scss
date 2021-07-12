@@ -78,7 +78,7 @@ a {
             &-category {
                 font-size: 1.1rem;
                 color: $primary-color;
-                margin-bottom: 1vh;                
+                margin-bottom: 1vh;          
             }
             &-location {
                 display: flex;
@@ -87,6 +87,10 @@ a {
                 font-size: 1.1rem;
                 font-weight: 500;
                 margin-bottom: 2vh;
+                &-img {
+                    width: 1vw;
+                    margin-right: 1vw;
+                }
             }
             &-finance {
                 font-size: 1.1rem;
@@ -106,7 +110,7 @@ a {
                 &-1 {
                     @include center();
                     justify-content: space-between;
-                    width: 30%;
+                    width: 50%;
                     &-follow , &-back {
                         @include center();
                         font-size: 1rem;
@@ -122,6 +126,22 @@ a {
                         }
                         &-text {
                             margin-left: 0.6vw;
+                        }
+                    }
+                    &-follow {
+                        user-select: none;
+                        &-active {
+                            background-color: $primary-color;
+                            color: #fff;
+                            border: 0.1vh solid $primary-color;
+                        }
+                        &-favorite {
+                            &-icon {
+                                &-path {
+                                    fill: #fff;
+                                    stroke: $primary-color;
+                                }
+                            }
                         }
                     }
                     &-back {
@@ -200,6 +220,11 @@ a {
             }
         }
     }
+}
+
+.product-section-1-column-btns-1-follow-text-prcie {
+    color: $primary-color;
+    font-weight: 500;
 }
 
 .interested-section {
