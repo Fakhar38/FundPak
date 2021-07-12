@@ -148,3 +148,73 @@
     text-align: right;
     margin-bottom: 3vh;
 }
+
+@media only screen and (min-width: 1600px) {
+    .login-container {
+        &-heading {
+            font-size: 2vw;
+        }
+        &-toprow {
+            font-size: 1.2vw;
+        }
+        &-input-row {
+            &-label , &-input {
+                font-size: 1.2vw;
+                &::placeholder {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+        &-lastrow {
+            font-size: 1.2vw;
+        }
+        &-submit-btn {
+            font-size: 1.2vw;
+        }
+    }
+}
+
+@media only screen and (min-width:980px) and (max-width:1180px) {
+    .login {
+        padding: 10vh 25%;
+        &-container {
+            padding: 10vh 6%;
+        }
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:980px) {
+    .login {
+        padding: 10vh 20%;
+        &-container {
+            padding: 10vh 4%;
+        }
+    }
+}
+
+
+@media only screen and (min-width:620px) and (max-width:768px) {
+    .login {
+        padding: 10vh 15%;
+        &-container {
+            padding: 10vh 3%;
+        }
+    }
+}
+
+@media only screen and (max-width:620px) {
+    .login {
+        padding: 0;
+        &-container {
+            border: none;
+        }
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .login {
+        &-container {
+            padding: 6vh 5%;
+        }
+    }
+}

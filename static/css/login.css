@@ -205,4 +205,76 @@
   text-align: right;
   margin-bottom: 3vh;
 }
+
+@media only screen and (min-width: 1600px) {
+  .login-container-heading {
+    font-size: 2vw;
+  }
+  .login-container-toprow {
+    font-size: 1.2vw;
+  }
+  .login-container-input-row-label, .login-container-input-row-input {
+    font-size: 1.2vw;
+  }
+  .login-container-input-row-label::-webkit-input-placeholder, .login-container-input-row-input::-webkit-input-placeholder {
+    font-size: 1.2vw;
+  }
+  .login-container-input-row-label:-ms-input-placeholder, .login-container-input-row-input:-ms-input-placeholder {
+    font-size: 1.2vw;
+  }
+  .login-container-input-row-label::-ms-input-placeholder, .login-container-input-row-input::-ms-input-placeholder {
+    font-size: 1.2vw;
+  }
+  .login-container-input-row-label::placeholder, .login-container-input-row-input::placeholder {
+    font-size: 1.2vw;
+  }
+  .login-container-lastrow {
+    font-size: 1.2vw;
+  }
+  .login-container-submit-btn {
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1180px) {
+  .login {
+    padding: 10vh 25%;
+  }
+  .login-container {
+    padding: 10vh 6%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+  .login {
+    padding: 10vh 20%;
+  }
+  .login-container {
+    padding: 10vh 4%;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 768px) {
+  .login {
+    padding: 10vh 15%;
+  }
+  .login-container {
+    padding: 10vh 3%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .login {
+    padding: 0;
+  }
+  .login-container {
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .login-container {
+    padding: 6vh 5%;
+  }
+}
 /*# sourceMappingURL=login.css.map */
