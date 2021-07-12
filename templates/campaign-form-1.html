@@ -340,13 +340,13 @@
                         640 x 640 recommended resolution, 220 x 220 minimum resolution.
                     </div>
 
-                    <input type="file" name="file[]" id="files" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
+                    <input onchange="uploadImage()" type="file" name="file[]" id="files" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
                     <input type="hidden" name="img_url" id="img_url">
 
-                    <!-- <div class="campaign-form-1-data-input-image-box-upload" style="background-image: url();background-size:cover">
+                    <div class="campaign-form-1-data-input-image-box-upload" style="background-image: url();background-size:cover">
 
-                    </div> -->
-                    <!-- <div class="loader"></div> -->
+                    </div>
+                    <div class="loader"></div>
 
                     <div class="campaign-form-1-data-input-image-box">
                         <img src="{% static 'images/upload-image-cam-icon.svg' %}" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
