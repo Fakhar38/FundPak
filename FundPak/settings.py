@@ -18,6 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 
+DOMAIN = "https://fundpak.com"
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -29,7 +31,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'localhost'
+    'localhost',
+    '50.116.27.216',
+    'fundpak.com'
 ]
 
 

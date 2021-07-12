@@ -1,0 +1,4 @@
+django
+pyrebase
+firebase-admin
+stripe
