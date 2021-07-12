@@ -685,10 +685,8 @@ a {
 }
 
 .cool-clever {
-  padding: 5vh 0vw;
   padding-top: 0;
   width: 92%;
-  height: 70vh;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -752,6 +750,7 @@ a {
   width: 100%;
   background-image: url(../images/back-bg.png);
   background-size: 100%;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1232,9 +1231,59 @@ a {
   transform: rotate(45deg);
 }
 
-@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+@media only screen and (min-width: 1600px) {
+  .header-logo {
+    padding-left: 2vw;
+  }
+  .header-logo-img {
+    width: 14vw;
+  }
   .header-explore {
-    margin-left: 6vw;
+    margin-left: 3vw;
+  }
+  .header-explore-btn {
+    font-size: 1.3vw;
+  }
+  .header-explore-icon-img {
+    width: 1.2vw;
+  }
+  .header-explore-content-row {
+    padding-top: 3vh;
+  }
+  .header-explore-content-row-column-heading {
+    font-size: 1.6vw;
+  }
+  .header-explore-content-bottom-column-heading {
+    font-size: 1.6vw;
+  }
+  .header-explore-content-bottom-column-links {
+    font-size: 1.2vw;
+  }
+  .header-story {
+    font-size: 1.3vw;
+  }
+  .header-search-icon-img {
+    width: 1.4vw;
+  }
+  .header-search-input-box-shown {
+    width: 18vw;
+    font-size: 1.3vw;
+    padding: 1.2vh 1vw;
+    border-radius: 2vw;
+  }
+  .header-link {
+    margin-left: 13vw;
+    font-size: 1.3vw;
+    width: 23vw;
+  }
+  .header-btn {
+    margin-left: 2vw;
+    font-size: 1.3vw;
+    width: 14vw;
+    border-left: 0.1vw solid #A0A0A0;
+  }
+  .header-btn-signup {
+    border-radius: 0.5vw;
   }
   .hero {
     height: 90vh;
@@ -1283,9 +1332,6 @@ a {
   }
   .popular-projects-row-card-update-currency {
     font-size: 0.9vw;
-  }
-  .cool-clever {
-    height: 60vh;
   }
   .cool-clever-content {
     font-size: 4vw;

@@ -492,6 +492,17 @@ a {
             }
         }
     }
+    &-btn {
+        padding: 1vh 0;
+        width: 20%;
+        @include center();
+        font-size: 1.1rem;
+        border-radius: 0.5vw;
+        background-color: $primary-color;
+        color: #fff;
+        margin: auto;
+        margin-bottom: 5vh;
+    }
 }
 
 //////////////////// 3. POPULAR PROJECTS ///////////////////////
@@ -503,10 +514,8 @@ a {
 //////////////////// 4. COOL CLEVER ///////////////////////
 
 .cool-clever {    
-    padding: 5vh 0vw;
     padding-top: 0;
     width: 92%;
-    height: 70vh;
     margin: auto;
     position: relative;
     overflow: hidden;
@@ -559,6 +568,7 @@ a {
         width: 100%;
         background-image: url(../images/back-bg.png);
         background-size: 100%;
+        background-repeat: no-repeat;
         @include center();
         flex-direction: column;
         justify-content: flex-start;
@@ -895,74 +905,74 @@ a {
   //////////////////// 8. FOOTER ///////////////////////
 
 
-//   responsive styling for more than 1400px
+//   responsive styling for more than 1600px
 
-@media only screen and (min-width: 1400px) and (max-width:1600px) {
+@media only screen and (min-width: 1600px) {
     //////////////////// 1. HEADER ///////////////////////
     //////////////////// 1. HEADER ///////////////////////
     //////////////////// 1. HEADER ///////////////////////
     .header {
         &-logo {
-            // padding-left: 3vw;
+            padding-left: 2vw;
             &-img {
-                // width: 15vw;
+                width: 14vw;
             }
         }
         &-explore {
-            margin-left: 6vw;
+            margin-left: 3vw;
             &-btn {
-                // font-size: 1.3vw;
+                font-size: 1.3vw;
             }
             &-icon-img {
-                // width: 1.2vw;
+                width: 1.2vw;
             }
             &-content {
                 &-row {
-                    // padding-top: 3vh;
+                    padding-top: 3vh;
                     &-column {
                         &-heading {
-                            // font-size: 1.6vw;
+                            font-size: 1.6vw;
                         }
                     }
                 }  
                 &-bottom-column {
                     &-heading {
-                        // font-size: 1.6vw;
+                        font-size: 1.6vw;
                     }
                     &-links {
-                        // font-size: 1.2vw;
+                        font-size: 1.2vw;
                     }
                 }              
             }
         }
         &-story {
-            // font-size: 1.3vw;
+            font-size: 1.3vw;
         }
         &-search-icon {
             &-img {
-                // width: 1.4vw;
+                width: 1.4vw;
             }
         }
         &-search-input {
             &-box-shown {
-                // width: 18vw;
-                // font-size: 1.3vw;
-                // padding: 1.2vh 1vw;
-                // border-radius: 2vw;
+                width: 18vw;
+                font-size: 1.3vw;
+                padding: 1.2vh 1vw;
+                border-radius: 2vw;
             }
         }
         &-link {
-            // margin-left: 13vw;
-            // font-size: 1.3vw;
-            // width: 23vw;
+            margin-left: 13vw;
+            font-size: 1.3vw;
+            width: 23vw;
         }
         &-btn {
-            // margin-left: 2vw;
-            // font-size: 1.3vw;
-            // width: 14vw;
-            // border-left: 0.1vw solid #A0A0A0;
+            margin-left: 2vw;
+            font-size: 1.3vw;
+            width: 14vw;
+            border-left: 0.1vw solid #A0A0A0;
             &-signup {
-                // border-radius: 0.5vw;
+                border-radius: 0.5vw;
             }
         }
     }
@@ -1044,7 +1054,7 @@ a {
     //////////////////// 4. COOL N CLEVER ///////////////////////
 
     .cool-clever {
-        height: 60vh;
+        // height: 60vh;
         &-content {
             font-size: 4vw;
         }
@@ -1175,6 +1185,4 @@ a {
     //////////////////// 8. FOOTER ///////////////////////
     //////////////////// 8. FOOTER ///////////////////////
 }
-
-
 

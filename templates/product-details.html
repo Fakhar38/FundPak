@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/product-details.css' %}">
     <!-- custom js -->
     <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/product-details.js' %}" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -201,7 +202,7 @@
             </div>
             <div class="product-section-1-column">
                 <div class="product-section-1-column-name">
-                    PAKFUND
+                    FUNDPAK
                 </div>
                 <div class="product-section-1-column-heading">
                     {{ this_prod.title }}
@@ -246,13 +247,41 @@
         <div class="product-section-2">
 
             <div class="product-section-2-menu">
-                <div class="product-section-2-menu-link product-section-2-menu-link-active">STORY</div>
-                <div class="product-section-2-menu-link">FAQ</div>
-                <div class="product-section-2-menu-link">CONTACT US</div>
+                <div class="product-section-2-menu-link product-section-2-menu-link-1 product-section-2-menu-link-active">STORY</div>
+                <div class="product-section-2-menu-link product-section-2-menu-link-2">FAQ</div>
+                <div class="product-section-2-menu-link product-section-2-menu-link-3">CONTACT US</div>
             </div>
 
             <div class="product-section-2-tab product-section-2-tab-1 product-section-2-tab-1-active">
                 {{ this_prod.description }}
+            </div>
+
+            <div class="product-section-2-tab product-section-2-tab-2 product-section-2-tab-2-active">
+                <div class="product-section-2-tab-heading">
+                    Contact Us
+                </div>
+                <div class="product-section-2-tab-description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500. 
+                    When an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div class="product-section-2-tab-contact">
+                    <div class="product-section-2-tab-contact-label">Email:</div>
+                    <a href="mailto:info@atlas1031.com" class="product-section-2-tab-contact-link">info@atlas1031.com</a>
+                </div>
+                <div class="product-section-2-tab-contact">
+                    <div class="product-section-2-tab-contact-label">Phone:</div>
+                    <a href="tel:1-800-227-1031" class="product-section-2-tab-contact-link">1-800-227-1031</a>
+                </div>
+                <div class="product-section-2-tab-contact">
+                    <div class="product-section-2-tab-contact-label">Fax:</div>
+                    <div class="product-section-2-tab-contact-link">1-850-201-6911</div>
+                </div>
+                <div class="product-section-2-tab-address">
+                    Naples Office
+                    <br>
+                    1908 Timarron Way, Naples, FL 34109
+                </div>
             </div>
 
         </div>
