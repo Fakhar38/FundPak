@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  Start a campaign | FundPak  </title>
     <!-- favicon goes here -->
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/campaign-form-2.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/campaign-form-3.css' %}">
     <!-- custom js -->
-    <script src="./js/app.js" defer></script>
+    <script src="{% static 'js/app.js' %}" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -35,7 +36,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="./index.html"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
@@ -43,21 +44,21 @@
         <div class="header-explore">
             <div class="header-explore-btn">
                 <a href="#" class="header-explore-text">Explore</a>
-                <div class="header-explore-icon"><img src="./images/icon-arrow-down.svg" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
             </div>
             <div class="header-explore-content">
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="./product-categories.html" class="header-explore-content-row-column-link"><img src="./images/drpdown1.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="./product-categories.html" class="header-explore-content-row-column-link"><img src="./images/drpdown2.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-3">
                         <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="./signup.html" class="header-explore-content-row-column-link"><img src="./images/drpdown3.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                 </div>
                 <div class="header-explore-content-bottom">
@@ -116,13 +117,13 @@
         <!-- header story starts here -->
 
         <div class="header-story">
-            <a href="./about-us.html" class="header-story-text">Our Story</a>
+            <a href="{% url 'core:about_us' %}" class="header-story-text">Our Story</a>
         </div>
 
         <!-- header seach input starts here -->
 
         <div class="header-search">
-            <div class="header-search-icon"><img src="./images/icon-search.svg" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
             <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
         </div>
 
@@ -130,8 +131,8 @@
 
         <div class="header-link">
 
-            <a href="./featured.html" class="header-link-investor">For Investors</a>
-            <a href="./start-a-campaign1.html" class="header-link-campaign">Start a Campaign</a>
+            <a href="{% url 'core:featured' %}" class="header-link-investor">For Investors</a>
+            <a href="#" class="header-link-campaign">Start a Campaign</a>
 
         </div>
 
@@ -139,28 +140,28 @@
         <!-- if there is no login then these buttons will be shown otherwise next div -->
 
         <!-- header buttons start here -->
-        <div class="header-btn">
-
-            <a href="./login.html" class="header-btn-login">
-                Log In
-            </a>
-
-            <a href="./signup.html" class="header-btn-signup">
-                Sign Up
-            </a>
-        </div>
+{#        <div class="header-btn">#}
+{##}
+{#            <a href="./login.html" class="header-btn-login">#}
+{#                Log In#}
+{#            </a>#}
+{##}
+{#            <a href="./signup.html" class="header-btn-signup">#}
+{#                Sign Up#}
+{#            </a>#}
+{#        </div>#}
         <!-- header buttons end here -->
 
         <!-- account logged in btns start here -->
 
-        <!-- <div class="header-loggedin-btns">
+        <div class="header-loggedin-btns">
             <div class="header-loggedin-btns-logout">
                 Logout
             </div>
             <div class="header-loggedin-btns-profile">
-                <img src="./images/profile-icon.svg" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
             </div>
-        </div> -->
+        </div>
 
         <!-- account logged in btns end here -->
 
@@ -232,98 +233,72 @@
                     Campaign / Basics
                 </div>
                 <div class="campaign-form-1-header-btns-container">
-                    <div class="campaign-form-1-header-save-btn">
-                        SAVE CAMPAIGN
-                    </div>
-                    <div class="campaign-form-1-header-review-btn">
-                        REVIEW & LAUNCH
-                    </div>
+{#                    <div class="campaign-form-1-header-save-btn">#}
+{#                        SAVE CAMPAIGN#}
+{#                    </div>#}
+{#                    <div class="campaign-form-1-header-review-btn">#}
+{#                        REVIEW & LAUNCH#}
+{#                    </div>#}
                 </div>                
             </div>
             <!-- campaign form header ends here -->
             <!-- campaign form description starts here -->
-            <div class="campaign-form-1-description">
-                <div class="campaign-form-1-description-heading">
-                    Pitch Video or Image
+            <form action="{% url 'core:campaign_2' prod_id=prod_id %}" method="post">
+                {% csrf_token %}
+                <div class="campaign-form-1-description">
+                    <div class="campaign-form-1-description-heading">
+                        Funding Type
+                    </div>
+                    <div class="campaign-form-1-description-details">
+                        Fundpak offers only one funding type: Flexible Funding (keep what you raise)
+                        Flexible funding is suitable for almost all the campaigns on Fundpak. With
+                        flexible funding, you keep all funds, even if you do not meet your goal!
+                    </div>
                 </div>
-                <div class="campaign-form-1-description-details">
-                    Add a video or image to appear on the top of your campaign page. 
-                    Campaigns with videos raise 2000% more than campaigns without videos. 
-                    Keep your video 2-3 minutes. Learn how to make a great video.
-                </div>
-            </div>
-            <!-- campaign form description ends here -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data campaign-form-1-image-data">
-                <div class="campaign-form-1-data-heading">
-                    Pitch Image <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    Upload an image to appear at the top of your campaign page.
-                    695 x 460 recommended resolution.
-                </div>
-                <input type="file" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
-                <div class="campaign-form-1-data-input-image-box">
-                    <img src="./images/upload-image-cam-icon.svg" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
-                    <p class="campaign-form-1-data-input-image-box-text">Upload an Image</p>
-                </div>
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    Story <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    Tell potential contributors more about your campaign. Provide details that will motivate people to contribute. A good pitch is compelling, informative, and easy to digest. Learn more.
-                </div>
-                <textarea class="campaign-form-1-data-input campaign-form-1-data-input-tagline" placeholder="My Campaign Story"></textarea>
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->   
-
-            <!-- --------------------------------------------- -->
-        
-            <!-- campaign form input starts here -->
-            <div class="campaign-form-1-data">
-                <div class="campaign-form-1-data-heading">
-                    FAQ <span class="campaign-form-1-data-heading-required">*</span>
-                </div>
-                <div class="campaign-form-1-data-description">
-                    The FAQ section should provide the most common details that backers are looking 
-                    for when evaluating your campaign. We will also provide common answers to questions 
-                    about crowdfunding and how Indiegogo works.
-                </div>
-                <div class="campaign-form-1-data-faq-question-heading">
-                    Question
-                </div>
-                <input type="text" name="" id="" class="campaign-form-1-data-faq-question-input">
-                <div class="campaign-form-1-data-faq-answer-heading">
-                    Answer
-                </div>
-                <input type="text" name="" id="" class="campaign-form-1-data-faq-answer-input">
-                <div class="campaign-form-1-data-faq-add-btn">
-                    <span class="campaign-form-1-data-faq-add-btn-icon">+</span>Add another Question
-                </div>
-            </div>
-            <!-- campaign form input ends here -->
-
-            <!-- --------------------------------------------- -->
+                <!-- campaign form description ends here -->
 
 
-            <div class="campaign-form-1-btn">
-                SAVE & CONTINUE
-            </div>
+                <!-- --------------------------------------------- -->
 
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Campaign Goal Amount <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        How much money would you like to raise for this campaign? A minimum goal of 50,000 in your currency is required. For help on choosing a goal amount, see this article. Make sure you keep in mind our fees and your reserved funds.
+                    </div>
+                    <input name="goalAmount" class="campaign-form-1-data-input" placeholder="Pkr 50,000" required>
+                </div>
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- --------------------------------------------- -->
+
+                <!-- campaign form input starts here -->
+                <div class="campaign-form-1-data">
+                    <div class="campaign-form-1-data-heading">
+                        Bank Information <span class="campaign-form-1-data-heading-required">*</span>
+                    </div>
+                    <div class="campaign-form-1-data-description">
+                        Fill out your bank account information. We’ll only be able to send you funds if you’ve raised more than 100 in your currency after fees. Learn more about payouts.
+                        Enter the number for the account into which you want us to deposit your funds.
+                    </div>
+                    <input name="iban" class="campaign-form-1-data-input" placeholder="IBAN *" required>
+                </div>
+
+
+                <!-- campaign form input ends here -->
+
+                <!-- --------------------------------------------- -->
+
+
+
+                <button type="submit" class="campaign-form-1-btn">
+                     LAUNCH
+                </button>
+            </form>
 
         </div>
 
@@ -371,7 +346,7 @@
             </div>
             <div class="footer-top-column-2">
                 <div class="footer-top-column-2-icon">
-                    <img src="./images/envelope.svg" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
                 </div>
                 <div class="footer-top-column-2-text">
                     Discover new and clever products in the pakfund newsletter.
@@ -389,11 +364,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-column footer-bottom-column-1">
-                <a href="#" class="footer-bottom-column-social"><img src="./images/fb.png" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/insta.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/linkedin.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/ttr.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/yt.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
             </div>
             <div class="footer-bottom-column footer-bottom-column-2">
                 <a href="#" class="footer-bottom-column-link">Terms of Use</a>

@@ -170,6 +170,8 @@ a {
   border-radius: 0.5vw;
   color: #575756;
   cursor: pointer;
+  background-color: #fff;
+  outline: none;
 }
 
 .product-section-1-column-btns-1-follow-img, .product-section-1-column-btns-1-back-img {
