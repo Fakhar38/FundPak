@@ -199,4 +199,105 @@
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+@media only screen and (min-width: 1600px) {
+  .signup-container-heading {
+    font-size: 2vw;
+  }
+  .signup-container-toprow {
+    font-size: 1.2vw;
+  }
+  .signup-container-input-row-label, .signup-container-input-row-input {
+    font-size: 1.2vw;
+  }
+  .signup-container-input-row-label::-webkit-input-placeholder, .signup-container-input-row-input::-webkit-input-placeholder {
+    font-size: 1.2vw;
+  }
+  .signup-container-input-row-label:-ms-input-placeholder, .signup-container-input-row-input:-ms-input-placeholder {
+    font-size: 1.2vw;
+  }
+  .signup-container-input-row-label::-ms-input-placeholder, .signup-container-input-row-input::-ms-input-placeholder {
+    font-size: 1.2vw;
+  }
+  .signup-container-input-row-label::placeholder, .signup-container-input-row-input::placeholder {
+    font-size: 1.2vw;
+  }
+  .signup-container-lastrow {
+    font-size: 1.2vw;
+  }
+  .signup-container-submit-btn {
+    font-size: 1.2vw;
+  }
+  .checkmark {
+    height: 1.5vw;
+    width: 1.5vw;
+  }
+  .signup-container-input-row-input-checkbox {
+    height: 1.5vw;
+    width: 1.5vw;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1180px) {
+  .signup {
+    padding: 10vh 25%;
+  }
+  .signup-container {
+    padding: 10vh 6%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+  .signup {
+    padding: 10vh 20%;
+  }
+  .signup-container {
+    padding: 10vh 4%;
+  }
+  .signup-container-toprow-logo {
+    width: 15vw;
+  }
+  .signup-container-input-row-checkboxlabel {
+    margin-left: 3vw;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 768px) {
+  .signup {
+    padding: 10vh 15%;
+  }
+  .signup-container {
+    padding: 10vh 3%;
+  }
+  .signup-container-toprow-logo {
+    width: 15vw;
+  }
+  .signup-container-input-row-checkboxlabel {
+    margin-left: 3vw;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .signup {
+    padding: 0;
+  }
+  .signup-container {
+    border: none;
+  }
+  .signup-container-toprow-logo {
+    width: 15vw;
+  }
+  .signup-container-input-row-checkboxlabel {
+    margin-left: 5vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .signup-container {
+    padding: 6vh 5%;
+  }
+  .signup-container-toprow-logo {
+    width: 20vw;
+  }
+}
 /*# sourceMappingURL=signup.css.map */

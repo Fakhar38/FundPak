@@ -171,6 +171,44 @@
 
     <!-- ----------------------------------------------------------- -->
 
+    <!-- header-mobile starts here -->
+
+    <div class="header-mobile">
+
+        <div class="header-mobile-logo">
+            <img src="{% static 'images/header-logo.svg' %}" alt="fundpak logo here" class="header-mobile-logo-img">
+        </div>
+
+        <div class="header-mobile-search">
+            <input type="text" class="header-mobile-search-input" placeholder="Search">
+            <img src="{% static 'images/icon-search.svg' %}" alt="" class="header-mobile-search-icon">        
+        </div>
+
+        <div class="header-mobile-hamburger">
+            <div class="header-mobile-hamburger-btn">
+                <div class="header-mobile-hamburger-btn-line"></div>
+                <div class="header-mobile-hamburger-btn-line"></div>
+                <div class="header-mobile-hamburger-btn-line"></div>
+            </div>
+
+            <div class="header-mobile-hamburger-menu">
+                <div class="header-mobile-hamburger-menu-link">Login</div>
+                <div class="header-mobile-hamburger-menu-link">Signup</div>  
+                <div class="header-mobile-hamburger-menu-link">Explore</div>
+                <div class="header-mobile-hamburger-menu-link">Most Favorites</div>
+                <div class="header-mobile-hamburger-menu-link">For Investors</div>
+                <div class="header-mobile-hamburger-menu-link">Start a Campaign</div>                              
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!-- header-mobile ends here -->
+    
+
+    <!-- ----------------------------------------------------------- -->
+
     <!-- ----------------------------------------------------------- -->
 
     <!-- campaign form starts here -->
@@ -225,7 +263,7 @@
         <!-- campaign form menu ends here -->
 
 
-        <form action="{% url 'core:campaign_1' %}" method="post">
+        <form action="{% url 'core:campaign_1' %}" method="post" class="campaign-form-container">
             {% csrf_token %}
             <!-- campaign form section 1 starts here -->
 
@@ -301,8 +339,15 @@
                         Upload a square image that represents your campaign.
                         640 x 640 recommended resolution, 220 x 220 minimum resolution.
                     </div>
+
                     <input type="file" name="file[]" id="files" class="campaign-form-1-data-input campaign-form-1-data-input-image" accept="image/*">
                     <input type="hidden" name="img_url" id="img_url">
+
+                    <!-- <div class="campaign-form-1-data-input-image-box-upload" style="background-image: url();background-size:cover">
+
+                    </div> -->
+                    <!-- <div class="loader"></div> -->
+
                     <div class="campaign-form-1-data-input-image-box">
                         <img src="{% static 'images/upload-image-cam-icon.svg' %}" alt="upload image icon" class="campaign-form-1-data-input-image-box-icon">
                         <p class="campaign-form-1-data-input-image-box-text">Upload an Image</p>
