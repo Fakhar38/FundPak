@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>  Product Categories | FundPak  </title>
     <!-- favicon goes here -->
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- custom css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/product-categories.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product-categories.css' %}">
     <!-- custom js -->
-    <script src="./js/app.js" defer></script>
-    <script src="./js/product-categories.js" defer></script>
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/product-categories.js' %}" defer></script>
     <!-- cdn for swiper js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -36,7 +37,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="./index.html"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="{% url 'core:index' %}"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
