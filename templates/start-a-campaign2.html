@@ -154,6 +154,44 @@
 
     <!-- header ends here -->
 
+        <!-- header-mobile starts here -->
+
+        <div class="header-mobile">
+
+            <div class="header-mobile-logo">
+                <img src="{% static 'images/header-logo.svg' %}" alt="fundpak logo here" class="header-mobile-logo-img">
+            </div>
+    
+            <div class="header-mobile-search">
+                <input type="text" class="header-mobile-search-input" placeholder="Search">
+                <img src="{% static 'images/icon-search.svg' %}" alt="" class="header-mobile-search-icon">        
+            </div>
+    
+            <div class="header-mobile-hamburger">
+                <div class="header-mobile-hamburger-btn">
+                    <div class="header-mobile-hamburger-btn-line"></div>
+                    <div class="header-mobile-hamburger-btn-line"></div>
+                    <div class="header-mobile-hamburger-btn-line"></div>
+                </div>
+    
+                <div class="header-mobile-hamburger-menu">
+                    <div class="header-mobile-hamburger-menu-link">Login</div>
+                    <div class="header-mobile-hamburger-menu-link">Signup</div>  
+                    <div class="header-mobile-hamburger-menu-link">Explore</div>
+                    <div class="header-mobile-hamburger-menu-link">Most Favorites</div>
+                    <div class="header-mobile-hamburger-menu-link">For Investors</div>
+                    <div class="header-mobile-hamburger-menu-link">Start a Campaign</div>                              
+                </div>
+            </div>
+            
+    
+        </div>
+    
+        <!-- header-mobile ends here -->
+        
+    
+        <!-- ----------------------------------------------------------- -->
+
     <!-- ----------------------------------------------------------- -->
 
     <!-- start campaign section starts here -->
@@ -180,21 +218,21 @@
                 Please choose the type of account that will be receiving your funds:
             </div>
             <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
-                <input type="radio" name="question1" id="start-campaign-form-answer1">
+                <input type="radio" class="start-campaign-form-2-text-question-answer-input-radio" name="question1" id="start-campaign-form-answer1">
                 <label for="start-campaign-form-answer1" class="start-campaign-form-2-text-question-answer-label">New startup</label>
             </div>
             <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
-                <input type="radio" name="question1" id="start-campaign-form-answer2">
+                <input type="radio" class="start-campaign-form-2-text-question-answer-input-radio" name="question1" id="start-campaign-form-answer2">
                 <label for="start-campaign-form-answer2" class="start-campaign-form-2-text-question-answer-label">Nonprofit / Charity</label>
             </div>
             <div class="start-campaign-form-2-text-question-answer start-campaign-form-2-text-question-1-answer">
-                <input type="radio" name="question1" id="start-campaign-form-answer3">
+                <input type="radio" class="start-campaign-form-2-text-question-answer-input-radio" name="question1" id="start-campaign-form-answer3">
                 <label for="start-campaign-form-answer3" class="start-campaign-form-2-text-question-answer-label">Extension of Existing Business</label>
             </div>
         </div>
         <div class="start-campaign-form-2-question">  
             <div class="start-campaign-form-2-text">
-                Who are you raising money for?
+                Where are you located?
             </div>      
             <div class="start-campaign-form-2-text-question start-campaign-form-2-text-question-2">
                 If you are raising funds as an individual, what is your city of legal residence? If you are raising funds for a business, where is the business located?

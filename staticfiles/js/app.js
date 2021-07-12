@@ -95,3 +95,30 @@ likeBtn1.forEach((e)=>{
         e.firstElementChild.classList.toggle("interested-section-row-card-toprow-favorite-icon-path-liked");        
     })
 })
+
+
+let hamburgerBtn = document.querySelector(".header-mobile-hamburger-btn");
+
+let hamburgerMenu = document.querySelector(".header-mobile-hamburger-menu");
+
+let headerMobile = document.querySelector(".header-mobile");
+
+hamburgerBtn.addEventListener("click",()=>{
+  headerMobile.classList.toggle("header-mobile-active");
+  hamburgerMenu.classList.toggle("header-mobile-hamburger-menu-active");  
+})
+
+
+let headerMobileSearchBtn = document.querySelector(".header-mobile-search-icon");
+let headerMobileSearchInput = document.querySelector(".header-mobile-search-input");
+
+document.body.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('header-mobile-search-icon')) {
+        headerMobileSearchInput.classList.remove("header-mobile-search-input-shown");
+    }
+});
+
+headerMobileSearchBtn.addEventListener("click",()=>{
+    headerMobileSearchInput.classList.add("header-mobile-search-input-shown");
+    headerMobileSearchInput.focus();
+})
