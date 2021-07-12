@@ -278,6 +278,9 @@
 }
 
 @media only screen and (max-width: 620px) {
+  html {
+    font-size: 14px;
+  }
   .signup {
     padding: 0;
   }
