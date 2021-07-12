@@ -218,7 +218,10 @@
                     <div class="product-section-1-column-location-text">{{ this_prod.location }}</div>
                 </div>
                 <div class="product-section-1-column-finance">
-                    <span class="product-section-1-column-finance-raised-amount">Rs {{ this_prod.moneyRaised }}</span> <span class="product-section-1-column-finance-amount-currency">PKR</span> by <span class="product-section-1-column-finance-numbers">{{ this_prod.totalBackers }}</span> backers
+                    <span class="product-section-1-column-finance-raised-amount">Target Amount: </span> <span class="product-section-1-column-finance-amount-currency">50,000 PKR</span>
+                </div>
+                <div class="product-section-1-column-finance">
+                    <span class="product-section-1-column-finance-raised-amount">Achieved: Rs {{ this_prod.moneyRaised }}</span> <span class="product-section-1-column-finance-amount-currency">PKR</span> by <span class="product-section-1-column-finance-numbers">{{ this_prod.totalBackers }}</span> backers
                 </div>
                 <div class="product-section-1-column-btns">
                     <div class="product-section-1-column-btns-1">
@@ -229,7 +232,7 @@
                         <form action="{% url 'core:create_checkout' %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="product-section-1-column-btns-1-back">
-                                <img src="{% static 'images/favorite.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
+                                <img src="{% static 'images/back.svg' %}" alt="favourite icon here" class="product-section-1-column-btns-1-follow-img">
 
 
                                     <input type="hidden" name="prod_id" value="{{ this_prod.id }}">
@@ -254,8 +257,7 @@
         <div class="product-section-2">
 
             <div class="product-section-2-menu">
-                <div class="product-section-2-menu-link product-section-2-menu-link-1 product-section-2-menu-link-active">STORY</div>
-                <div class="product-section-2-menu-link product-section-2-menu-link-2">FAQ</div>
+                <div class="product-section-2-menu-link product-section-2-menu-link-1 product-section-2-menu-link-active">STORY</div>                
                 <div class="product-section-2-menu-link product-section-2-menu-link-3">CONTACT US</div>
             </div>
 
