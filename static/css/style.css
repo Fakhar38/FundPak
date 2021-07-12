@@ -1432,16 +1432,16 @@ a {
     font-size: 1.2vw;
     height: 7vh;
   }
-  .footer-top-column-2-form-input::-webkit-input-placeholder-shown {
+  .footer-top-column-2-form-input::-webkit-input-placeholder {
     font-size: 1.1vw;
   }
-  .footer-top-column-2-form-input:-ms-input-placeholder-shown {
+  .footer-top-column-2-form-input:-ms-input-placeholder {
     font-size: 1.1vw;
   }
-  .footer-top-column-2-form-input::-ms-input-placeholder-shown {
+  .footer-top-column-2-form-input::-ms-input-placeholder {
     font-size: 1.1vw;
   }
-  .footer-top-column-2-form-input::placeholder-shown {
+  .footer-top-column-2-form-input::placeholder {
     font-size: 1.1vw;
   }
   .footer-top-column-2-form-checkbox-text {

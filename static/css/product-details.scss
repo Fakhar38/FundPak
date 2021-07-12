@@ -109,8 +109,7 @@ a {
                 align-self: flex-end;
                 &-1 {
                     @include center();
-                    justify-content: space-between;
-                    width: 50%;
+                    justify-content: flex-start;
                     &-follow , &-back {
                         @include center();
                         font-size: 1rem;
@@ -344,4 +343,584 @@ a {
             }
         }
     }
+}
+
+// styles for more than 1600px
+
+
+@media only screen and (min-width: 1600px) {
+    .product-section-1-column {
+        &-name {
+            font-size: 1vw;
+        }
+        &-heading {
+            font-size: 2vw;
+        }
+        &-description , &-category , &-location , &-finance {
+            font-size: 1.2vw;
+        }
+    }
+    .product-section-1-column-btns-1-follow, .product-section-1-column-btns-1-back {
+        font-size: 1.2vw;
+    }
+    .product-section-1-column-btns-1-follow-favorite-icon {
+        width: 2vw;
+        height: 3vh;
+    }
+    .product-section-2-menu-link {
+        font-size: 1.4vw;
+    }
+    .product-section-2-tab , .product-section-2-tab-description , .product-section-2-tab-contact , .product-section-2-tab-address {
+        font-size: 1.2vw;
+    }
+    .product-section-2-tab-heading , .interested-section-heading {
+        font-size: 1.8vw;
+    }
+    .interested-section {
+        &-row-card {
+            &-toprow {
+                font-size: 1.3vw;
+            }
+            &-name {
+                font-size: 1.3vw;
+            }
+            &-description {
+                font-size: 1.1vw;
+            }
+            &-category {
+                font-size: 1.1vw;
+            }
+            &-update {
+                &-amount {
+                    font-size: 1vw;
+                }
+                &-currency {
+                    font-size: 0.9vw;
+                }
+            }
+        }
+        &-btn {
+            font-size: 1.5vw;
+            width: 26%;
+        }
+    }
+}
+
+
+// RESPONSIVE STYLE FOR MORE THAN 1160 PX AND LESS THAN 1350 PX
+
+@media only screen and (min-width: 1160px) and  (max-width:1350px) {    
+    .interested-section {
+        padding-bottom: 6vh;
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                &-image {
+                    &-title {
+                        height: 25vh;
+                    }
+                }
+            }
+        }
+    }    
+    .header-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:980px) and (max-width: 1160px) {    
+    .interested-section {
+        &-row {
+            padding: 0 6vw;
+            &-card {
+                width: 25vw;
+            }
+        }
+        &-btn {
+            width: 27%;
+        }
+    }    
+    .header-mobile {
+        display: none;
+    }
+    .product-section-2-tab-1 {
+        width: 80%;
+    }
+}
+
+
+////////////////////////////////
+
+
+///////////////////////////////
+
+
+///////////////////////////////
+
+
+@media only screen and (min-width: 768px) and (max-width:980px) {
+
+    .product-section {
+        &-1 {
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 2vw;
+                }
+                &-btns-2-img {
+                    width: 3vw;
+                    &:first-child {
+                        width: 2vw;
+                    }
+                }
+            }
+        }
+    }
+    
+    .interested-section {
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 28vw;
+                &-image {
+                    &-title {
+                        height: 25vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 27%;
+        }
+    }
+
+    .product-section-2-tab-1 , .product-section-2-tab-description {
+        width: 80%;
+    }
+    
+}
+
+
+@media only screen and (min-width: 620px) and (max-width:768px) {  
+    
+    .product-section {
+        &-1 {
+            padding-top: 4vh;
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 2vw;
+                }
+                &-btns-2-img {
+                    width: 3vw;
+                    &:first-child {
+                        width: 2vw;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .interested-section {
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 40vw;
+                margin-left: 3vw;
+                &-image {
+                    &-title {
+                        height: 28vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 35%;
+        }
+    }
+
+    .product-section-2-tab-1 , .product-section-2-tab-description {
+        width: 95%;
+    }
+    
+}
+
+
+@media only screen and (max-width:620px) {
+
+
+    .product-section {
+        &-1 {
+            padding-top: 4vh;
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 3vw;
+                }
+                &-btns-2-img {
+                    width: 4vw;
+                    &:first-child {
+                        width: 2.8vw;
+                    }
+                }
+            }
+        }
+    }
+    
+    .interested-section {
+        padding-bottom: 0vh;
+        &-heading {
+            font-size: 1.6rem;
+            padding-bottom: 6vh;
+            text-align: center;
+        }
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 50vw;
+                margin: auto;
+                margin-bottom: 7vh;
+                &-image {
+                    &-title {
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 52%;
+            font-size: 1rem;
+            border-radius: 1vw;
+        }
+    }
+
+    .product-section-2-tab-1 , .product-section-2-tab-description {
+        width: 95%;
+    }
+
+    .product-section-2-menu {
+        display: none;
+    }
+
+    .product-section-2-tab-1 {
+        padding-bottom: 5vh;
+    }
+
+    .product-section-2-tab-2 {
+        padding-top: 2vh;
+        display: block !important;
+    }
+    
+}
+
+
+@media only screen and (max-width:500px) {  
+    
+    .product-section {
+        &-1 {
+            padding-top: 4vh;
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 3vw;
+                }
+                &-btns-2-img {
+                    width: 6vw;
+                    margin-left: 3vw;
+                    &:first-child {
+                        width: 3.8vw;
+                        margin-left: 0;
+                    }
+                }
+                &-btns {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &-1 {
+                        margin-bottom: 3vh;
+                        justify-content: space-between;
+                        width: 100%;
+                        &-follow {
+                            padding: 1vh 3vw;
+                            &-text {
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        &-back {
+                            padding: 1vh 3vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .interested-section {
+        padding-bottom: 0vh;
+        &-heading {
+            font-size: 1.6rem;
+            padding-bottom: 6vh;
+        }
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 62vw;
+                margin: auto;
+                margin-bottom: 7vh;
+                &-image {
+                    &-title {
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 65%;
+            font-size: 1rem;
+            border-radius: 1vw;
+        }
+    }    
+}
+
+@media only screen and (max-width:440px) { 
+    
+    .product-section {
+        &-1 {
+            padding-top: 4vh;
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 3vw;
+                }
+                &-btns-2-img {
+                    width: 6vw;
+                    margin-left: 3vw;
+                    &:first-child {
+                        width: 3.8vw;
+                        margin-left: 0;
+                    }
+                }
+                &-btns {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &-1 {
+                        margin-bottom: 3vh;
+                        justify-content: space-between;
+                        width: 100%;
+                        &-follow {
+                            padding: 1vh 3vw;
+                            &-text {
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        &-back {
+                            padding: 1vh 3vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .interested-section {
+        padding-bottom: 0vh;
+        &-heading {
+            font-size: 1.6rem;
+            padding-bottom: 6vh;
+        }
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 68vw;
+                margin: auto;
+                margin-bottom: 7vh;
+                &-image {
+                    &-title {
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 70%;
+            font-size: 1rem;
+            border-radius: 1vw;
+        }
+    }    
+}
+
+@media only screen and (max-width:380px) {   
+    
+    .product-section {
+        &-1 {
+            padding-top: 4vh;
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-heading {
+                    font-size: 1.5rem;
+                }
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 5vw;
+                }
+                &-btns-2-img {
+                    width: 6vw;
+                    margin-left: 3vw;
+                    &:first-child {
+                        width: 3.8vw;
+                        margin-left: 0;
+                    }
+                }
+                &-btns {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &-1 {
+                        margin-bottom: 3vh;
+                        justify-content: space-between;
+                        width: 100%;
+                        &-follow {
+                            padding: 1vh 3vw;
+                            &-text {
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        &-back {
+                            padding: 1vh 3vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .interested-section {
+        padding-bottom: 0vh;
+        &-heading {
+            font-size: 1.6rem;
+            padding-bottom: 6vh;
+        }
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 72vw;
+                &-image {
+                    &-title {
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 70%;
+            font-size: 1rem;
+            border-radius: 1vw;
+        }
+    }    
+}
+
+@media only screen and (max-width:320px) {  
+    
+    .product-section {
+        &-1 {
+            padding-top: 4vh;
+            flex-direction: column;
+            &-column {
+                width: 100%;
+                &-heading {
+                    font-size: 1.5rem;
+                }
+                &-thumbnail {
+                    width: 100%;
+                    margin-bottom: 5vh;
+                }
+                &-location-img {
+                    width: 5vw;
+                }
+                &-btns-2-img {
+                    width: 8vw;
+                    margin-left: 3vw;
+                    &:first-child {
+                        width: 4.8vw;
+                        margin-left: 0;
+                    }
+                }
+                &-btns {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &-1 {
+                        margin-bottom: 3vh;
+                        justify-content: space-between;
+                        width: 100%;
+                        &-follow {
+                            padding: 1vh 3vw;
+                            &-text {
+                                margin-left: 1.5vw;
+                            }
+                        }
+                        &-back {
+                            padding: 1vh 3vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .interested-section {
+        padding-bottom: 0vh;
+        &-heading {
+            font-size: 1.6rem;
+            padding-bottom: 6vh;
+        }
+        &-row {
+            padding: 0 4vw;
+            &-card {
+                width: 82vw;
+                &-image {
+                    &-title {
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+        &-btn {
+            width: 70%;
+            font-size: 1rem;
+            border-radius: 1vw;
+        }
+    }
+    
 }
