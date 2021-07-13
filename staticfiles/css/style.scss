@@ -919,6 +919,9 @@ a {
 //   responsive styling for more than 1600px
 
 @media only screen and (min-width: 1600px) {
+    html {
+        font-size: 1.2vw;
+    }
     //////////////////// 1. HEADER ///////////////////////
     //////////////////// 1. HEADER ///////////////////////
     //////////////////// 1. HEADER ///////////////////////
@@ -1200,7 +1203,7 @@ a {
 
 // RESPONSIVE STYLE FOR MORE THAN 1160 PX AND LESS THAN 1350 PX
 
-@media only screen and (min-width: 1160px) and  (max-width:1350px) {
+@media only screen and (min-width: 1160px) and  (max-width:1350px) {    
     .header {
         &-explore {
             &-content {
@@ -1258,6 +1261,9 @@ a {
 }
 
 @media only screen and (min-width:980px) and (max-width: 1160px) {
+    .header-loggedin-btns-profile-img {
+        width: 4rem;
+    }
     .header {
         &-explore {
             &-content {
@@ -1377,7 +1383,10 @@ a {
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width:980px) {
+@media only screen and (min-width: 768px) and (max-width:980px) {    
+    .header-loggedin-btns-profile-img {
+        width: 3.2rem;
+    }
     .header {
         height: 12vh;
         &-logo {
@@ -1569,6 +1578,12 @@ a {
 
 
 @media only screen and (min-width: 620px) and (max-width:768px) {
+    .header-loggedin-btns {
+        margin-left: auto;
+    }
+    .header-loggedin-btns-profile-img {
+        width: 3.2rem;
+    }
     .header {
         height: 12vh;
         &-logo {

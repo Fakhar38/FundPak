@@ -1,0 +1,500 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Profile | FundPak  </title>
+    <!-- favicon goes here -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <!-- custom js -->
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/profile.js' %}" defer></script>
+    <!-- cdn for swiper js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- cdn for jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- 1. header -->
+    <!-- 2. profile container -->
+    <!-- 3. footer -->
+
+    <!-- ------------------------------------------------------------- -->
+
+    <!-- header starts here -->
+
+    <div class="header">
+
+        <!-- header logo starts here -->
+
+        <div class="header-logo">
+            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
+        </div>
+
+        <!-- header explore starts here -->
+
+        <div class="header-explore">
+            <div class="header-explore-btn">
+                <a href="#" class="header-explore-text">Explore</a>
+                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+            </div>
+            <div class="header-explore-content">
+                <div class="header-explore-content-row">
+                    <div class="header-explore-content-row-column header-explore-content-row-column-1">
+                        <div class="header-explore-content-row-column-heading">Explore All Projects</div>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                    </div>
+                    <div class="header-explore-content-row-column header-explore-content-row-column-2">
+                        <div class="header-explore-content-row-column-heading">Most Favorites</div>
+                        <a href="{% url 'core:product_categories' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                    </div>
+                    <div class="header-explore-content-row-column header-explore-content-row-column-3">
+                        <div class="header-explore-content-row-column-heading">Join Us!</div>
+                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
+                    </div>
+                </div>
+                <div class="header-explore-content-bottom">
+                    <div class="header-explore-content-bottom-column">
+                        <div class="header-explore-content-bottom-column-heading">
+                            TECH & INNOVATION
+                        </div>
+                        <div class="header-explore-content-bottom-column-links">
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Audio</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Camera Gear</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Education</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Energy & Green Tech</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Fashion & Wearables</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Food & Beverages</a>
+                            </div>
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Health & Fitness</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Home</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Phones & Accessories</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Productivity</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Transportation</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Travel & Outdoors</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-explore-content-bottom-line">
+                        <div class="header-explore-content-bottom-line-verticle"></div>
+                    </div>
+                    <div class="header-explore-content-bottom-column">
+                        <div class="header-explore-content-bottom-column-heading">
+                            CREATIVE WORKS
+                        </div>
+                        <div class="header-explore-content-bottom-column-links">
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Art</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Comics</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Dance & Theater</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Film</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Music</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Photography</a>
+                            </div>
+                            <div class="header-explore-content-bottom-column-links-column">
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Podcasts, Blogs & Vlogs</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Tabletop Games</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Video Games</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Web Series & TV Shows</a>
+                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Writing & Publishing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- header story starts here -->
+
+        <div class="header-story">
+            <a href="{% url 'core:signup' %}" class="header-story-text">Our Story</a>
+        </div>
+
+        <!-- header seach input starts here -->
+
+        <div class="header-search">
+            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
+        </div>
+
+        <!-- header links start here -->
+
+        <div class="header-link">
+
+            <a href="{% url 'core:featured' %}" class="header-link-investor">For Investors</a>
+            <a href="{% url 'core:start_camp_not_logged' %}" class="header-link-campaign">Start a Campaign</a>
+
+        </div>
+
+
+        <!-- if there is no login then these buttons will be shown otherwise next div -->
+
+        <!-- header buttons start here -->
+        <div class="header-loggedin-btns">
+                <a href="{% url 'core:logout' %}" class="header-loggedin-btns-logout">
+                    Logout
+                </a>
+                <div class="header-loggedin-btns-profile">
+                    <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                </div>
+            </div>
+        <!-- header buttons end here -->
+
+        <!-- account logged in btns start here -->
+
+        <!-- <div class="header-loggedin-btns">
+            <div class="header-loggedin-btns-logout">
+                Logout
+            </div>
+            <div class="header-loggedin-btns-profile">
+                <img src="./images/profile-icon.svg" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+            </div>
+        </div> -->
+
+        <!-- account logged in btns end here -->
+
+    </div>
+
+    <!-- header ends here -->
+
+    <!-- ----------------------------------------------------------- -->
+
+    <!-- profile section starts here -->
+
+    <div class="profile-section">
+        <div class="profile-section-menu">
+            <div class="profile-section-menu-dp">
+                <img src="{% static 'images/profile-icon.svg' %}" alt="avatar" class="profile-section-menu-dp-img">
+                <div class="profile-section-menu-dp-upload-container">                    
+                    <div class="profile-section-menu-dp-upload-container-bg">
+                        <div class="loader" style="opacity: 0"></div>
+                        <img src="{% static 'images/upload-dp.svg' %}" alt="" class="profile-section-menu-dp-upload-container-bg-icon">
+                    </div>
+                    <input onchange="uploadImage()" type="file" name="file[]" id="" accept="image/*" class="profile-section-menu-dp-upload-container-input">
+                </div>
+            </div>
+            <div class="profile-section-menu-name">
+                <span class="profile-section-menu-name-first">First</span> <span class="profile-section-menu-name-second">Second</span>
+            </div>
+            <div class="profile-section-menu-description">
+                fakharmahmood38@gmail.com
+            </div>
+            <div class="profile-section-menu-campaigns">
+                <div class="profile-section-menu-campaigns-numbers">0</div>
+                <div class="profile-section-menu-campaigns-text">Compaigns</div>
+            </div>
+            <div class="profile-section-menu-contributions">
+                <div class="profile-section-menu-contributions-numbers">0</div>
+                <div class="profile-section-menu-contributions-text">Contributions</div>
+            </div>
+            <a href="{% static 'campaign-form-1.html' %}" class="profile-section-menu-btn">
+                Start a New Campaign
+            </a>
+        </div>
+
+        <div class="profile-section-details">
+            <div class="profile-section-details-menu">
+                <div class="profile-section-details-menu-link profile-section-details-menu-link-1 profile-section-details-menu-link-active">Campaigns</div>
+                <div class="profile-section-details-menu-link profile-section-details-menu-link-2">Contributations</div>
+            </div>
+            <!-- details about campaigns starts here -->
+            <div class="profile-section-details-campaign">
+                <div class="profile-section-details-campaign-heading">
+                    Campaigns I'm On
+                </div>
+
+                <!-- campaign card starts here -->
+                <div class="profile-section-details-campaign-card">
+                    <div class="profile-section-details-campaign-card-thumbnail">
+                        <img src="{% static 'images/campaign-thumbnail.png' %}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
+                    </div>
+                    <div class="profile-section-details-campaign-card-text">
+                        <div class="profile-section-details-campaign-card-text-title">
+                            My Campaign Title
+                        </div>
+                        <div class="profile-section-details-campaign-card-text-name">
+                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>
+                        </div>
+                    </div>
+                    <div class="profile-section-details-campaign-card-links">
+                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
+                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- campaign card ends here -->
+
+{#                <!-- campaign card starts here -->#}
+{#                <div class="profile-section-details-campaign-card">#}
+{#                    <div class="profile-section-details-campaign-card-thumbnail">#}
+{#                        <img src="./images/campaign-thumbnail.png" alt="" class="profile-section-details-campaign-card-thumbnail-img">#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-text">#}
+{#                        <div class="profile-section-details-campaign-card-text-title">#}
+{#                            My Campaign Title#}
+{#                        </div>#}
+{#                        <div class="profile-section-details-campaign-card-text-name">#}
+{#                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-links">#}
+{#                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>#}
+{#                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- campaign card ends here -->#}
+{##}
+{#                <!-- campaign card starts here -->#}
+{#                <div class="profile-section-details-campaign-card">#}
+{#                    <div class="profile-section-details-campaign-card-thumbnail">#}
+{#                        <img src="./images/campaign-thumbnail.png" alt="" class="profile-section-details-campaign-card-thumbnail-img">#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-text">#}
+{#                        <div class="profile-section-details-campaign-card-text-title">#}
+{#                            My Campaign Title#}
+{#                        </div>#}
+{#                        <div class="profile-section-details-campaign-card-text-name">#}
+{#                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-links">#}
+{#                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>#}
+{#                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- campaign card ends here -->#}
+{##}
+{#                <!-- campaign card starts here -->#}
+{#                <div class="profile-section-details-campaign-card">#}
+{#                    <div class="profile-section-details-campaign-card-thumbnail">#}
+{#                        <img src="./images/campaign-thumbnail.png" alt="" class="profile-section-details-campaign-card-thumbnail-img">#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-text">#}
+{#                        <div class="profile-section-details-campaign-card-text-title">#}
+{#                            My Campaign Title#}
+{#                        </div>#}
+{#                        <div class="profile-section-details-campaign-card-text-name">#}
+{#                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-links">#}
+{#                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>#}
+{#                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- campaign card ends here -->#}
+{##}
+{#                <!-- campaign card starts here -->#}
+{#                <div class="profile-section-details-campaign-card">#}
+{#                    <div class="profile-section-details-campaign-card-thumbnail">#}
+{#                        <img src="./images/campaign-thumbnail.png" alt="" class="profile-section-details-campaign-card-thumbnail-img">#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-text">#}
+{#                        <div class="profile-section-details-campaign-card-text-title">#}
+{#                            My Campaign Title#}
+{#                        </div>#}
+{#                        <div class="profile-section-details-campaign-card-text-name">#}
+{#                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-links">#}
+{#                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>#}
+{#                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- campaign card ends here -->#}
+{##}
+{#                <!-- campaign card starts here -->#}
+{#                <div class="profile-section-details-campaign-card">#}
+{#                    <div class="profile-section-details-campaign-card-thumbnail">#}
+{#                        <img src="./images/campaign-thumbnail.png" alt="" class="profile-section-details-campaign-card-thumbnail-img">#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-text">#}
+{#                        <div class="profile-section-details-campaign-card-text-title">#}
+{#                            My Campaign Title#}
+{#                        </div>#}
+{#                        <div class="profile-section-details-campaign-card-text-name">#}
+{#                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="profile-section-details-campaign-card-links">#}
+{#                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>#}
+{#                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+{#                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- campaign card ends here -->#}
+
+            </div>
+            <!-- details about campaigns ends here -->
+
+
+            <!-- details about contributions starts here -->
+            <div class="profile-section-details-contributions">
+                <div class="profile-section-details-contributions-heading">
+                    My Contributions
+                </div>
+            </div>
+            <!-- details about contributions starts here -->
+        </div>
+    </div>
+
+
+    <!-- profile section ends here -->
+    
+    <!-- footer starts here -->
+
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-top-column-1">
+                <div class="footer-top-column-1-column">
+                    <div class="footer-top-column-1-column-heading">
+                        EXPLORE
+                    </div>
+                    <a href="#" class="footer-top-column-1-column-link">What We Do</a>
+                    <a href="#" class="footer-top-column-1-column-link">Funding</a>
+                    <a href="#" class="footer-top-column-1-column-link">GoFundMe</a>
+                </div>
+                <div class="footer-top-column-1-column">
+                    <div class="footer-top-column-1-column-heading">
+                        ABOUT
+                    </div>
+                    <a href="#" class="footer-top-column-1-column-link">About Us</a>
+                    <a href="#" class="footer-top-column-1-column-link">Trust & Safety</a>
+                    <a href="#" class="footer-top-column-1-column-link">Help & Support</a>
+                    <a href="#" class="footer-top-column-1-column-link">Contact</a>
+                </div>
+                <div class="footer-top-column-1-column">
+                    <div class="footer-top-column-1-column-heading">
+                        ENTREPRENEURS
+                    </div>
+                    <a href="#" class="footer-top-column-1-column-link">How It Works</a>
+                    <a href="#" class="footer-top-column-1-column-link">Education Center</a>
+                    <a href="#" class="footer-top-column-1-column-link">Experts Directory</a>
+                    <a href="#" class="footer-top-column-1-column-link">Fees</a>
+                    <a href="#" class="footer-top-column-1-column-link">Enterprise</a>
+                </div>
+            </div>
+            <div class="footer-top-column-2">
+                <div class="footer-top-column-2-icon">
+                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                </div>
+                <div class="footer-top-column-2-text">
+                    Discover new and clever products in the pakfund newsletter.
+                </div>
+                <form class="footer-top-column-2-form">
+                    <input type="text" class="footer-top-column-2-form-input" placeholder="Your email address">
+                    <div class="footer-top-column-2-form-inner">
+                        <input type="checkbox" name="" id="subscribe" class="footer-top-column-2-form-checkbox">
+                        <span class="footer-checkmark"></span>
+                        <label for="subscribe" class="footer-top-column-2-form-checkbox-text">I agree to the Terms of Use and have read and understand the Privacy Policy.</label>
+                    </div>                    
+                    <button type="submit" class="footer-top-column-2-form-btn">SIGN UP NOW</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           <div class="footer-bottom-column footer-bottom-column-1">
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+            </div>
+            <div class="footer-bottom-column footer-bottom-column-2">
+                <a href="#" class="footer-bottom-column-link">Terms of Use</a>
+                <a href="#" class="footer-bottom-column-link">Privacy Policy</a>
+                <a href="#" class="footer-bottom-column-link">Cookie Policy</a>
+                <div class="footer-bottom-column-link">© 2021 fundPAK, Inc. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer ends here -->
+    
+</body>
+<!-- Adding firebase js -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+<script>
+    var firebaseConfig = {
+          apiKey: "AIzaSyBQwup5w7OoBcSrn8_ggVivckCJ2TSN3AQ",
+          authDomain: "fundpak-531e2.firebaseapp.com",
+          databaseURL: "https://fundpak-531e2.firebaseio.com",
+          projectId: "fundpak-531e2",
+          storageBucket: "fundpak-531e2.appspot.com",
+          messagingSenderId: "588369785043",
+          appId: "1:588369785043:web:b0a25f4da16f657302e426",
+          measurementId: "G-1NZH718QKV",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function uploadImage(){
+        console.log("In uploadimage fundtion")
+        let loader = document.querySelector(".loader");
+        let image = document.querySelector(".profile-section-menu-dp-upload-container-bg-icon");
+        loader.style.opacity = "1";
+        var storage = firebase.storage();
+        var file = document.getElementById('files').files[0];
+        var storageRef = storage.ref();
+        var thisRef = storageRef.child("user_image").child(file.name).put(file);
+
+        thisRef.on('state_changed', function (snapshot){
+            console.log("file uploaded!");
+        },
+        function (error){
+
+        },
+        function() {
+            storage.ref().child("user_image").child(file.name).getDownloadURL().then((url) => {
+                console.log("Got Url")
+                console.log(url);
+                image.src = url;
+                loader.style.opacity = "0";
+            });
+        }
+        )
+    }
+
+</script>
+</html>
