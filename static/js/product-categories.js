@@ -1,4 +1,4 @@
-let categoryBtn = document.querySelectorAll(".product-categories-showroom-menu-category-heading");
+let categoryBtn = document.querySelectorAll(".product-categories-showroom-menu-category-heading-1");
 
 categoryBtn.forEach((e)=>{
     e.addEventListener("click",()=>{
