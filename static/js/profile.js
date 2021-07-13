@@ -38,10 +38,12 @@ let avatarBtn = document.querySelector(".profile-section-menu-dp-img");
 
 let uploadInput = document.querySelector(".profile-section-menu-dp-upload-container");
 
+let profileContainer = document.querySelector(".profile-section-menu-dp");
+
 avatarBtn.addEventListener("mouseover",()=>{
     uploadInput.style.display = "flex";
 })
 
-avatarBtn.addEventListener("mouseout",()=>{
+profileContainer.addEventListener("mouseleave",()=>{
     uploadInput.style.display = "none";
 })
