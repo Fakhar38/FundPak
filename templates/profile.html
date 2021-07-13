@@ -146,7 +146,7 @@
                     Logout
                 </a>
                 <div class="header-loggedin-btns-profile">
-                    <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    <img src="{{ user.image_url }}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
                 </div>
             </div>
         <!-- header buttons end here -->
@@ -213,13 +213,13 @@
     <div class="profile-section">
         <div class="profile-section-menu">
             <div class="profile-section-menu-dp">
-                <img src="{% static 'images/profile-icon.svg' %}" alt="avatar" class="profile-section-menu-dp-img">
+                <img src="{{ user.image_url }}" alt="avatar" class="profile-section-menu-dp-img">
                 <div class="profile-section-menu-dp-upload-container">                    
                     <div class="profile-section-menu-dp-upload-container-bg">
                         <div class="loader" style="opacity: 0"></div>
                         <img src="{% static 'images/upload-dp.svg' %}" alt="" class="profile-section-menu-dp-upload-container-bg-icon">
                     </div>
-                    <input onchange="uploadImage()" type="file" name="file[]" id="" accept="image/*" class="profile-section-menu-dp-upload-container-input">
+                    <input onchange="uploadImage()" type="file" name="file[]" id="files" accept="image/*" class="profile-section-menu-dp-upload-container-input">
                 </div>
             </div>
             <div class="profile-section-menu-name">
@@ -513,7 +513,8 @@
     function uploadImage(){
         console.log("In uploadimage fundtion")
         let loader = document.querySelector(".loader");
-        let image = document.querySelector(".profile-section-menu-dp-upload-container-bg-icon");
+        let image = document.querySelector(".profile-section-menu-dp-img");
+        let header_image = document.querySelector(".header-loggedin-btns-profile-img");
         loader.style.opacity = "1";
         var storage = firebase.storage();
         var file = document.getElementById('files').files[0];
@@ -531,7 +532,16 @@
                 console.log("Got Url")
                 console.log(url);
                 image.src = url;
+                header_image.src = url;
                 loader.style.opacity = "0";
+                {#console.log({{ user.id }})#}
+                //let user_id = {{ user.id }};
+                //let update_url = {{ update_url }};
+                $.ajax({
+                    url: '/core/update_profile/',
+                    method: 'POST',
+                    data: {'img_url': url},
+                })
             });
         }
         )

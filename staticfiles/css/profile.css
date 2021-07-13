@@ -73,21 +73,21 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  width: 30%;
   position: relative;
   margin-bottom: 2vh;
 }
 
 .profile-section-menu-dp-img {
-  width: 30%;
+  width: 100%;
   height: 22vh;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .profile-section-menu-dp-upload-container {
-  width: 30%;
-  left: 35%;
+  width: 100%;
+  left: 0%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.45);
   height: 100%;
@@ -115,6 +115,20 @@ a {
 .profile-section-menu-dp-upload-container-bg {
   position: absolute;
   z-index: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-section-menu-dp-upload-container-bg-icon {
+  position: absolute;
 }
 
 .profile-section-menu-name {

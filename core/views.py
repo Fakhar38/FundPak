@@ -53,6 +53,24 @@ def get_all_products():
     return prods_list
 
 
+def get_prods_by_cat(cat):
+    all_prods = get_all_products()
+    this_prods = []
+    for each in all_prods:
+        if cat.upper() in each['category'].upper():
+            this_prods.append(each)
+    return this_prods
+
+
+def get_prods_by_word(word):
+    all_prods = get_all_products()
+    this_prods = []
+    for each in all_prods:
+        if word.upper() in each['title'].upper():
+            this_prods.append(each)
+    return this_prods
+
+
 def get_my_campaigns(prods_list, user_id):
     my_campaigns = []
     for prod in prods_list:
@@ -91,8 +109,11 @@ def index(request):
         user_id = None
     if user_id:
         is_logged = True
+        user = db.collection("users").document(user_id).get().to_dict()
+        user_image = user['image_url']
     else:
         is_logged = False
+        user_image = None
 
     # Getting products
     all_prods = get_all_products()
@@ -101,7 +122,9 @@ def index(request):
 
     context = {
         'is_logged': is_logged,
-        "all_prods": all_prods
+        "all_prods": all_prods,
+        'user_image': user_image
+
     }
     return render(request, 'index.html', context)
 
@@ -109,12 +132,16 @@ def index(request):
 def product_detail(request, prod_id):
     try:
         user_id = request.session['uid']
+        print(f"User id: {user_id}")
     except KeyError:
         user_id = None
     if user_id:
         is_logged = True
+        user = db.collection("users").document(user_id).get().to_dict()
+        user_image = user['image_url']
     else:
         is_logged = False
+        user_image = None
 
     all_prods = get_all_products()
     this_prod = ''
@@ -132,13 +159,99 @@ def product_detail(request, prod_id):
     context = {
         'is_logged': is_logged,
         "this_prod": this_prod,
+        'user_image': user_image,
         "extra_prods": extra_prods_to_show
     }
     return render(request, 'product-details.html', context)
 
 
 def product_categories(request):
-    return render(request, 'product-categories.html')
+    try:
+        user_id = request.session['uid']
+        print(f"User id: {user_id}")
+    except KeyError:
+        user_id = None
+    if user_id:
+        is_logged = True
+        user = db.collection("users").document(user_id).get().to_dict()
+        user_image = user['image_url']
+    else:
+        is_logged = False
+        user_image = None
+
+    all_prods = get_all_products()
+    context = {
+        'all_prods': all_prods,
+        'is_logged': is_logged,
+        "user_image": user_image,
+    }
+
+    return render(request, 'product-categories.html', context)
+
+
+def prod_cat_search(request, category):
+    try:
+        user_id = request.session['uid']
+        print(f"User id: {user_id}")
+    except KeyError:
+        user_id = None
+    if user_id:
+        is_logged = True
+        user = db.collection("users").document(user_id).get().to_dict()
+        user_image = user['image_url']
+    else:
+        is_logged = False
+        user_image = None
+
+    cats = category.split("&")
+    all_prods_summed = []
+    for cat in cats:
+        all_prods = get_prods_by_cat(cat)
+        for prod in all_prods:
+            all_prods_summed.append(prod)
+
+    context = {
+        'all_prods': all_prods_summed,
+        'is_logged': is_logged,
+        "user_image": user_image,
+    }
+
+    return render(request, 'product-categories.html', context)
+
+
+def prod_phrase_search(request):
+    try:
+        user_id = request.session['uid']
+        print(f"User id: {user_id}")
+    except KeyError:
+        user_id = None
+    if user_id:
+        is_logged = True
+        user = db.collection("users").document(user_id).get().to_dict()
+        user_image = user['image_url']
+    else:
+        is_logged = False
+        user_image = None
+
+    phrase = request.POST.get("phrase")
+    words = phrase.split(" ")
+    all_prods_summed = []
+    once_added = []
+    for word in words:
+        all_prods = get_prods_by_word(word)
+        for prod in all_prods:
+            if prod['title'] not in once_added:
+                once_added.append(prod['title'])
+                all_prods_summed.append(prod)
+
+
+    context = {
+        'all_prods': all_prods_summed,
+        'is_logged': is_logged,
+        "user_image": user_image,
+    }
+
+    return render(request, 'product-categories.html', context)
 
 
 def featured(request):
@@ -217,7 +330,7 @@ def signup_view(request):
                 'email': email,
                 'userId': user_id,
                 "username": f"{first_name} {last_name}",
-                "image_url": ''
+                "image_url": 'https://firebasestorage.googleapis.com/v0/b/fundpak-531e2.appspot.com/o/user_image%2F23P4V4uBbWamCeLw3kUUtcrW47y1.jpg?alt=media&token=0adf4076-8906-414a-a74a-d0f80dc7b6be',
             }
             try:
                 db.collection('users').document(user_id).set(data)
@@ -488,6 +601,7 @@ def profile(request):
         all_prods = get_all_products()
         my_campaigns = get_my_campaigns(all_prods, user_id)
         my_contributions = get_my_contributions(user_id)
+        profile_update_url = request.build_absolute_uri(reverse('core:update_profile_pic'))
 
         context = {
             'user': user,
@@ -495,5 +609,16 @@ def profile(request):
             "contributions": my_contributions,
             "campaign_count": len(my_campaigns),
             "contrib_count": len(my_contributions),
+            'update_url': profile_update_url,
         }
         return render(request, 'profile.html', context)
+
+
+@csrf_exempt
+def update_profile_pic(request):
+    print(f"update post: {request.POST}")
+    img_url = request.POST.get("img_url")
+    user_id = request.session['uid']
+
+    db.collection("users").document(user_id).update({'image_url': img_url})
+    return HttpResponse(200)

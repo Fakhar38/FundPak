@@ -164,7 +164,11 @@
                     Logout
                 </a>
                 <div class="header-loggedin-btns-profile">
-                    <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    {% if user_image %}
+                        <img src="{{ user_image }}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    {% else %}
+                        <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    {% endif %}
                 </div>
             </div>
         {% else %}
