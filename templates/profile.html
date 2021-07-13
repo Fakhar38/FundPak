@@ -185,17 +185,17 @@
                 </div>
             </div>
             <div class="profile-section-menu-name">
-                <span class="profile-section-menu-name-first">First</span> <span class="profile-section-menu-name-second">Second</span>
+                <span class="profile-section-menu-name-first">{{ user.username }}</span>
             </div>
             <div class="profile-section-menu-description">
-                fakharmahmood38@gmail.com
+                {{ user.email }}
             </div>
             <div class="profile-section-menu-campaigns">
-                <div class="profile-section-menu-campaigns-numbers">0</div>
-                <div class="profile-section-menu-campaigns-text">Compaigns</div>
+                <div class="profile-section-menu-campaigns-numbers">{{ campaign_count }}</div>
+                <div class="profile-section-menu-campaigns-text">Campaigns</div>
             </div>
             <div class="profile-section-menu-contributions">
-                <div class="profile-section-menu-contributions-numbers">0</div>
+                <div class="profile-section-menu-contributions-numbers">{{ contrib_count }}</div>
                 <div class="profile-section-menu-contributions-text">Contributions</div>
             </div>
             <a href="{% static 'campaign-form-1.html' %}" class="profile-section-menu-btn">
@@ -214,30 +214,33 @@
                     Campaigns I'm On
                 </div>
 
-                <!-- campaign card starts here -->
-                <div class="profile-section-details-campaign-card">
-                    <div class="profile-section-details-campaign-card-thumbnail">
-                        <img src="{% static 'images/campaign-thumbnail.png' %}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
-                    </div>
-                    <div class="profile-section-details-campaign-card-text">
-                        <div class="profile-section-details-campaign-card-text-title">
-                            My Campaign Title
+
+                {% for campaign in campaigns %}
+                    <!-- campaign card starts here -->
+                    <div class="profile-section-details-campaign-card">
+                        <div class="profile-section-details-campaign-card-thumbnail">
+                            <img src="{{ campaign.image }}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
                         </div>
-                        <div class="profile-section-details-campaign-card-text-name">
-                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>
+                        <div class="profile-section-details-campaign-card-text">
+                            <div class="profile-section-details-campaign-card-text-title">
+                                {{ campaign.title }}
+                            </div>
+                            <div class="profile-section-details-campaign-card-text-name">
+                                By <span class="profile-section-details-campaign-card-text-name-value">{{ user.username }}</span>
+                            </div>
+                        </div>
+                        <div class="profile-section-details-campaign-card-links">
+                            <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
+                                <a href="{% url 'core:product_detail' prod_id=campaign.id %}" class="profile-section-details-campaign-card-links-btn-content-link">View Details</a>
+{#                                <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                                <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+                                <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="profile-section-details-campaign-card-links">
-                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
-                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- campaign card ends here -->
+                    <!-- campaign card ends here -->
+                {% endfor %}
 
 {#                <!-- campaign card starts here -->#}
 {#                <div class="profile-section-details-campaign-card">#}

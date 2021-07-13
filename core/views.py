@@ -53,6 +53,36 @@ def get_all_products():
     return prods_list
 
 
+def get_my_campaigns(prods_list, user_id):
+    my_campaigns = []
+    for prod in prods_list:
+        if prod['userId'] == user_id:
+            my_campaigns.append(prod)
+    return my_campaigns
+
+
+def get_my_contributions(user_id):
+    my_contribs = []
+    all_contribs = db.collection("orders").get()
+    all_contribs = [x.to_dict() for x in all_contribs]
+    for contrib in all_contribs:
+        if contrib['userId'] == user_id:
+            my_contribs.append(contrib)
+
+    all_prods = get_all_products()
+    my_contribs_with_details = []
+    for my_contrib in my_contribs:
+        prod_id = my_contrib['productId']
+        for prod in all_prods:
+            if prod['id'] == prod_id:
+                prod['orderId'] = my_contrib['orderId']
+                prod['time'] = my_contrib['time']
+                my_contribs_with_details.append(prod)
+                break
+
+    return my_contribs_with_details
+
+
 def index(request):
     try:
         user_id = request.session['uid']
@@ -448,4 +478,22 @@ def start_campaign_logged(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    try:
+        user_id = request.session['uid']
+    except KeyError:
+        return HttpResponseRedirect(reverse("core:login"))
+    else:
+        user = db.collection('users').document(user_id).get().to_dict()
+
+        all_prods = get_all_products()
+        my_campaigns = get_my_campaigns(all_prods, user_id)
+        my_contributions = get_my_contributions(user_id)
+
+        context = {
+            'user': user,
+            'campaigns': my_campaigns,
+            "contributions": my_contributions,
+            "campaign_count": len(my_campaigns),
+            "contrib_count": len(my_contributions),
+        }
+        return render(request, 'profile.html', context)
