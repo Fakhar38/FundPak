@@ -173,7 +173,7 @@ a {
                     color: $primary-color;
                     font-size: 1rem;
                     margin-bottom: 1vh;
-                    &-favorite {
+                    &-favorite {                        
                         @include center();
                         width: 15%;
                         &-icon {
@@ -190,6 +190,7 @@ a {
                                 }
                             }
                         }
+                        display: none;
                     }
                 }
                 &-name , &-description {
@@ -787,4 +788,13 @@ a {
         }
     }
     
+}
+
+@media only screen and (max-width:980px) {
+    .product-categories-showroom-menu {
+        display: none;
+    }
+    .product-categories-showroom-container-search-icon {
+        display: none;
+    }
 }

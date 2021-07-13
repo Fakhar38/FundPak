@@ -191,6 +191,7 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  display: none;
 }
 
 .product-section-1-column-btns-1-follow-active {
@@ -426,6 +427,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 15%;
+  display: none;
 }
 
 .interested-section-row-card-toprow-favorite-icon {

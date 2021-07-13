@@ -629,6 +629,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 15%;
+  display: none;
 }
 
 .popular-projects-row-card-toprow-favorite-icon {
