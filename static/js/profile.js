@@ -47,3 +47,23 @@ avatarBtn.addEventListener("mouseover",()=>{
 profileContainer.addEventListener("mouseleave",()=>{
     uploadInput.style.display = "none";
 })
+
+let stopBtn = document.querySelector(".campaign-stop-btn");
+
+let popup = document.querySelector(".campaign-stop-popup");
+
+let crossBtn = document.querySelector(".cross-popup-icon");
+
+let noBtn = document.querySelector(".campaign-stop-popup-row-btn-no");
+
+stopBtn.addEventListener("click",()=>{
+    popup.style.display = "flex";
+})
+
+crossBtn.addEventListener("click",()=>{
+    popup.style.display = "none";
+})
+
+noBtn.addEventListener("click",()=>{
+    popup.style.display = "none";
+})

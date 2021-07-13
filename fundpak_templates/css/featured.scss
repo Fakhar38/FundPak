@@ -29,317 +29,7 @@ a {
 
 //////////////////////////////////////////////////////
 
-// 1. header
-// 2. hero
-// 3. popular projects
-// 4. cool and clever 
-// 5. back the project 
-// 6. categories 
-// 7. clever things 
-// 8. footer 
 
-//////////////////////////////////////////////////////
-
-//////////////////// 1. HEADER ///////////////////////
-//////////////////// 1. HEADER ///////////////////////
-//////////////////// 1. HEADER ///////////////////////
-
-.header {
-    width: 100%;
-    height: 14vh;
-    background-color: #ffffff;
-    display: flex;  
-    align-items: center;  
-    font-size: 0.9rem;
-    &-logo {
-        padding-left: 1.3rem;
-        display: flex;
-        align-items: center;
-        &-img {
-            width: 10.5rem;
-        }
-    }
-    &-explore {               
-        margin-left: 2.6rem;
-        padding: 0 1rem;
-        padding-right: 0;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.5s ease-in-out;
-        &-icon {
-            margin-left: 5%;
-            &-img {
-                width: 0.8rem;
-                cursor: pointer;
-            }
-        }
-        &-content {
-            position: absolute;
-            width: 100%;
-            height: 0;
-            overflow: hidden;
-            left: 0;
-            top: 14vh;
-            z-index: 2;
-            background-color: #fff;            
-            transition: all 0.3s ease-in;
-            &-row {
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                padding-bottom: 5vh;
-                width: 80%;
-                height: 45%;
-                margin: auto;
-                &-column {
-                    height: 100%;
-                    margin-right: 2vw;                
-                    &-heading {
-                        color: $brand-black;
-                        font-size: 1.4rem;
-                        margin-bottom: 3vh;
-                    }
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    &-1 {
-                        width: 45%;
-                    }
-                    &-2 {
-                        width: 17.8%;
-                    }
-                    &-3 {
-                        width: 19%;
-                    }
-                    &-link {
-                        width: 100%;
-                        position: relative;
-                        overflow: hidden;
-                        &-img {
-                            width: 100%;
-                            cursor: pointer;
-                            transition: all 0.3s ease-in-out;
-                            &:hover {
-                                transform: scale(1.2);
-                            }
-                        }
-                    }
-                }
-            }
-            &-bottom {
-                width: 100%;
-                height: 45vh;
-                background-color: #F2F2F2;
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                padding: 3vh 10%;
-                &-line {
-                    width: 5%;
-                    margin-left: 6%;
-                    height: 100%;
-                    &-verticle {
-                        width: 2px;
-                        height: 100%;
-                        background-color: #A0A0A0;
-                    }
-                }
-                &-column {
-                    width: 40%;
-                    &-heading {
-                        font-size: 1.4rem;
-                        color: $brand-black;
-                        margin-bottom: 3vh;
-                    }
-                    &-links {
-                        display: flex;
-                        align-items: flex-start;
-                        justify-content: space-between;                        
-                        &-column {         
-                            &-link {
-                                margin-bottom: 2vh;
-                                display: block;
-                            }               
-                        }
-                    }
-                }
-            }
-        }
-        &-btn {
-            display: flex;
-            position: relative;
-            cursor: pointer;            
-        } 
-    }
-    &-story {
-        margin-left: 2.5%;
-    }
-    &-search {
-        display: flex;        
-        width: 16rem;
-        margin-left: 1.5rem;
-        &-icon {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            &-img {
-                width: 1.1rem;
-            }
-        }
-        &-input {
-            &-box {
-                border: none;
-                outline: none;
-                width: 0;      
-                padding: 0;                 
-                transition: all 0.3s;
-                &::placeholder {
-                    color: #979797;
-                } 
-                &-shown {         
-                    background-color: #F2F2F2;
-                    border-radius: 1rem;                       
-                    margin-left: 5%;           
-                    padding: 0.6rem 1rem;  
-                    width: 14rem;                    
-                }           
-            }
-        }
-    }
-    &-link {
-        width: 17rem;
-        display: flex;
-        justify-content: space-between;
-        margin-left: 9.7rem;
-    }
-    &-btn {
-        border-left: 0.8px solid #A0A0A0;
-        display: flex;
-        margin-left: 1rem;
-        padding-left: 2rem;
-        width: 12rem;
-        height: 60%;
-        align-items: center;
-        justify-content: space-between;
-            &-signup{
-                padding: 4% 10%;
-                background-color:$primary-color;
-                border-radius: 0.5rem;
-                color: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-        }
-    }
-}
-
-.header-explore:hover .header-explore-content  {                
-    height: 80%;
-    transition: all 0.3s ease-in;
-}
-
-//////////////////// 1. HEADER ///////////////////////
-//////////////////// 1. HEADER ///////////////////////
-//////////////////// 1. HEADER ///////////////////////
-
-//////////////////// 2. HERO ///////////////////////
-//////////////////// 2. HERO ///////////////////////
-//////////////////// 2. HERO ///////////////////////
-
-.hero {
-    width: 100%;
-    height: 100vh;
-    &-swiper {
-        &-container {
-            width: 100%;
-            height: 100%;
-        }
-        &-wrapper {
-            width: 100%;
-            height: 100%;
-        }
-        &-slide {
-            width: 100%;
-            height: 100%;
-            @include center();            
-            &-1 {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url(../images/hero-bg-1.png);
-                background-size: 100%;                
-            }
-            &-2 {
-                background-image: url(../images/hero-bg-2.png);
-            }
-            &-3 {
-                background-image: url(../images/hero-bg-3.png);
-            }
-            &-content {
-                background-color: #18181948;
-                width: 100%;
-                height: 100%;
-                color: #fff;
-                @include center();
-                flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 25vh;
-                &-heading {
-                    font-size: 3rem;
-                }
-                &-paragraph {
-                    font-size: 1.2rem;
-                    width: 55%;
-                    text-align: center;
-                    margin-top: 3vh;
-                }
-                &-btn {
-                    margin-top: 5vh;
-                    background-color: $primary-color;
-                    color: #fff;
-                    padding: 1.5vh 5%;
-                    border-radius: 0.5rem;
-                    font-size: 1.2rem;
-                }
-            }
-        }
-    }
-    &-scroll-icon {
-        width: 2%;
-        margin: auto;
-        &-img {
-            width: 100%;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-        }
-    }
-}
-
-.bounce-1 {
-    animation-name: bounce-1;
-    animation-timing-function: linear;
-    animation-delay: 3s;
-}
-@keyframes bounce-1 {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
-
-.swiper-button-prev::after {
-    color: #fff;
-}
-.swiper-button-next::after {
-    color: #fff;
-}
-
-//////////////////// 2. HERO ///////////////////////
-//////////////////// 2. HERO ///////////////////////
-//////////////////// 2. HERO ///////////////////////
 
 .dream-section {
     padding-top: 5vh;
@@ -509,309 +199,225 @@ a {
     }
 }
 
-
-
-//////////////////// 6. CATEGORIES ///////////////////////
-//////////////////// 6. CATEGORIES ///////////////////////
-//////////////////// 6. CATEGORIES ///////////////////////
-
-.categories {
-    width: 100%;
-    background-color: #fff;
-    padding: 5vh 4vw;
-    @include center();
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 10vh;
-    color: $brand-black;
-    &-heading {
-        font-weight: 600;
-        font-size: 2rem;
-    }
-    &-paragraph {
-        font-size: 1.2rem;
-        width: 60%;
-        text-align: center;
-        margin-top: 3vh;
-    }
-    &-btn {
-        color: #fff;
-        background-color: $primary-color;
-        font-size: 1.3rem;
-        padding: 1.3vh 4vw;
-        border-radius: 0.5rem;
-        margin-top: 5vh;
-        margin-bottom: 4vh;
-    }
-    &-link {
-        color: #000;
-        font-size: 1rem;
-    }
-    &-row {
-        margin-top: 10vh;
-        @include center();
-        justify-content: space-between;
-        align-items: baseline;
-        width: 80%;
-        padding-bottom: 4vh;
-        border-bottom: 4px solid #ECECEC; 
-        font-size: 1.4rem;       
-        &-link {
-            @include center();
-            flex-direction: column;
-            width: 10%;
-            &-icon {
-                width: 50%;
-                @include center();      
-                &-phone {
-                    width: 25%;
-                }          
-                &-img {
-                    width: 100%;
-                    margin-bottom: 3vh;
-                }
-            }            
-        }
+@media only screen and (min-width: 1600px) {
+    html {
+        font-size: 1.2vw;
     }
 }
 
-//////////////////// 6. CATEGORIES ///////////////////////
-//////////////////// 6. CATEGORIES ///////////////////////
-//////////////////// 6. CATEGORIES ///////////////////////
 
-
-//////////////////// 7. CLEVER THINGS ///////////////////////
-//////////////////// 7. CLEVER THINGS ///////////////////////
-//////////////////// 7. CLEVER THINGS ///////////////////////
-
-.clever-things {
-    width: 100%;
-    background-color: #fff;
-    padding: 5vh 4vw;
-    @include center();
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 10vh;
-    color: $brand-black;
-    &-heading {
-        font-weight: 600;
-        font-size: 2rem;
+@media only screen and (min-width: 980px) and (max-width:1080px) {
+    .dream-section-btn {
+        width: 35%;
     }
-    &-paragraph {
-        font-size: 1rem;
-        width: 80%;
-        text-align: center;
-        margin-top: 3vh;
-    }    
-    &-row {
-        margin-top: 3vh;
-        @include center();
-        justify-content: space-between;
-        align-items: baseline;
+}
+
+@media only screen and (min-width: 768px) and (max-width:980px) {
+    .dream-section-heading {
+        width: 70%;
+    }
+    .dream-section-thumbnail-img {
+        width: 25%;
+    }
+    .dream-section-btn {
         width: 45%;
-        padding-bottom: 4vh;
-        &-btn {
-            color: #fff;
-            background-color: $primary-color;
-            font-size: 1.3rem;
-            padding: 1.3vh 4vw;
-            border-radius: 0.5rem;
-            margin-top: 5vh;
-            margin-bottom: 4vh;
-            border: 0.2rem solid $primary-color;
-            &-2 {
-                background-color: #fff;
-                color: #000;
-            }
-        }
+    }
+    .guide-section-text {
+        width: 70%;
+    }
+    .guide-section-btn {
+        width: 40%;
     }
 }
 
-//////////////////// 7. CLEVER THINGS ///////////////////////
-//////////////////// 7. CLEVER THINGS ///////////////////////
-//////////////////// 7. CLEVER THINGS ///////////////////////
-
-
-
-
-//////////////////// 8. FOOTER ///////////////////////
-//////////////////// 8. FOOTER ///////////////////////
-//////////////////// 8. FOOTER ///////////////////////
-
-.footer {
-    width: 100%;
-    background-color: #ECECEC;
-    padding: 12vh 4vw 7vh 4vw;
-    color: $brand-black;
-    &-top {
-        width: 100%;
-        padding-bottom: 10vh;
-        border-bottom: 4px solid #D0D0D0;
-        margin-bottom: 5vh;
-        display: flex;
+@media only screen and (min-width: 620px) and (max-width:768px) {
+    .dream-section-heading {
+        width: 80%;
+        font-size: 1.8;
+    }
+    .dream-section-thumbnail-img {
+        width: 25%;
+    }
+    .dream-section-btn {
+        width: 45%;
+    }
+    .guide-section-text {
+        width: 70%;
+    }
+    .guide-section-btn {
+        width: 40%;
+    }
+    .project-section-heading {
+        width: 80%;
+        font-size: 1.8rem;
+    }
+    .project-section-row , .success-stories-section-row {
+        flex-direction: column;
+    }
+    .project-section-row-column , .success-stories-section-row-column {
+        flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
-        &-column-1 {
-            width: 50%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            &-column {
-                &-heading {
-                    font-size: 1.4rem;
-                    margin-bottom: 3vh;
-                }
-                &-link {
-                    display: block;
-                    margin-bottom: 2vh;
-                }
-            }
-        }
-        &-column-2 {
-            width: 40%;
-            &-icon {
-                @include center();
-                &-img {
-                    width: 10%;
-                    margin-bottom: 2vh;
-                }
-            }
-            &-text {
-                text-align: center;
-                font-size: 1.2rem;
-                width: 70%;
-                margin: auto;
-                margin-bottom: 3vh;
-            }
-            &-form {
-                &-input {
-                    width: 70%;
-                    margin: auto;
-                    display: block;
-                    height: 8vh;
-                    border: none;
-                    outline: none;
-                    background-color: #fff;
-                    color: $brand-black;
-                    font-size: 1rem;
-                    padding: 0.5vh 1vw;
-                    border-radius: 0.5rem;
-                    margin-bottom: 3vh;
-                    &::placeholder {
-                        color: #979797;
-                        font-size: 1rem;
-                    }
-                }
-                &-inner {
-                    width: 70%;
-                    margin: auto;
-                    text-align: center;
-                    display: flex;
-                    align-items: baseline;
-                    justify-content: space-between;
-                    margin-bottom: 3vh;
-                    position: relative;
-                }
-                &-checkbox {
-                    width: 1.4rem;
-                    height: 1.4rem;                    
-                    border-radius: 0;
-                    width: 10%;
-                    border: none;
-                    position: relative;
-                    z-index: 100;
-                    opacity: 0;
-                    cursor: pointer;
-                    &:checked ~ .footer-checkmark {
-                        background-color: $primary-color;
-                    }
-                    &:checked ~ .footer-checkmark:after {
-                        display: block;
-                    }
-                    &-text {
-                        width: 90%;
-                        font-size: 1rem;
-                        color: $brand-black;
-                        user-select: none;
-                        display: block;
-                        text-align: left;
-                        cursor: pointer;
-                    }
-                }
-                &-btn {
-                    display: block;
-                    width: 70%;
-                    margin: auto;
-                    border: none;
-                    outline: none;
-                    background-color: $primary-color;
-                    color: #fff;
-                    font-size: 1.2rem;
-                    border-radius: 0.5rem;
-                    padding: 1vh 0vw;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-    &-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
         width: 100%;
-        &-column {
-            display: flex;
-            align-items: baseline;
-            justify-content: flex-start;
-            &-1 {
-                width: 40%;
-            }
-            &-2 {
-                width: 60%;
-            }
-            &-social {
-                margin-right: 2vw;
-                &-img {
-                    &-1 {
-                        width: 1.2vw;
-                    }
-                    width: 2vw;
-                }
-            }
-            &-link {
-                margin-right: 2vw;
-            }
-        }
+        margin-bottom: 6vh;
+    }
+    .success-stories-section-row-column-text {
+        margin-top: 0;
+        text-align: justify;
+        margin-right: 2vw;
+    }
+    .success-stories-section-row-column-thumbnail {
+        width: 45%;
+        margin-right: 2vw;
     }
 }
 
-.footer-checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.8rem;
-  width: 1.8rem;
-  background-color: #fff;
-  cursor: pointer;
+
+@media only screen and (max-width: 620px) {
+    html {
+        font-size: 14px;
+    }
+    .dream-section-heading {
+        width: 80%;
+        font-size: 1.8;
+    }
+    .dream-section-thumbnail-img {
+        width: 25%;
+    }
+    .dream-section-btn {
+        width: 45%;
+    }
+    .guide-section-text {
+        width: 70%;
+    }
+    .guide-section-btn {
+        width: 40%;
+    }
+    .project-section-heading {
+        width: 80%;
+        font-size: 1.8rem;
+    }
+    .project-section-row , .success-stories-section-row {
+        flex-direction: column;
+    }
+    .project-section-row-column , .success-stories-section-row-column {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6vh;
+    }
+    .success-stories-section-row-column-text {
+        margin-top: 0;
+        text-align: justify;
+        margin-right: 2vw;
+    }
+    .success-stories-section-row-column-thumbnail {
+        width: 45%;
+        margin-right: 2vw;
+    }
 }
-.footer-checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
 
-.footer-checkmark:after {
-    left: 40%;
-    top: 20%;
-    width: 15%;
-    height: 40%;
-    border: solid white;
-    border-width: 0 0.2rem 0.2rem 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+@media only screen and (max-width: 450px) {
+    html {
+        font-size: 14px;
+    }
+    .dream-section-heading {
+        width: 90%;
+        font-size: 1.8rem;
+    }
+    .dream-section-thumbnail-img {
+        width: 25%;
+    }
+    .dream-section-btn {
+        width: 60%;
+    }
+    .dream-section-text {
+        width: 80%;
+    }
+    .guide-section-text {
+        width: 70%;
+    }
+    .guide-section-btn {
+        width: 40%;
+    }
+    .project-section-heading {
+        width: 80%;
+        font-size: 1.8rem;
+    }
+    .project-section-row , .success-stories-section-row {
+        flex-direction: column;
+    }
+    .project-section-row-column , .success-stories-section-row-column {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6vh;
+    }
+    .success-stories-section-row-column-text {
+        margin-top: 0;
+        text-align: justify;
+        margin-right: 2vw;
+    }
+    .success-stories-section-row-column-thumbnail {
+        width: 80%;
+        margin-right: 0vw;
+        margin-bottom: 2vh;
+    }
+    .success-stories-section-row-column {
+        flex-direction: column;
+    }
+}
 
-  //////////////////// 8. FOOTER ///////////////////////
-  //////////////////// 8. FOOTER ///////////////////////
-  //////////////////// 8. FOOTER ///////////////////////
+@media only screen and (max-width: 380px) {
+    html {
+        font-size: 14px;
+    }
+    .dream-section-heading {
+        width: 90%;
+        font-size: 1.8rem;
+    }
+    .dream-section-thumbnail-img {
+        width: 25%;
+    }
+    .dream-section-btn {
+        width: 80%;
+    }
+    .dream-section-text {
+        width: 80%;
+    }
+    .guide-section-text {
+        width: 90%;
+    }
+    .guide-section-btn {
+        width: 70%;
+    }
+    .project-section-heading {
+        width: 80%;
+        font-size: 1.8rem;
+    }
+    .project-section-row , .success-stories-section-row {
+        flex-direction: column;
+    }
+    .project-section-row-column , .success-stories-section-row-column {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6vh;
+    }
+    .success-stories-section-row-column-text {
+        margin-top: 0;
+        text-align: justify;
+        margin-right: 2vw;
+    }
+    .success-stories-section-row-column-thumbnail {
+        width: 80%;
+        margin-right: 0vw;
+        margin-bottom: 3vh;
+    }
+    .success-stories-section-row-column {
+        flex-direction: column;
+    }
+}
