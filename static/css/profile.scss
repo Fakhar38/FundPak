@@ -53,21 +53,21 @@ a {
         flex-direction: column;
         &-dp {
             @include center();
-            width: 100%;
+            width: 30%;
             position: relative;
             &-img {
-                width: 30%;
+                width: 100%;
                 height: 22vh;
                 border-radius: 50%;
                 cursor: pointer;
             }
             margin-bottom: 2vh;
             &-upload-container {                
-                width: 30%;
-                left: 35%;
+                width: 100%;
+                left: 0%;
                 position: absolute;
                 background-color: rgba(0, 0, 0, 0.45);
-                height: 100%;
+                height: 80%;
                 border-radius: 50%;
                 @include center();
                 display: none;
@@ -81,6 +81,11 @@ a {
                 &-bg {
                     position: absolute;
                     z-index: 1;
+                    width: 100%;
+                    @include center();
+                    &-icon {
+                        position: absolute;
+                    }
                 }
             }
         }
