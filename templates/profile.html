@@ -146,7 +146,7 @@
                     Logout
                 </a>
                 <div class="header-loggedin-btns-profile">
-                    <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    <img src="{{ user.image_url }}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
                 </div>
             </div>
         <!-- header buttons end here -->
@@ -213,27 +213,27 @@
     <div class="profile-section">
         <div class="profile-section-menu">
             <div class="profile-section-menu-dp">
-                <img src="{% static 'images/profile-icon.svg' %}" alt="avatar" class="profile-section-menu-dp-img">
+                <img src="{{ user.image_url }}" alt="avatar" class="profile-section-menu-dp-img">
                 <div class="profile-section-menu-dp-upload-container">                    
                     <div class="profile-section-menu-dp-upload-container-bg">
                         <div class="loader" style="opacity: 0"></div>
                         <img src="{% static 'images/upload-dp.svg' %}" alt="" class="profile-section-menu-dp-upload-container-bg-icon">
                     </div>
-                    <input onchange="uploadImage()" type="file" name="file[]" id="" accept="image/*" class="profile-section-menu-dp-upload-container-input">
+                    <input onchange="uploadImage()" type="file" name="file[]" id="files" accept="image/*" class="profile-section-menu-dp-upload-container-input">
                 </div>
             </div>
             <div class="profile-section-menu-name">
-                <span class="profile-section-menu-name-first">First</span> <span class="profile-section-menu-name-second">Second</span>
+                <span class="profile-section-menu-name-first">{{ user.username }}</span>
             </div>
             <div class="profile-section-menu-description">
-                fakharmahmood38@gmail.com
+                {{ user.email }}
             </div>
             <div class="profile-section-menu-campaigns">
-                <div class="profile-section-menu-campaigns-numbers">0</div>
-                <div class="profile-section-menu-campaigns-text">Compaigns</div>
+                <div class="profile-section-menu-campaigns-numbers">{{ campaign_count }}</div>
+                <div class="profile-section-menu-campaigns-text">Campaigns</div>
             </div>
             <div class="profile-section-menu-contributions">
-                <div class="profile-section-menu-contributions-numbers">0</div>
+                <div class="profile-section-menu-contributions-numbers">{{ contrib_count }}</div>
                 <div class="profile-section-menu-contributions-text">Contributions</div>
             </div>
             <a href="{% static 'campaign-form-1.html' %}" class="profile-section-menu-btn">
@@ -252,18 +252,31 @@
                     Campaigns I'm On
                 </div>
 
-                <!-- campaign card starts here -->
-                <div class="profile-section-details-campaign-card">
-                    <div class="profile-section-details-campaign-card-thumbnail">
-                        <img src="{% static 'images/campaign-thumbnail.png' %}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
-                    </div>
-                    <div class="profile-section-details-campaign-card-text">
-                        <div class="profile-section-details-campaign-card-text-title">
-                            My Campaign Title
+
+                {% for campaign in campaigns %}
+                    <!-- campaign card starts here -->
+                    <div class="profile-section-details-campaign-card">
+                        <div class="profile-section-details-campaign-card-thumbnail">
+                            <img src="{{ campaign.image }}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
                         </div>
-                        <div class="profile-section-details-campaign-card-text-name">
-                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>
+                        <div class="profile-section-details-campaign-card-text">
+                            <div class="profile-section-details-campaign-card-text-title">
+                                {{ campaign.title }}
+                            </div>
+                            <div class="profile-section-details-campaign-card-text-name">
+                                By <span class="profile-section-details-campaign-card-text-name-value">{{ user.username }}</span>
+                            </div>
                         </div>
+<<<<<<< HEAD
+                        <div class="profile-section-details-campaign-card-links">
+                            <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
+                                <a href="{% url 'core:product_detail' prod_id=campaign.id %}" class="profile-section-details-campaign-card-links-btn-content-link">View Details</a>
+{#                                <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>#}
+{#                                <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>#}
+                                <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>
+                            </div>
+=======
                         <div class="profile-section-details-campaign-card-text-amount">
                             Amount Raised: <span class="profile-section-details-campaign-card-text-amount-value">5,000 PKR</span>
                         </div>
@@ -273,10 +286,11 @@
                         <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
                             <div class="profile-section-details-campaign-card-links-btn-content-link">View Campaign</div>
                             <div class="profile-section-details-campaign-card-links-btn-content-link campaign-stop-btn">Stop Campaign</div>
+>>>>>>> ad53e2a655915ae2cc2639a44f07f71035177b38
                         </div>
                     </div>
-                </div>
-                <!-- campaign card ends here -->
+                    <!-- campaign card ends here -->
+                {% endfor %}
 
 {#                <!-- campaign card starts here -->#}
 {#                <div class="profile-section-details-campaign-card">#}
@@ -580,7 +594,8 @@
     function uploadImage(){
         console.log("In uploadimage fundtion")
         let loader = document.querySelector(".loader");
-        let image = document.querySelector(".profile-section-menu-dp-upload-container-bg-icon");
+        let image = document.querySelector(".profile-section-menu-dp-img");
+        let header_image = document.querySelector(".header-loggedin-btns-profile-img");
         loader.style.opacity = "1";
         var storage = firebase.storage();
         var file = document.getElementById('files').files[0];
@@ -598,7 +613,16 @@
                 console.log("Got Url")
                 console.log(url);
                 image.src = url;
+                header_image.src = url;
                 loader.style.opacity = "0";
+                {#console.log({{ user.id }})#}
+                //let user_id = {{ user.id }};
+                //let update_url = {{ update_url }};
+                $.ajax({
+                    url: '/core/update_profile/',
+                    method: 'POST',
+                    data: {'img_url': url},
+                })
             });
         }
         )

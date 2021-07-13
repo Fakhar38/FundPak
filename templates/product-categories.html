@@ -37,7 +37,7 @@
         <!-- header logo starts here -->
 
         <div class="header-logo">
-            <a href="{% url 'core:index' %}"><img src="./images/header-logo.svg" alt="header fundpak logo here" class="header-logo-img"></a>
+            <a href="{% url 'core:index' %}"><img src="{% static 'images/header-logo.svg' %}" alt="header fundpak logo here" class="header-logo-img"></a>
         </div>
 
         <!-- header explore starts here -->
@@ -45,21 +45,21 @@
         <div class="header-explore">
             <div class="header-explore-btn">
                 <a href="#" class="header-explore-text">Explore</a>
-                <div class="header-explore-icon"><img src="./images/icon-arrow-down.svg" alt="header arrow down icon here" class="header-explore-icon-img"></div>
+                <div class="header-explore-icon"><img src="{% static 'images/icon-arrow-down.svg' %}" alt="header arrow down icon here" class="header-explore-icon-img"></div>
             </div>
             <div class="header-explore-content">
                 <div class="header-explore-content-row">
                     <div class="header-explore-content-row-column header-explore-content-row-column-1">
                         <div class="header-explore-content-row-column-heading">Explore All Projects</div>
-                        <a href="./product-categories.html" class="header-explore-content-row-column-link"><img src="./images/drpdown1.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown1.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-2">
                         <div class="header-explore-content-row-column-heading">Most Favorites</div>
-                        <a href="./product-categories.html" class="header-explore-content-row-column-link"><img src="./images/drpdown2.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="#" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown2.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                     <div class="header-explore-content-row-column header-explore-content-row-column-3">
                         <div class="header-explore-content-row-column-heading">Join Us!</div>
-                        <a href="./signup.html" class="header-explore-content-row-column-link"><img src="./images/drpdown3.png" alt="" class="header-explore-content-row-column-link-img"></a>
+                        <a href="{% url 'core:signup' %}" class="header-explore-content-row-column-link"><img src="{% static 'images/drpdown3.png' %}" alt="" class="header-explore-content-row-column-link-img"></a>
                     </div>
                 </div>
                 <div class="header-explore-content-bottom">
@@ -69,20 +69,20 @@
                         </div>
                         <div class="header-explore-content-bottom-column-links">
                             <div class="header-explore-content-bottom-column-links-column">
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Audio</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Camera Gear</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Education</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Energy & Green Tech</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Fashion & Wearables</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Food & Beverages</a>
+                                <a href="{% url 'core:prod_cat_search' category='Audio' %}" class="header-explore-content-bottom-column-links-column-link">Audio</a>
+                                <a href="{% url 'core:prod_cat_search' category='camera' %}"  class="header-explore-content-bottom-column-links-column-link">Camera Gear</a>
+                                <a href="{% url 'core:prod_cat_search' category='education' %}"  class="header-explore-content-bottom-column-links-column-link">Education</a>
+                                <a href="{% url 'core:prod_cat_search' category='energy&green' %}"  class="header-explore-content-bottom-column-links-column-link">Energy & Green Tech</a>
+                                <a href="{% url 'core:prod_cat_search' category='fashion&wearable' %}"  class="header-explore-content-bottom-column-links-column-link">Fashion & Wearables</a>
+                                <a href="{% url 'core:prod_cat_search' category='food&beverages' %}"  class="header-explore-content-bottom-column-links-column-link">Food & Beverages</a>
                             </div>
                             <div class="header-explore-content-bottom-column-links-column">
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Health & Fitness</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Home</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Phones & Accessories</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Productivity</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Transportation</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Travel & Outdoors</a>
+                                <a href="{% url 'core:prod_cat_search' category='health&fitness' %}"  class="header-explore-content-bottom-column-links-column-link">Health & Fitness</a>
+                                <a href="{% url 'core:prod_cat_search' category='home' %}"  class="header-explore-content-bottom-column-links-column-link">Home</a>
+                                <a href="{% url 'core:prod_cat_search' category='phone&accessories' %}"  class="header-explore-content-bottom-column-links-column-link">Phones & Accessories</a>
+                                <a href="{% url 'core:prod_cat_search' category='productivity' %}"  class="header-explore-content-bottom-column-links-column-link">Productivity</a>
+                                <a href="{% url 'core:prod_cat_search' category='transportation' %}"  class="header-explore-content-bottom-column-links-column-link">Transportation</a>
+                                <a href="{% url 'core:prod_cat_search' category='travel&outdoor' %}"  class="header-explore-content-bottom-column-links-column-link">Travel & Outdoors</a>
                             </div>
                         </div>
                     </div>
@@ -95,19 +95,19 @@
                         </div>
                         <div class="header-explore-content-bottom-column-links">
                             <div class="header-explore-content-bottom-column-links-column">
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Art</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Comics</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Dance & Theater</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Film</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Music</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Photography</a>
+                                <a href="{% url 'core:prod_cat_search' category='Art' %}"  class="header-explore-content-bottom-column-links-column-link">Art</a>
+                                <a href="{% url 'core:prod_cat_search' category='comics' %}"  class="header-explore-content-bottom-column-links-column-link">Comics</a>
+                                <a href="{% url 'core:prod_cat_search' category='dance&theatre' %}"  class="header-explore-content-bottom-column-links-column-link">Dance & Theater</a>
+                                <a href="{% url 'core:prod_cat_search' category='film' %}"  class="header-explore-content-bottom-column-links-column-link">Film</a>
+                                <a href="{% url 'core:prod_cat_search' category='music' %}"  class="header-explore-content-bottom-column-links-column-link">Music</a>
+                                <a href="{% url 'core:prod_cat_search' category='photography' %}"  class="header-explore-content-bottom-column-links-column-link">Photography</a>
                             </div>
                             <div class="header-explore-content-bottom-column-links-column">
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Podcasts, Blogs & Vlogs</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Tabletop Games</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Video Games</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Web Series & TV Shows</a>
-                                <a href="#" class="header-explore-content-bottom-column-links-column-link">Writing & Publishing</a>
+                                <a href="{% url 'core:prod_cat_search' category='podcasts' %}"  class="header-explore-content-bottom-column-links-column-link">Podcasts, Blogs & Vlogs</a>
+                                <a href="{% url 'core:prod_cat_search' category='tabletop&games' %}"  class="header-explore-content-bottom-column-links-column-link">Tabletop Games</a>
+                                <a href="{% url 'core:prod_cat_search' category='video&games' %}"  class="header-explore-content-bottom-column-links-column-link">Video Games</a>
+                                <a href="{% url 'core:prod_cat_search' category='web series&tv show' %}"  class="header-explore-content-bottom-column-links-column-link">Web Series & TV Shows</a>
+                                <a href="{% url 'core:prod_cat_search' category='writing' %}"  class="header-explore-content-bottom-column-links-column-link">Writing & Publishing</a>
                             </div>
                         </div>
                     </div>
@@ -118,13 +118,13 @@
         <!-- header story starts here -->
 
         <div class="header-story">
-            <a href="./about-us.html" class="header-story-text">Our Story</a>
+            <a href="{% url 'core:about_us' %}" class="header-story-text">Our Story</a>
         </div>
 
         <!-- header seach input starts here -->
 
         <div class="header-search">
-            <div class="header-search-icon"><img src="./images/icon-search.svg" alt="header search icon here" class="header-search-icon-img"></div>
+            <div class="header-search-icon"><img src="{% static 'images/icon-search.svg' %}" alt="header search icon here" class="header-search-icon-img"></div>
             <div class="header-search-input"><input type="text" placeholder="Search" class="header-search-input-box"></div>
         </div>
 
@@ -132,26 +132,42 @@
 
         <div class="header-link">
 
-            <a href="./featured.html" class="header-link-investor">For Investors</a>
-            <a href="./start-a-campaign1.html" class="header-link-campaign">Start a Campaign</a>
+            <a href="{% url 'core:featured' %}" class="header-link-investor">For Investors</a>
+            <a href="{% url 'core:start_camp_not_logged' %}" class="header-link-campaign">Start a Campaign</a>
 
         </div>
 
 
         <!-- if there is no login then these buttons will be shown otherwise next div -->
 
-        <!-- header buttons start here -->
-        <div class="header-btn">
+        {% if is_logged %}
 
-            <a href="./login.html" class="header-btn-login">
-                Log In
-            </a>
+             <div class="header-loggedin-btns">
+                <a href="{% url 'core:logout' %}" class="header-loggedin-btns-logout">
+                    Logout
+                </a>
+                <div class="header-loggedin-btns-profile">
+                    {% if user_image %}
+                        <img src="{{ user_image }}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    {% else %}
+                        <img src="{% static 'images/profile-icon.svg' %}" alt="no profile picture icon here" class="header-loggedin-btns-profile-img">
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <!-- header buttons start here -->
+            <div class="header-btn">
 
-            <a href="./signup.html" class="header-btn-signup">
-                Sign Up
-            </a>
-        </div>
-        <!-- header buttons end here -->
+                <a href="{% url 'core:login' %}" class="header-btn-login">
+                    Log In
+                </a>
+
+                <a href="{% url 'core:signup' %}" class="header-btn-signup">
+                    Sign Up
+                </a>
+            </div>
+
+        {% endif %}
 
         <!-- account logged in btns start here -->
 
@@ -213,18 +229,18 @@
 
             <div class="product-categories-showroom-menu-category-heading product-categories-showroom-menu-category-1-heading">
                 <div class="product-categories-showroom-menu-category-heading-text">All Categories</div>
-                <img src="./images/down.svg" alt="" class="product-categories-showroom-menu-category-heading-icon">
+                <img src="{% static 'images/down.svg' %}" alt="" class="product-categories-showroom-menu-category-heading-icon">
             </div>
 
             <div class="product-categories-showroom-menu-category-link-container  product-categories-showroom-menu-category-1-link-container" style="overflow: hidden;transition: all 0.5s ease-in-out;">
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Audio</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Camera Gear</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Education</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Energy & Green Tech</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Fashion & Wearables</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Food & Beverages</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Health & Fitness</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Home</div>
+                <a href="{% url 'core:prod_cat_search' category='Audio' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Audio</a>
+                <a href="{% url 'core:prod_cat_search' category='camera' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Camera Gear</a>
+                <a href="{% url 'core:prod_cat_search' category='education' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Education</a>
+                <a href="{% url 'core:prod_cat_search' category='energy&green' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Energy & Green Tech</a>
+                <a href="{% url 'core:prod_cat_search' category='fashion&wearable' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Fashion & Wearables</a>
+                <a href="{% url 'core:prod_cat_search' category='food&beverages' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Food & Beverages</a>
+                <a href="{% url 'core:prod_cat_search' category='health&fitness' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Health & Fitness</a>
+                <a href="{% url 'core:prod_cat_search' category='home' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Home</a>
             </div>   
             
             <!-- second category ends here -->
@@ -233,19 +249,13 @@
 
             <div class="product-categories-showroom-menu-category-heading product-categories-showroom-menu-category-1-heading">
                 <div class="product-categories-showroom-menu-category-heading-text">Tech & Innovation</div>
-                <img src="./images/down.svg" alt="" class="product-categories-showroom-menu-category-heading-icon">
+                <img src="{% static 'images/down.svg' %}" alt="" class="product-categories-showroom-menu-category-heading-icon">
             </div>
 
             <div class="product-categories-showroom-menu-category-link-container  product-categories-showroom-menu-category-1-link-container" style="overflow: hidden;transition: all 0.5s ease-in-out;">
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Audio</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Camera Gear</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Education</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Energy & Green Tech</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Fashion & Wearables</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Food & Beverages</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Health & Fitness</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Home</div>
-            </div>   
+                <a href="{% url 'core:prod_cat_search' category='Audio' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Audio</a>
+                <a href="{% url 'core:prod_cat_search' category='camera' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Camera Gear</a>
+            </div>
             
             <!-- second category ends here -->
 
@@ -253,19 +263,12 @@
 
             <div class="product-categories-showroom-menu-category-heading product-categories-showroom-menu-category-1-heading">
                 <div class="product-categories-showroom-menu-category-heading-text">Creative Works</div>
-                <img src="./images/down.svg" alt="" class="product-categories-showroom-menu-category-heading-icon">
+                <img src="{% static 'images/down.svg' %}" alt="" class="product-categories-showroom-menu-category-heading-icon">
             </div>
 
             <div class="product-categories-showroom-menu-category-link-container  product-categories-showroom-menu-category-1-link-container" style="overflow: hidden;transition: all 0.5s ease-in-out;">
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Audio</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Camera Gear</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Education</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Energy & Green Tech</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Fashion & Wearables</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Food & Beverages</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Health & Fitness</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Home</div>
-            </div>   
+                <a href="{% url 'core:prod_cat_search' category='home' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Home</a>
+            </div>
             
             <!-- second category ends here -->
 
@@ -273,19 +276,16 @@
 
             <div class="product-categories-showroom-menu-category-heading product-categories-showroom-menu-category-1-heading">
                 <div class="product-categories-showroom-menu-category-heading-text">Community Projects</div>
-                <img src="./images/down.svg" alt="" class="product-categories-showroom-menu-category-heading-icon">
+                <img src="{% static 'images/down.svg' %}" alt="" class="product-categories-showroom-menu-category-heading-icon">
             </div>
 
             <div class="product-categories-showroom-menu-category-link-container  product-categories-showroom-menu-category-1-link-container" style="overflow: hidden;transition: all 0.5s ease-in-out;">
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Audio</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Camera Gear</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Education</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Energy & Green Tech</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Fashion & Wearables</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Food & Beverages</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Health & Fitness</div>
-                <div class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Home</div>
-            </div>   
+                <a href="{% url 'core:prod_cat_search' category='education' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Education</a>
+                <a href="{% url 'core:prod_cat_search' category='energy&green' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Energy & Green Tech</a>
+                <a href="{% url 'core:prod_cat_search' category='fashion&wearable' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Fashion & Wearables</a>
+                <a href="{% url 'core:prod_cat_search' category='food&beverages' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Food & Beverages</a>
+                <a href="{% url 'core:prod_cat_search' category='health&fitness' %}" class="product-categories-showroom-menu-category-link product-categories-showroom-menu-category-1-link">Health & Fitness</a>
+           </div>
             
             <!-- second category ends here -->
             
@@ -294,161 +294,168 @@
 
         <div class="product-categories-showroom-container">
 
-            <div class="product-categories-showroom-container-search">
-                <input type="text" class="product-categories-showroom-container-search-input" placeholder="SEARCH FOR CAMPAIGN">
-                <img src="./images/icon-search.svg" alt="" class="product-categories-showroom-container-search-icon">
-            </div>
+            <form method="post" action="{% url 'core:prod_phrase_search' %}">
+                {% csrf_token %}
+                <div class="product-categories-showroom-container-search">
+                    <input type="text" name="phrase" class="product-categories-showroom-container-search-input" placeholder="SEARCH FOR CAMPAIGN">
+                    <img src="{% static 'images/icon-search.svg' %}" alt="" class="product-categories-showroom-container-search-icon">
+{#                    <button type="submit">Search</button>#}
+                </div>
+            </form>
 
             <div class="product-categories-showroom-container-row">
-                <!-- row card starts here -->
-                <div class="product-categories-showroom-container-row-card">
-                    <a href="#" class="product-categories-showroom-container-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-toprow">
-                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>
-                        <div class="product-categories-showroom-container-row-card-toprow-favorite">
-                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                            </svg>                           
+
+                {% for prod in all_prods %}
+                    <!-- row card starts here -->
+                    <div class="product-categories-showroom-container-row-card">
+                        <a href="{% url 'core:product_detail' prod_id=prod.id %}" class="product-categories-showroom-container-row-card-image">
+                            <img src="{{ prod.image }}" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">
+                        </a>
+                        <div class="product-categories-showroom-container-row-card-toprow">
+                            <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>
+                            <div class="product-categories-showroom-container-row-card-toprow-favorite">
+                                <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <a href="{% url 'core:product_detail' prod_id=prod.id %}" class="product-categories-showroom-container-row-card-name">
+                            {{ prod.title }}
+                        </a>
+                        <div class="product-categories-showroom-container-row-card-description">
+                            {{ prod.tagline }}
+                        </div>
+                        <div class="product-categories-showroom-container-row-card-category">
+                            {{ prod.category }}
+                        </div>
+                        <div class="product-categories-showroom-container-row-card-update">
+                            <div class="product-categories-showroom-container-row-card-update-amount">Rs {{ prod.moneyRaised }}</div>
+                            <div class="product-categories-showroom-container-row-card-update-currency">PKR raised</div>
                         </div>
                     </div>
-                    <a href="#" class="product-categories-showroom-container-row-card-name">
-                        Center Cam: Finally- a middle-screen webcam!
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-description">
-                        Center Cam is an adjustable webcam that operates in the middle of your screen.
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-category">
-                        BEAUTY
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-update">
-                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>
-                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>
-                    </div>
-                </div>
-                <!-- row card ends here -->
+                    <!-- row card ends here -->
+                {% endfor %}
                 
-                <!-- row card starts here -->
-                <div class="product-categories-showroom-container-row-card">
-                    <a href="#" class="product-categories-showroom-container-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-toprow">
-                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>
-                        <div class="product-categories-showroom-container-row-card-toprow-favorite">
-                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                            </svg>                           
-                        </div>
-                    </div>
-                    <a href="#" class="product-categories-showroom-container-row-card-name">
-                        Center Cam: Finally- a middle-screen webcam!
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-description">
-                        Center Cam is an adjustable webcam that operates in the middle of your screen.
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-category">
-                        BEAUTY
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-update">
-                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>
-                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>
-                    </div>
-                </div>
-                <!-- row card ends here -->
-
-                <!-- row card starts here -->
-                <div class="product-categories-showroom-container-row-card">
-                    <a href="#" class="product-categories-showroom-container-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-toprow">
-                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>
-                        <div class="product-categories-showroom-container-row-card-toprow-favorite">
-                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                            </svg>                           
-                        </div>
-                    </div>
-                    <a href="#" class="product-categories-showroom-container-row-card-name">
-                        Center Cam: Finally- a middle-screen webcam!
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-description">
-                        Center Cam is an adjustable webcam that operates in the middle of your screen.
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-category">
-                        BEAUTY
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-update">
-                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>
-                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>
-                    </div>
-                </div>
-                <!-- row card ends here -->
-
-                <!-- row card starts here -->
-                <div class="product-categories-showroom-container-row-card">
-                    <a href="#" class="product-categories-showroom-container-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-toprow">
-                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>
-                        <div class="product-categories-showroom-container-row-card-toprow-favorite">
-                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                            </svg>                           
-                        </div>
-                    </div>
-                    <a href="#" class="product-categories-showroom-container-row-card-name">
-                        Center Cam: Finally- a middle-screen webcam!
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-description">
-                        Center Cam is an adjustable webcam that operates in the middle of your screen.
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-category">
-                        BEAUTY
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-update">
-                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>
-                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>
-                    </div>
-                </div>
-                <!-- row card ends here -->
-
-                <!-- row card starts here -->
-                <div class="product-categories-showroom-container-row-card">
-                    <a href="#" class="product-categories-showroom-container-row-card-image">
-                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-toprow">
-                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>
-                        <div class="product-categories-showroom-container-row-card-toprow-favorite">
-                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>
-                            </svg>                           
-                        </div>
-                    </div>
-                    <a href="#" class="product-categories-showroom-container-row-card-name">
-                        Center Cam: Finally- a middle-screen webcam!
-                    </a>
-                    <div class="product-categories-showroom-container-row-card-description">
-                        Center Cam is an adjustable webcam that operates in the middle of your screen.
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-category">
-                        BEAUTY
-                    </div>
-                    <div class="product-categories-showroom-container-row-card-update">
-                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>
-                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>
-                    </div>
-                </div>
-                <!-- row card ends here -->
+{#                <!-- row card starts here -->#}
+{#                <div class="product-categories-showroom-container-row-card">#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-image">#}
+{#                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-toprow">#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-favorite">#}
+{#                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                            </svg>                           #}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-name">#}
+{#                        Center Cam: Finally- a middle-screen webcam!#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-description">#}
+{#                        Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-category">#}
+{#                        BEAUTY#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-update">#}
+{#                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- row card ends here -->#}
+{##}
+{#                <!-- row card starts here -->#}
+{#                <div class="product-categories-showroom-container-row-card">#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-image">#}
+{#                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-toprow">#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-favorite">#}
+{#                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                            </svg>                           #}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-name">#}
+{#                        Center Cam: Finally- a middle-screen webcam!#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-description">#}
+{#                        Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-category">#}
+{#                        BEAUTY#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-update">#}
+{#                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- row card ends here -->#}
+{##}
+{#                <!-- row card starts here -->#}
+{#                <div class="product-categories-showroom-container-row-card">#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-image">#}
+{#                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-toprow">#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-favorite">#}
+{#                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                            </svg>                           #}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-name">#}
+{#                        Center Cam: Finally- a middle-screen webcam!#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-description">#}
+{#                        Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-category">#}
+{#                        BEAUTY#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-update">#}
+{#                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- row card ends here -->#}
+{##}
+{#                <!-- row card starts here -->#}
+{#                <div class="product-categories-showroom-container-row-card">#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-image">#}
+{#                        <img src="./images/project-title.png" alt="project title image here" class="product-categories-showroom-container-row-card-image-title">#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-toprow">#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-category">FUNDING</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-toprow-favorite">#}
+{#                            <svg class="product-categories-showroom-container-row-card-toprow-favorite-icon" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">#}
+{#                                <path class="product-categories-showroom-container-row-card-toprow-favorite-icon-path" d="M15.9736 5.40791L16.5 6.36982L17.0263 5.40792C17.5475 4.45552 18.4231 3.16566 19.7219 2.16123L19.3548 1.68661L19.7219 2.16123C21.0663 1.12145 22.5796 0.6 24.2344 0.6C28.8552 0.6 32.4 4.37196 32.4 9.50774C32.4 12.2511 31.307 14.5856 29.2978 17.01C27.2733 19.4528 24.365 21.9339 20.7929 24.978L21.1499 25.3969L20.7929 24.978C19.5838 26.0083 18.2112 27.1781 16.7838 28.4264L16.7836 28.4266C16.7056 28.4949 16.6051 28.5328 16.5 28.5328C16.3949 28.5328 16.2944 28.4949 16.2165 28.4266L16.2162 28.4263C14.7898 27.179 13.4178 26.0097 12.2099 24.9804L12.2079 24.9786L12.2079 24.9786C8.63538 21.9342 5.72685 19.453 3.70234 17.0101C1.69304 14.5856 0.6 12.2511 0.6 9.50774C0.6 4.37196 4.14479 0.6 8.76562 0.6C10.4204 0.6 11.9337 1.12145 13.2781 2.16123C14.5769 3.16566 15.4525 4.45547 15.9736 5.40791Z" stroke-width="2"/>#}
+{#                            </svg>                           #}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <a href="#" class="product-categories-showroom-container-row-card-name">#}
+{#                        Center Cam: Finally- a middle-screen webcam!#}
+{#                    </a>#}
+{#                    <div class="product-categories-showroom-container-row-card-description">#}
+{#                        Center Cam is an adjustable webcam that operates in the middle of your screen.#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-category">#}
+{#                        BEAUTY#}
+{#                    </div>#}
+{#                    <div class="product-categories-showroom-container-row-card-update">#}
+{#                        <div class="product-categories-showroom-container-row-card-update-amount">$1,210,12</div>#}
+{#                        <div class="product-categories-showroom-container-row-card-update-currency">USD raised</div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <!-- row card ends here -->#}
             </div>
 
-            <div class="product-categories-showroom-container-btn">
-                SHOW MORE
-            </div>
+{#            <div class="product-categories-showroom-container-btn">#}
+{#                SHOW MORE#}
+{#            </div>#}
 
         </div>
 
@@ -496,7 +503,7 @@
             </div>
             <div class="footer-top-column-2">
                 <div class="footer-top-column-2-icon">
-                    <img src="./images/envelope.svg" alt="envelope icon here" class="footer-top-column-2-icon-img">
+                    <img src="{% static 'images/envelope.svg' %}" alt="envelope icon here" class="footer-top-column-2-icon-img">
                 </div>
                 <div class="footer-top-column-2-text">
                     Discover new and clever products in the pakfund newsletter.
@@ -514,11 +521,11 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-bottom-column footer-bottom-column-1">
-                <a href="#" class="footer-bottom-column-social"><img src="./images/fb.png" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/insta.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/linkedin.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/ttr.png" alt="" class="footer-bottom-column-social-img"></a>
-                <a href="#" class="footer-bottom-column-social"><img src="./images/yt.png" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/fb.png' %}" alt="" class="footer-bottom-column-social-img footer-bottom-column-social-img-1"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/insta.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/linkedin.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/ttr.png' %}" alt="" class="footer-bottom-column-social-img"></a>
+                <a href="#" class="footer-bottom-column-social"><img src="{% static 'images/yt.png' %}" alt="" class="footer-bottom-column-social-img"></a>
             </div>
             <div class="footer-bottom-column footer-bottom-column-2">
                 <a href="#" class="footer-bottom-column-link">Terms of Use</a>
