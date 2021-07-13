@@ -1278,6 +1278,9 @@ a {
 }
 
 @media only screen and (min-width: 1600px) {
+  html {
+    font-size: 1.2vw;
+  }
   .header {
     height: 12vh;
   }
@@ -1496,6 +1499,9 @@ a {
 }
 
 @media only screen and (min-width: 980px) and (max-width: 1160px) {
+  .header-loggedin-btns-profile-img {
+    width: 4rem;
+  }
   .header-explore-content-row {
     width: 90%;
   }
@@ -1582,6 +1588,9 @@ a {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 980px) {
+  .header-loggedin-btns-profile-img {
+    width: 3.2rem;
+  }
   .header {
     height: 12vh;
   }
@@ -1752,6 +1761,12 @@ a {
 }
 
 @media only screen and (min-width: 620px) and (max-width: 768px) {
+  .header-loggedin-btns {
+    margin-left: auto;
+  }
+  .header-loggedin-btns-profile-img {
+    width: 3.2rem;
+  }
   .header {
     height: 12vh;
   }

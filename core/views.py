@@ -445,3 +445,7 @@ def start_campaign_logged(request):
             return HttpResponseRedirect(reverse("core:campaign_1", kwargs={'prod_id': prod_id}))
         else:
             return render(request, "start-a-campaign2.html")
+
+
+def profile(request):
+    return render(request, 'profile.html')
