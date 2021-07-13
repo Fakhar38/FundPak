@@ -57,7 +57,6 @@ a {
             position: relative;
             &-img {
                 width: 100%;
-                height: 22vh;
                 border-radius: 50%;
                 cursor: pointer;
             }
@@ -180,6 +179,7 @@ a {
                     }
                 }
                 &-text {
+                    height: 100%;
                     margin-left: 2vw;
                     &-title {
                         font-size: 1.4rem;
@@ -187,16 +187,22 @@ a {
                     }
                     &-name {
                         font-size: 1.1rem;
+                        margin-bottom: 3vh;
                         &-value {
                             color: $primary-color;
+                        }
+                    }
+                    &-amount {
+                        margin-top: auto;
+                        &-value {
+                            font-weight: 500;
                         }
                     }
                 }
                 &-links {       
                     margin-left: auto;          
                     &-btn {
-                        width: 10vw;
-                        padding: 1vh 1.5vw;
+                        padding: 1vh 2vw;
                         border: 0.1vh solid #575756;
                         border-radius: 0.5vw;
                         color: #575756;
@@ -252,3 +258,218 @@ a {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  .campaign-stop-popup {
+    width: 50%;
+    height: 50vh;
+    position: fixed;
+    z-index: 100;
+    left: 25%;
+    top: 25vh;
+    background-color: #fff;
+    box-shadow: 0.2rem 0.6rem 0.4rem rgba(0, 0, 0, 0.25); 
+    @include center();
+    flex-direction: column;
+    padding: 0 2%;
+    display: none;
+    &-first-row {
+        width: 100%;
+        @include center();
+        justify-content: flex-end;
+        padding-right: 5%;
+        margin-bottom: 2vh;
+        span {
+            cursor: pointer;
+        }
+    }
+    &-heading {
+        color: $brand-black;
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 5vh;
+        text-align: center;
+    }     
+    &-para {
+        font-size: 1.1rem;
+        margin-bottom: 4vh;
+        text-align: center;
+    }
+    &-row {
+        margin-bottom: 3vh;
+        width: 50%;        
+        @include center();
+        text-align: center;
+        justify-content: space-between;
+        &-btn {
+            padding: 1vh 2vw;
+            font-size: 1.1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            &-yes {
+                background-color: rgb(240, 84, 84);
+                color: #fff;
+            }
+            &-no {
+                background-color: rgb(0, 199, 0);
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1600px) {
+    html {
+        font-size: 1.2vw;
+    }
+}
+
+@media only screen and (min-width:980px) and (max-width:1080px) {
+    .campaign-stop-popup {
+        width: 70%;
+    }
+}
+
+
+@media only screen and (min-width:768px) and (max-width:980px) {
+    .profile-section {
+        flex-direction: column;
+        &-menu {
+            width: 50vw;
+            margin-bottom: 6vh;
+        }
+        &-details {
+            width: 90%;
+        }
+    }
+    .campaign-stop-popup {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width:620px) and (max-width:768px) {
+    .profile-section {
+        flex-direction: column;
+        &-menu {
+            width: 50vw;
+            margin-bottom: 6vh;
+            &-btn {
+                width: 70%;
+            }
+        }
+        &-details {
+            width: 90%;
+        }
+    }
+    .profile-section-details-campaign-card-links-btn {
+        padding: 1vh 3vw;
+    }
+    .campaign-stop-popup {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width:620px) {
+    html {
+        font-size: 14px;
+    }
+    .profile-section {
+        flex-direction: column;
+        &-menu {
+            width: 70vw;
+            margin: auto;
+            margin-bottom: 6vh;
+            &-btn {
+                width: 70%;
+            }
+        }
+        &-details {
+            width: 90%;
+        }
+    }
+    .profile-section-details-campaign-card-links-btn {
+        padding: 1vh 3vw;
+    }
+    .profile-section-details-campaign-card-thumbnail {
+        width: 35%;
+    }
+    .campaign-stop-popup {
+        width: 90%;
+        left: 5%;
+        &-row {
+            width: 80%;
+        }
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .profile-section {
+        flex-direction: column;
+        &-menu {
+            width: 70vw;
+            margin: auto;
+            margin-bottom: 6vh;
+            &-btn {
+                width: 70%;
+            }
+        }
+        &-details {
+            width: 90%;
+        }
+    }
+    .profile-section-details-campaign-card-links-btn {
+        padding: 1vh 3vw;
+    }
+    .profile-section-details-campaign-card-thumbnail {
+        width: 60%;
+    }
+    .profile-section-details-campaign-card {
+        flex-direction: column;
+    }
+    .profile-section-details-campaign-card-links {
+        margin-top: 2vh;
+    }
+    .campaign-stop-popup {
+        width: 90%;
+        left: 5%;
+        &-row {
+            width: 90%;
+        }
+    }
+}
+
+
+@media only screen and (max-width:380px) {
+    .profile-section {
+        flex-direction: column;
+        &-menu {
+            width: 90vw;
+            margin: auto;
+            margin-bottom: 6vh;
+            &-btn {
+                width: 70%;
+            }
+        }
+        &-details {
+            width: 90%;
+        }
+    }
+    .profile-section-details-campaign-card-links-btn {
+        padding: 1vh 3vw;
+    }
+    .profile-section-details-campaign-card-thumbnail {
+        width: 60%;
+    }
+    .profile-section-details-campaign-card {
+        flex-direction: column;
+    }
+    .profile-section-details-campaign-card-links {
+        margin-top: 2vh;
+    }
+    .campaign-stop-popup {
+        width: 90%;
+        left: 5%;
+        &-row {
+            width: 90%;
+        }
+    }
+}

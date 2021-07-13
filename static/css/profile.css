@@ -80,7 +80,6 @@ a {
 
 .profile-section-menu-dp-img {
   width: 100%;
-  height: 22vh;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -289,6 +288,7 @@ a {
 }
 
 .profile-section-details-campaign-card-text {
+  height: 100%;
   margin-left: 2vw;
 }
 
@@ -299,10 +299,19 @@ a {
 
 .profile-section-details-campaign-card-text-name {
   font-size: 1.1rem;
+  margin-bottom: 3vh;
 }
 
 .profile-section-details-campaign-card-text-name-value {
   color: #FC7753;
+}
+
+.profile-section-details-campaign-card-text-amount {
+  margin-top: auto;
+}
+
+.profile-section-details-campaign-card-text-amount-value {
+  font-weight: 500;
 }
 
 .profile-section-details-campaign-card-links {
@@ -310,8 +319,7 @@ a {
 }
 
 .profile-section-details-campaign-card-links-btn {
-  width: 10vw;
-  padding: 1vh 1.5vw;
+  padding: 1vh 2vw;
   border: 0.1vh solid #575756;
   border-radius: 0.5vw;
   color: #575756;
@@ -397,6 +405,280 @@ a {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+.campaign-stop-popup {
+  width: 50%;
+  height: 50vh;
+  position: fixed;
+  z-index: 100;
+  left: 25%;
+  top: 25vh;
+  background-color: #fff;
+  -webkit-box-shadow: 0.2rem 0.6rem 0.4rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0.2rem 0.6rem 0.4rem rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 2%;
+  display: none;
+}
+
+.campaign-stop-popup-first-row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 5%;
+  margin-bottom: 2vh;
+}
+
+.campaign-stop-popup-first-row span {
+  cursor: pointer;
+}
+
+.campaign-stop-popup-heading {
+  color: #181819;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.campaign-stop-popup-para {
+  font-size: 1.1rem;
+  margin-bottom: 4vh;
+  text-align: center;
+}
+
+.campaign-stop-popup-row {
+  margin-bottom: 3vh;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.campaign-stop-popup-row-btn {
+  padding: 1vh 2vw;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.campaign-stop-popup-row-btn-yes {
+  background-color: #f05454;
+  color: #fff;
+}
+
+.campaign-stop-popup-row-btn-no {
+  background-color: #00c700;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 1.2vw;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1080px) {
+  .campaign-stop-popup {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+  .profile-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-menu {
+    width: 50vw;
+    margin-bottom: 6vh;
+  }
+  .profile-section-details {
+    width: 90%;
+  }
+  .campaign-stop-popup {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 620px) and (max-width: 768px) {
+  .profile-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-menu {
+    width: 50vw;
+    margin-bottom: 6vh;
+  }
+  .profile-section-menu-btn {
+    width: 70%;
+  }
+  .profile-section-details {
+    width: 90%;
+  }
+  .profile-section-details-campaign-card-links-btn {
+    padding: 1vh 3vw;
+  }
+  .campaign-stop-popup {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  html {
+    font-size: 14px;
+  }
+  .profile-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-menu {
+    width: 70vw;
+    margin: auto;
+    margin-bottom: 6vh;
+  }
+  .profile-section-menu-btn {
+    width: 70%;
+  }
+  .profile-section-details {
+    width: 90%;
+  }
+  .profile-section-details-campaign-card-links-btn {
+    padding: 1vh 3vw;
+  }
+  .profile-section-details-campaign-card-thumbnail {
+    width: 35%;
+  }
+  .campaign-stop-popup {
+    width: 90%;
+    left: 5%;
+  }
+  .campaign-stop-popup-row {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .profile-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-menu {
+    width: 70vw;
+    margin: auto;
+    margin-bottom: 6vh;
+  }
+  .profile-section-menu-btn {
+    width: 70%;
+  }
+  .profile-section-details {
+    width: 90%;
+  }
+  .profile-section-details-campaign-card-links-btn {
+    padding: 1vh 3vw;
+  }
+  .profile-section-details-campaign-card-thumbnail {
+    width: 60%;
+  }
+  .profile-section-details-campaign-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-details-campaign-card-links {
+    margin-top: 2vh;
+  }
+  .campaign-stop-popup {
+    width: 90%;
+    left: 5%;
+  }
+  .campaign-stop-popup-row {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .profile-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-menu {
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 6vh;
+  }
+  .profile-section-menu-btn {
+    width: 70%;
+  }
+  .profile-section-details {
+    width: 90%;
+  }
+  .profile-section-details-campaign-card-links-btn {
+    padding: 1vh 3vw;
+  }
+  .profile-section-details-campaign-card-thumbnail {
+    width: 60%;
+  }
+  .profile-section-details-campaign-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile-section-details-campaign-card-links {
+    margin-top: 2vh;
+  }
+  .campaign-stop-popup {
+    width: 90%;
+    left: 5%;
+  }
+  .campaign-stop-popup-row {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=profile.css.map */

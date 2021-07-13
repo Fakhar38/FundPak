@@ -264,14 +264,15 @@
                         <div class="profile-section-details-campaign-card-text-name">
                             By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>
                         </div>
+                        <div class="profile-section-details-campaign-card-text-amount">
+                            Amount Raised: <span class="profile-section-details-campaign-card-text-amount-value">5,000 PKR</span>
+                        </div>
                     </div>
                     <div class="profile-section-details-campaign-card-links">
                         <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
                         <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Details</div>
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">Edit Campaign</div>
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">Stop Campaign</div>
-                            <div class="profile-section-details-campaign-card-links-btn-content-link">Delete Campaign</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Campaign</div>
+                            <div class="profile-section-details-campaign-card-links-btn-content-link campaign-stop-btn">Stop Campaign</div>
                         </div>
                     </div>
                 </div>
@@ -411,6 +412,54 @@
                 <div class="profile-section-details-contributions-heading">
                     My Contributions
                 </div>
+                <!-- campaign card starts here -->
+                <div class="profile-section-details-campaign-card">
+                    <div class="profile-section-details-campaign-card-thumbnail">
+                        <img src="{% static 'images/campaign-thumbnail.png' %}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
+                    </div>
+                    <div class="profile-section-details-campaign-card-text">
+                        <div class="profile-section-details-campaign-card-text-title">
+                            My Campaign Title
+                        </div>
+                        <div class="profile-section-details-campaign-card-text-name">
+                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>
+                        </div>
+                        <div class="profile-section-details-campaign-card-text-amount">
+                            Amount Contributed: <span class="profile-section-details-campaign-card-text-amount-value">5,000 PKR</span>
+                        </div>
+                    </div>
+                    <div class="profile-section-details-campaign-card-links">
+                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
+                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Campaign</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- campaign card ends here -->
+                <!-- campaign card starts here -->
+                <div class="profile-section-details-campaign-card">
+                    <div class="profile-section-details-campaign-card-thumbnail">
+                        <img src="{% static 'images/campaign-thumbnail.png' %}" alt="" class="profile-section-details-campaign-card-thumbnail-img">
+                    </div>
+                    <div class="profile-section-details-campaign-card-text">
+                        <div class="profile-section-details-campaign-card-text-title">
+                            My Campaign Title
+                        </div>
+                        <div class="profile-section-details-campaign-card-text-name">
+                            By <span class="profile-section-details-campaign-card-text-name-value">Hamza Abbas</span>
+                        </div>
+                        <div class="profile-section-details-campaign-card-text-amount">
+                            Amount Contributed: <span class="profile-section-details-campaign-card-text-amount-value">5,000 PKR</span>
+                        </div>
+                    </div>
+                    <div class="profile-section-details-campaign-card-links">
+                        <div class="profile-section-details-campaign-card-links-btn">ACTION</div>
+                        <div class="profile-section-details-campaign-card-links-btn-content" style="display: none;">
+                            <div class="profile-section-details-campaign-card-links-btn-content-link">View Campaign</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- campaign card ends here -->
             </div>
             <!-- details about contributions starts here -->
         </div>
@@ -418,6 +467,27 @@
 
 
     <!-- profile section ends here -->
+
+    <!-- pop up for campaign stop starts here -->
+
+    <div class="campaign-stop-popup">
+        <div class="campaign-stop-popup-first-row">
+            <span class="cross-popup-icon">❌</span>
+        </div>
+        <div class="campaign-stop-popup-heading">
+            Stop the campaign?
+        </div>
+        <div class="campaign-stop-popup-para">
+            Are you sure, you want to stop the campaign?
+        </div>
+        <div class="campaign-stop-popup-row">
+            <div class="campaign-stop-popup-row-btn campaign-stop-popup-row-btn-yes"> YES SURE</div>
+            <div class="campaign-stop-popup-row-btn campaign-stop-popup-row-btn-no"> NO PLEASE</div>
+        </div>
+    </div>
+
+
+    <!-- pop up for campaign stop ends here -->
     
     <!-- footer starts here -->
 
